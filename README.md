@@ -18,20 +18,28 @@ npm run build
 - `app/page.tsx` — 首頁：全系列最新一代卡片。
 - `app/product/[slug]/page.tsx` — 產品頁：判定、週期、下一代訊號、台灣價格、電信、規格建議、判定紀錄。
 - `components/Icons.tsx` — 內嵌 SVG 圖示與自繪產品剪影（照片缺席時的備援）。
-- 產品照片：`lib/products.ts` 每筆的 `photo.unsplashId`（Unsplash 免費圖庫，可商用），以 `photoUrl()` 組出 `unsplash.com/photos/<id>/download?force=true&w=…`；產品頁與頁尾標註出處。換照片只要改 id。
+- 產品照片：`lib/products.ts` 每筆的 `photo`（Unsplash 免費圖庫，可商用，不用 Apple 官方產品照或 logo）：
+  - `unsplashId`：照片頁 id，`photoPage()` 組出 `unsplash.com/photos/<id>` 作為出處連結。
+  - `src`：CDN 路徑 `photo-<數字>-<hash>`，`photoUrl()` 組出 `images.unsplash.com/<src>?w=…&q=80&auto=format&fit=crop`。
+    不可改回 `unsplash.com/photos/<id>/download`，那個網址會被 Unsplash 的機器人驗證擋下，`<img>` 載不到。
+  - `by`：攝影師，顯示在產品頁 figcaption。
+  - 換照片時三個欄位要一起改；`src` 可從照片頁的圖片網址或 `unsplash.com/napi/photos/<id>` 的 `urls.raw` 取得。
 
 價格、降幅、電信資費等尚未接資料的欄位以 `[ ]` 佔位。
 
 ## 部署
 
 - Vercel 專案：`applenews`（team `virus11456s-projects`），Production 網址 `https://applenews-five.vercel.app`（別名 `applenews-virus11456s-projects.vercel.app`）
-- 目前以檔案直傳方式部署；GitHub repo `virus11456/applenews` 連上後改為 push 自動部署。
+- GitHub repo：`https://github.com/virus11456/applenews`（`main` 分支，已 push）。
+- 目前仍以檔案直傳方式部署：Vercel 專案尚未連上 Git（待在 Vercel 後台 Settings → Git 連 `virus11456/applenews`，或本機 `vercel link` + `vercel git connect`）。連上後 push `main` 即自動部署 Production。
 
 ## 更新紀錄
 
 - 2026-10-03：初版上線。首頁 12 條產品線（每系列最新一代）判定卡、產品頁、判定規則、SVG 圖示；首次部署到 Vercel。
 
 - 2026-10-03：每張卡與產品頁首屏加入 Unsplash 照片（12 張），頁尾與產品頁標註出處。
+
+- 2026-10-03：照片改走 `images.unsplash.com` CDN（原 `/download` 網址被機器人驗證擋，訪客看不到圖）；Studio Display 原圖其實是舊款 iMac，換成 Amanz 的 Studio Display 照（`l7JJMyHBKBU`）；12 張攝影師全部補齊並校正（AirTag 為 Onur Binay）。repo 推上 GitHub。
 
 ## 維護約定
 

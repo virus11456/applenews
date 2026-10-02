@@ -14,7 +14,7 @@ export interface Product {
   name: string;
   category: Category;
   icon: string; // key in components/Icons.tsx DEVICE_ICONS
-  photo?: { unsplashId: string; by?: string }; // Unsplash 免費圖庫，by = 攝影師
+  photo?: { unsplashId: string; src: string; by: string }; // Unsplash 免費圖庫：unsplashId = 照片頁 id（出處連結），src = images.unsplash.com 的 photo-… 路徑，by = 攝影師
   releasedTW: string; // 台灣開賣日 YYYY-MM-DD；未來日期 = 即將開賣
   avgDays: number | null; // 歷代平均更新天數；首代為 null
   prev: { name: string; date: string } | null; // 上一代
@@ -43,7 +43,7 @@ export const PRODUCTS: Product[] = [
     name: "iPhone 18 Pro",
     category: "iphone",
     icon: "phone",
-    photo: { unsplashId: "LunVPm34ly4", by: "Tatiana Steve" },
+    photo: { unsplashId: "LunVPm34ly4", src: "photo-1710023038502-ba80a70a9f53", by: "Tatiana Steve" },
     releasedTW: "2026-09-14",
     avgDays: 360,
     prev: { name: "iPhone 17 Pro", date: "2025-09-19" },
@@ -76,7 +76,7 @@ export const PRODUCTS: Product[] = [
     name: "iPad Air",
     category: "ipad",
     icon: "tablet",
-    photo: { unsplashId: "feXbDPB8dmQ" },
+    photo: { unsplashId: "feXbDPB8dmQ", src: "photo-1590252973641-1352f1a8885e", by: "Dollar Gill" },
     releasedTW: "2026-03-06",
     avgDays: 578,
     prev: { name: "iPad Air（M3）", date: "2025-03-12" },
@@ -100,7 +100,7 @@ export const PRODUCTS: Product[] = [
     name: "MacBook Air",
     category: "mac",
     icon: "laptop",
-    photo: { unsplashId: "RSCirJ70NDM" },
+    photo: { unsplashId: "RSCirJ70NDM", src: "photo-1541807084-5c52b6b3adef", by: "Howard Bouchevereau" },
     releasedTW: "2026-03-06",
     avgDays: 363,
     prev: { name: "MacBook Air（M4）", date: "2025-03-12" },
@@ -124,7 +124,7 @@ export const PRODUCTS: Product[] = [
     name: "MacBook Pro",
     category: "mac",
     icon: "laptop-pro",
-    photo: { unsplashId: "fLEwqKoIQDo" },
+    photo: { unsplashId: "fLEwqKoIQDo", src: "photo-1627766556564-5d89b3765c46", by: "AltumCode" },
     releasedTW: "2026-03-06",
     avgDays: 384,
     prev: { name: "MacBook Pro（M4）", date: "2024-11-08" },
@@ -150,7 +150,7 @@ export const PRODUCTS: Product[] = [
     name: "Mac mini",
     category: "mac",
     icon: "mac-mini",
-    photo: { unsplashId: "SwwOWevFcqs", by: "Mahmudul Hasan" },
+    photo: { unsplashId: "SwwOWevFcqs", src: "photo-1735810501831-40892dcfef1e", by: "Mahmudul Hasan" },
     releasedTW: "2026-08-27",
     avgDays: 722,
     prev: { name: "Mac mini（M4）", date: "2024-11-08" },
@@ -171,7 +171,7 @@ export const PRODUCTS: Product[] = [
     name: "Apple Watch Series 12",
     category: "wear",
     icon: "watch",
-    photo: { unsplashId: "ahzcFfjnmII" },
+    photo: { unsplashId: "ahzcFfjnmII", src: "photo-1631729171446-b7868592cc08", by: "Taylor Beach" },
     releasedTW: "2026-09-11",
     avgDays: 364,
     prev: { name: "Apple Watch Series 11", date: "2025-09-19" },
@@ -192,7 +192,7 @@ export const PRODUCTS: Product[] = [
     name: "AirPods 5",
     category: "wear",
     icon: "airpods",
-    photo: { unsplashId: "qFJR0wI2ITM" },
+    photo: { unsplashId: "qFJR0wI2ITM", src: "photo-1588940086836-36c7d89611a0", by: "Filipe Alves" },
     releasedTW: "2026-09-11",
     avgDays: 889,
     prev: { name: "AirPods 4", date: "2024-09-20" },
@@ -213,7 +213,7 @@ export const PRODUCTS: Product[] = [
     name: "Vision Pro",
     category: "wear",
     icon: "vision",
-    photo: { unsplashId: "Rhs-zF4C8Nw", by: "Raman Shaunia" },
+    photo: { unsplashId: "Rhs-zF4C8Nw", src: "photo-1706990769341-d450bb0c52b7", by: "Raman Shaunia" },
     releasedTW: "2025-10-17",
     avgDays: 635,
     prev: { name: "Vision Pro（第一代）", date: "2024-02-02" },
@@ -233,7 +233,7 @@ export const PRODUCTS: Product[] = [
     name: "Studio Display",
     category: "home",
     icon: "display",
-    photo: { unsplashId: "-k-1evDrrzY" },
+    photo: { unsplashId: "l7JJMyHBKBU", src: "photo-1738834886517-77efc7c659df", by: "Amanz" },
     releasedTW: "2026-03-06",
     avgDays: 1152,
     prev: { name: "Studio Display（2022）", date: "2022-03-18" },
@@ -253,7 +253,7 @@ export const PRODUCTS: Product[] = [
     name: "AirTag 2",
     category: "home",
     icon: "airtag",
-    photo: { unsplashId: "AA7F4FBpuUg", by: "Mark Chan" },
+    photo: { unsplashId: "AA7F4FBpuUg", src: "photo-1620376153436-02f9a4b44d88", by: "Onur Binay" },
     releasedTW: "2026-01-28",
     avgDays: 1739,
     prev: { name: "AirTag（第一代）", date: "2021-04-30" },
@@ -273,7 +273,7 @@ export const PRODUCTS: Product[] = [
     name: "HomePod",
     category: "home",
     icon: "homepod",
-    photo: { unsplashId: "876c-F8YBrg", by: "Howard Bouchevereau" },
+    photo: { unsplashId: "876c-F8YBrg", src: "photo-1529359744902-86b2ab9edaea", by: "Howard Bouchevereau" },
     releasedTW: "2023-01-20",
     avgDays: 1818,
     prev: { name: "HomePod（第一代）", date: "2018-02-09" },
@@ -294,7 +294,7 @@ export const PRODUCTS: Product[] = [
     name: "Apple TV",
     category: "home",
     icon: "appletv",
-    photo: { unsplashId: "GjOl79QjfD8", by: "Omar Rodriguez" },
+    photo: { unsplashId: "GjOl79QjfD8", src: "photo-1621685950846-9323d993bbf3", by: "Omar Rodriguez" },
     releasedTW: "2022-10-20",
     avgDays: 738,
     prev: { name: "Apple TV 4K（2021）", date: "2021-05-21" },
@@ -316,7 +316,8 @@ export const PRODUCTS: Product[] = [
 ];
 
 export function photoUrl(p: Product, w = 800): string | null {
-  return p.photo ? `https://unsplash.com/photos/${p.photo.unsplashId}/download?force=true&w=${w}` : null;
+  // 直接用 images.unsplash.com CDN；unsplash.com/photos/<id>/download 會被機器人驗證擋下，<img> 無法通過
+  return p.photo ? `https://images.unsplash.com/${p.photo.src}?w=${w}&q=80&auto=format&fit=crop` : null;
 }
 
 export function photoPage(p: Product): string | null {
