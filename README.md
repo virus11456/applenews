@@ -14,6 +14,10 @@ npm run build
 ## 結構
 
 - `lib/products.ts` — 產品資料（上市日、歷代平均、上一代、下一代訊號、覆寫）。改這裡就會改判定。
+  - `releasedTW`／`history` 填台灣開賣日，也就是台灣第一天能正式購買的日期，預購不算。因 NCC 延後上市的 Mac／iPad，以台灣官網開放訂購日為準。不可填美國日期。
+  - `avgDays` 一律用美國首發日計算。台灣常延後上市，用台灣日期會讓週期失真。
+  - `next.expected` 必須是 `YYYY-MM-DD` 或 `null`；只有推估月份時，填該月中旬並在 `note` 註明「推估」。
+  - 訊號 `signals` 必須附真實可查的來源與報導日期。
 - `lib/verdict.ts` — 判定規則（企劃書 4.2）與天數計算；頁面每小時重算（ISR）。
 - `app/page.tsx` — 首頁：全系列最新一代卡片。
 - `app/product/[slug]/page.tsx` — 產品頁：判定、週期、下一代訊號、台灣價格、電信、規格建議、判定紀錄。
@@ -43,6 +47,13 @@ npm run build
 - 2026-10-03：照片改走 `images.unsplash.com` CDN（原 `/download` 網址被機器人驗證擋，訪客看不到圖）；Studio Display 原圖其實是舊款 iMac，換成 Amanz 的 Studio Display 照（`l7JJMyHBKBU`）；12 張攝影師全部補齊並校正（AirTag 為 Onur Binay）。repo 推上 GitHub，並經 Vercel API 從 GitHub `main` 部署到 Production（`dpl_7Y2vQ51K8ECKobhbv3va4t8z8P5d`）。
 
 - 2026-10-02：Vision Pro 改為台灣已販售。依 Apple 台灣新聞稿校正日期：M5 版 2025-11-28、第一代 2024-12-17（原本誤填美國日期）。歷代平均改用全球節奏 628 天，判定由「台灣尚未販售」變為「觀望」。
+
+- 2026-10-02：全面查證 12 項產品（依據 Apple 台灣新聞稿與台灣、國際科技媒體）。
+  - 多筆 `releasedTW`／`history` 原本誤用美國日期或預購日，已改為台灣開賣日。
+  - `avgDays` 統一改用美國首發日重算。
+  - 名稱補上晶片或代別，例如 iPad Air（M4）、MacBook Air（M5）、MacBook Pro（M5 Pro／Max）、Mac mini（M6／M5 Pro）。MacBook Pro 歷代補上 M5 基本款。
+  - 下一代訊號修正：iPad Air M5、MacBook Air M6、MacBook Pro M6 基本款、Vision Pro 開發縮減、HomePod 不在 10/13 發表、Apple TV 訊號日期改為 9/30。
+  - 刪除無來源的降價推論，以及已結束的 BTS 優惠說法。
 
 ## 維護約定
 
