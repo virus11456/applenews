@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Subscribe } from "@/components/Chrome";
 import { Badge } from "@/components/Badge";
 import { Icon } from "@/components/Icons";
-import { CATEGORY_LABEL, getProduct, PRODUCTS } from "@/lib/products";
+import { CATEGORY_LABEL, getProduct, photoPage, photoUrl, PRODUCTS } from "@/lib/products";
 import { compute, daysBetween, pct, todayISO, VERDICT_META } from "@/lib/verdict";
 
 export const revalidate = 3600;
@@ -48,6 +48,13 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               {c.overridden && <div className="override"><strong>覆寫理由：</strong>{p.override!.reason}（自動判定為「{VERDICT_META[c.auto].label}」）</div>}
             </div>
             <aside className="verdict-side">
+              {photoUrl(p) && (
+                <figure className="hero-photo">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={photoUrl(p, 1200)!} alt={p.name} />
+                  <figcaption>照片：<a href={photoPage(p)!} target="_blank" rel="noreferrer">{p.photo?.by ?? "Unsplash"}</a> / Unsplash</figcaption>
+                </figure>
+              )}
               <div className="side-stats">
                 <div><div className="muted sm">台灣開賣</div><div className="mono stat">{p.releasedTW}</div></div>
                 <div><div className="muted sm">已過天數</div><div className="mono stat">{c.days ?? "—"}</div></div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CATEGORY_LABEL, type Product } from "@/lib/products";
+import { CATEGORY_LABEL, photoPage, photoUrl, type Product } from "@/lib/products";
 import { compute, monthsBetween, pct, VERDICT_META } from "@/lib/verdict";
 import { Badge } from "./Badge";
 import { DeviceIcon, Icon } from "./Icons";
@@ -14,7 +14,14 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
 
   return (
     <article className="card">
-      <div className="card-art"><DeviceIcon kind={p.icon} /></div>
+      {photoUrl(p) ? (
+        <a href={photoPage(p)!} target="_blank" rel="noreferrer" className="card-photo" aria-label={`${p.name} 照片，來源 Unsplash`}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={photoUrl(p)!} alt={`${p.name}`} loading="lazy" />
+        </a>
+      ) : (
+        <div className="card-art"><DeviceIcon kind={p.icon} /></div>
+      )}
       <div className="card-head">
         <span className="chip"><CatIcon size={14} />{CATEGORY_LABEL[p.category]}</span>
         <h3>{p.name}</h3>
