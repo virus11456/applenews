@@ -11,7 +11,7 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
   const meta = VERDICT_META[c.verdict];
   const CatIcon = CAT_ICON[p.category];
   const pending = pendingTW(p, today);
-  const status = c.overridden ? `編輯覆寫 · ${p.override!.reason.slice(0, 18)}…` : p.next.note && c.verdict !== "wait" ? p.next.note : meta.status;
+  const status = c.overridden ? `編輯覆寫 · ${p.override!.reason.slice(0, 18)}…` : pending ? meta.status : p.next.note && c.verdict !== "wait" ? p.next.note : meta.status;
 
   return (
     <article className="card">

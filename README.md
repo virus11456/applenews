@@ -18,7 +18,8 @@ npm run build
   - `avgDays` 一律用美國首發日計算。台灣常延後上市，用台灣日期會讓週期失真。
   - `next.expected` 必須是 `YYYY-MM-DD` 或 `null`；只有推估月份時，填該月中旬並在 `note` 註明「推估」。
   - 訊號 `signals` 必須附真實可查的來源與報導日期。
-- `lib/verdict.ts` — 判定規則（企劃書 4.2）與天數計算；頁面每小時重算（ISR）。
+  - **新款已發表、台灣尚未開賣**時，一定要填 `announced`，包含 `name`、全球發表日 `date`、`twRelease`（未公布填 `null`）、`source`、`url`。填了之後判定自動變成「即將開賣」，卡片和產品頁上方會顯示「新款已發表：○○ 已於 MM/DD 發表 · 台灣尚未發售」，讓訪客知道已經有新款。台灣開賣後，把新款移進 `releasedTW`／`prev`／`history`，並刪掉 `announced`。
+- `lib/verdict.ts` — 判定規則（企劃書 4.2）與天數計算；頁面每小時重算（ISR）。`pendingTW()` 判斷有沒有已發表、台灣尚未開賣的新款。
 - `app/page.tsx` — 首頁：全系列最新一代卡片。
 - `app/product/[slug]/page.tsx` — 產品頁：判定、週期、下一代訊號、台灣價格、電信、規格建議、判定紀錄。
 - `components/Icons.tsx` — 內嵌 SVG 圖示與自繪產品剪影（照片缺席時的備援）。
@@ -54,6 +55,8 @@ npm run build
   - 名稱補上晶片或代別，例如 iPad Air（M4）、MacBook Air（M5）、MacBook Pro（M5 Pro／Max）、Mac mini（M6／M5 Pro）。MacBook Pro 歷代補上 M5 基本款。
   - 下一代訊號修正：iPad Air M5、MacBook Air M6、MacBook Pro M6 基本款、Vision Pro 開發縮減、HomePod 不在 10/13 發表、Apple TV 訊號日期改為 9/30。
   - 刪除無來源的降價推論，以及已結束的 BTS 優惠說法。
+
+- 2026-10-02：新增「新款已發表、台灣尚未發售」標示（`announced` 欄位）。卡片與產品頁顯示新款名稱、發表日與台灣狀態，判定自動改為「即將開賣」。週期圖註明平均天數以美國首發日計算。截至今天，12 條產品線都沒有已發表但台灣未開賣的新款。
 
 ## 維護約定
 
