@@ -1,4 +1,4 @@
-import type { Product, Verdict } from "./products";
+import type { Announced, Product, Verdict } from "./products";
 
 export const VERDICT_META: Record<Verdict, { label: string; color: string; status: string }> = {
   buy: { label: "可以買", color: "#1A6B43", status: "剛更新，離下一代最遠" },
@@ -37,7 +37,7 @@ export interface Computed {
 /**
  * 判定規則（企劃書 4.2）
  * 1. 已停產 → disc
- * 2. 台灣未上市 → soon
+ * 2. 台灣未上市，或新款已發表但台灣尚未開賣（announced）→ soon
  * 3. 下一代 A 級訊號且 60 天內 → no
  * 4. 週期進度 ≥ 75% 且下一代 B 級以上 → care
  * 4b. 下一代 B 級以上且 90 天內 → care
@@ -53,7 +53,7 @@ export function compute(p: Product, today = todayISO()): Computed {
 
   let auto: Verdict;
   if (p.discontinued) auto = "disc";
-  else if (days < 0) auto = "soon";
+  else if (days < 0 || pendingTW(p, today)) auto = "soon";
   else if (p.next.grade === "A" && daysToNext !== null && daysToNext <= 60) auto = "no";
   else if (progress !== null && progress >= 0.75 && strong) auto = "care";
   else if (strong && daysToNext !== null && daysToNext <= 90) auto = "care";
@@ -70,6 +70,18 @@ export function compute(p: Product, today = todayISO()): Computed {
     progress,
     daysToNext,
   };
+}
+
+/** 新款已發表、台灣尚未開賣（twRelease 未定或在未來）時回傳該新款 */
+export function pendingTW(p: Product, today = todayISO()): Announced | null {
+  const a = p.announced;
+  if (!a) return null;
+  return a.twRelease === null || a.twRelease > today ? a : null;
+}
+
+export function announcedLine(a: Announced): string {
+  const d = (s: string) => s.slice(5).replace("-", "/");
+  return `${a.name} 已於 ${d(a.date)} 發表 · 台灣${a.twRelease ? ` ${d(a.twRelease)} 開賣` : "尚未發售"}`;
 }
 
 export function pct(progress: number | null): number {

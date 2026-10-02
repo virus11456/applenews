@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CATEGORY_LABEL, photoPage, photoUrl, type Product } from "@/lib/products";
-import { compute, monthsBetween, pct, VERDICT_META } from "@/lib/verdict";
+import { announcedLine, compute, monthsBetween, pct, pendingTW, VERDICT_META } from "@/lib/verdict";
 import { Badge } from "./Badge";
 import { DeviceIcon, Icon } from "./Icons";
 
@@ -10,6 +10,7 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
   const c = compute(p, today);
   const meta = VERDICT_META[c.verdict];
   const CatIcon = CAT_ICON[p.category];
+  const pending = pendingTW(p, today);
   const status = c.overridden ? `編輯覆寫 · ${p.override!.reason.slice(0, 18)}…` : p.next.note && c.verdict !== "wait" ? p.next.note : meta.status;
 
   return (
@@ -29,6 +30,7 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
           <Badge v={c.verdict} />
           {p.twAvailable ? <span className="muted">{status}</span> : <span className="warn"><Icon.info size={14} />台灣尚未販售</span>}
         </div>
+        {pending && <div className="announced"><Icon.info size={14} /><span><strong>新款已發表：</strong>{announcedLine(pending)}</span></div>}
       </div>
       <div className="tiles">
         <div className="tile">

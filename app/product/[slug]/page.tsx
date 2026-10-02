@@ -4,7 +4,7 @@ import { Subscribe } from "@/components/Chrome";
 import { Badge } from "@/components/Badge";
 import { Icon } from "@/components/Icons";
 import { CATEGORY_LABEL, getProduct, photoPage, photoUrl, PRODUCTS } from "@/lib/products";
-import { compute, daysBetween, pct, todayISO, VERDICT_META } from "@/lib/verdict";
+import { announcedLine, compute, daysBetween, pct, pendingTW, todayISO, VERDICT_META } from "@/lib/verdict";
 
 export const revalidate = 3600;
 
@@ -31,6 +31,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   const today = todayISO();
   const c = compute(p, today);
   const meta = VERDICT_META[c.verdict];
+  const pending = pendingTW(p, today);
   const intervals = p.history.slice(0, -1).map((h, i) => ({ from: p.history[i + 1].gen, to: h.gen, days: daysBetween(p.history[i + 1].date, h.date) }));
   const maxDays = Math.max(...intervals.map((x) => x.days), c.days ?? 0, 1);
 
@@ -43,6 +44,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div className="verdict-main">
               <div className="verdict-row"><Badge v={c.verdict} size="lg" /><span className="mono muted">判定更新 {today} · {c.overridden ? "編輯覆寫" : "自動判定"}</span></div>
               <h1>{p.name}</h1>
+              {pending && (
+                <div className="announced lg">
+                  <Icon.info size={18} />
+                  <span><strong>新款已發表：</strong>{announcedLine(pending)}。以下為台灣目前販售的 {p.name} 資料。{pending.url ? <> 來源：<a href={pending.url} target="_blank" rel="noreferrer">{pending.source}</a></> : <> 來源：{pending.source}</>}</span>
+                </div>
+              )}
               <p className="lead">{today} 判定：<strong style={{ color: meta.color }}>{meta.label}</strong>。{p.summary}</p>
               <ol className="reasons">{p.reasons.map((r, i) => <li key={i}><span className="num" style={{ background: meta.color }}>{i + 1}</span><span>{r}</span></li>)}</ol>
               {c.overridden && <div className="override"><strong>覆寫理由：</strong>{p.override!.reason}（自動判定為「{VERDICT_META[c.auto].label}」）</div>}
@@ -85,7 +92,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <div className="bar-row" key={x.to}><div className="muted">{x.from} → {x.to}</div><div className="track track-lg"><div className="fill" style={{ width: `${Math.round((x.days / maxDays) * 100)}%`, background: "#8E8E89" }} /></div><div className="mono r">{x.days}</div></div>
             ))}
             <div className="bar-row bold"><div>{p.name} → 現在</div><div className="track track-lg"><div className="fill" style={{ width: `${Math.round(((c.days ?? 0) / maxDays) * 100)}%`, background: meta.color }} /></div><div className="mono r" style={{ color: meta.color }}>{c.days ?? "—"}</div></div>
-            {p.avgDays && <div className="panel-foot">歷代平均 {p.avgDays} 天</div>}
+            {p.avgDays && <div className="panel-foot">歷代平均 {p.avgDays} 天（以美國首發日計算，避免台灣延後上市造成失真）</div>}
           </div>
         </section>
 

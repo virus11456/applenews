@@ -9,6 +9,15 @@ export interface Signal {
   date: string; // YYYY-MM-DD
 }
 
+// 已發表、台灣尚未開賣的新款。台灣開賣後：移進 releasedTW／prev／history，並刪掉 announced。
+export interface Announced {
+  name: string; // 新款名稱
+  date: string; // 全球發表日 YYYY-MM-DD
+  twRelease: string | null; // 台灣開賣日；未公布 = null
+  source: string; // 來源（如 Apple Newsroom）
+  url?: string; // 來源連結
+}
+
 export interface Product {
   slug: string;
   name: string;
@@ -19,6 +28,7 @@ export interface Product {
   avgDays: number | null; // 歷代平均更新天數，一律以美國首發日計算（避免台灣延後上市造成失真）；首代為 null
   prev: { name: string; date: string } | null; // 上一代
   next: { name: string; expected: string | null; grade: Grade | null; note: string }; // 下一代
+  announced?: Announced; // 新款已發表但台灣尚未開賣時填寫
   twAvailable: boolean;
   discontinued?: string; // 停產日
   override?: { verdict: Verdict; reason: string };

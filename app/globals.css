@@ -74,6 +74,10 @@ p { margin: 0; }
 .card-head h3 { font-size: 20px; }
 .chip { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 0.04em; }
 .card-status { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.announced { display: flex; align-items: flex-start; gap: 6px; padding: 8px 10px; border-radius: 8px; background: #E8EEF9; color: #1F4FA6; font-size: 13px; line-height: 1.5; }
+.announced svg { flex: none; margin-top: 2px; }
+.announced.lg { font-size: 15px; padding: 12px 14px; margin: 4px 0 8px; }
+.announced a { text-decoration: underline; }
 .warn { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 700; color: #A8291C; }
 .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .tile { padding: 12px 14px; background: var(--ground); border-radius: 8px; display: flex; flex-direction: column; gap: 4px; }
