@@ -31,7 +31,8 @@ npm run build
 
 - Vercel 專案：`applenews`（team `virus11456s-projects`），Production 網址 `https://applenews-five.vercel.app`（別名 `applenews-virus11456s-projects.vercel.app`）
 - GitHub repo：`https://github.com/virus11456/applenews`（`main` 分支，已 push）。
-- 目前仍以檔案直傳方式部署：Vercel 專案尚未連上 Git（待在 Vercel 後台 Settings → Git 連 `virus11456/applenews`，或本機 `vercel link` + `vercel git connect`）。連上後 push `main` 即自動部署 Production。
+- 目前部署方式：push `main` 到 GitHub 後，以 Vercel API（MCP `create_deployment`，`gitSource` = `virus11456/applenews@main`，`target: production`）手動觸發，從 GitHub 拉原始碼建置。
+- Vercel 專案尚未連上 Git，所以 push 不會自動部署。要改成自動部署，需在 Vercel 後台 Settings → Git 連 `virus11456/applenews`，或在本機執行 `vercel link` + `vercel git connect`；MCP 沒辦法替既有專案接 Git。
 
 ## 更新紀錄
 
@@ -39,7 +40,7 @@ npm run build
 
 - 2026-10-03：每張卡與產品頁首屏加入 Unsplash 照片（12 張），頁尾與產品頁標註出處。
 
-- 2026-10-03：照片改走 `images.unsplash.com` CDN（原 `/download` 網址被機器人驗證擋，訪客看不到圖）；Studio Display 原圖其實是舊款 iMac，換成 Amanz 的 Studio Display 照（`l7JJMyHBKBU`）；12 張攝影師全部補齊並校正（AirTag 為 Onur Binay）。repo 推上 GitHub。
+- 2026-10-03：照片改走 `images.unsplash.com` CDN（原 `/download` 網址被機器人驗證擋，訪客看不到圖）；Studio Display 原圖其實是舊款 iMac，換成 Amanz 的 Studio Display 照（`l7JJMyHBKBU`）；12 張攝影師全部補齊並校正（AirTag 為 Onur Binay）。repo 推上 GitHub，並經 Vercel API 從 GitHub `main` 部署到 Production（`dpl_7Y2vQ51K8ECKobhbv3va4t8z8P5d`）。
 
 ## 維護約定
 
