@@ -42,6 +42,8 @@ npm run build
 
 - 2026-10-03：照片改走 `images.unsplash.com` CDN（原 `/download` 網址被機器人驗證擋，訪客看不到圖）；Studio Display 原圖其實是舊款 iMac，換成 Amanz 的 Studio Display 照（`l7JJMyHBKBU`）；12 張攝影師全部補齊並校正（AirTag 為 Onur Binay）。repo 推上 GitHub，並經 Vercel API 從 GitHub `main` 部署到 Production（`dpl_7Y2vQ51K8ECKobhbv3va4t8z8P5d`）。
 
+- 2026-10-02：Vision Pro 改為台灣已販售。依 Apple 台灣新聞稿校正日期：M5 版 2025-11-28、第一代 2024-12-17（原本誤填美國日期）。歷代平均改用全球節奏 628 天，判定由「台灣尚未販售」變為「觀望」。
+
 ## 維護約定
 
 每次改動（功能、資料、部署方式）都同步更新本 README 的「結構」「部署」「更新紀錄」。
