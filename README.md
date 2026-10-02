@@ -23,7 +23,7 @@ npm run build
 
 ## 部署
 
-- Vercel 專案：`applenews`（team `virus11456s-projects`），Production 網址 `https://applenews-virus11456s-projects.vercel.app`
+- Vercel 專案：`applenews`（team `virus11456s-projects`），Production 網址 `https://applenews-five.vercel.app`（別名 `applenews-virus11456s-projects.vercel.app`）
 - 目前以檔案直傳方式部署；GitHub repo `virus11456/applenews` 連上後改為 push 自動部署。
 
 ## 更新紀錄
