@@ -20,3 +20,16 @@ npm run build
 - `components/Icons.tsx` — 內嵌 SVG 圖示與自繪產品剪影（不用官方圖片）。
 
 價格、降幅、電信資費等尚未接資料的欄位以 `[ ]` 佔位。
+
+## 部署
+
+- Vercel 專案：`applenews`（team `virus11456s-projects`），Production 網址 `https://applenews-virus11456s-projects.vercel.app`
+- 目前以檔案直傳方式部署；GitHub repo `virus11456/applenews` 連上後改為 push 自動部署。
+
+## 更新紀錄
+
+- 2026-10-03：初版上線。首頁 12 條產品線（每系列最新一代）判定卡、產品頁、判定規則、SVG 圖示；首次部署到 Vercel。
+
+## 維護約定
+
+每次改動（功能、資料、部署方式）都同步更新本 README 的「結構」「部署」「更新紀錄」。
