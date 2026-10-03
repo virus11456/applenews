@@ -12,7 +12,11 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
   const meta = VERDICT_META[c.verdict];
   const CatIcon = CAT_ICON[p.category];
   const pending = pendingTW(p, today);
-  const status = c.overridden ? `編輯覆寫 · ${p.override!.reason.slice(0, 18)}…` : pending ? meta.status : p.next.note && c.verdict !== "wait" ? p.next.note : meta.status;
+  // 徽章旁寫給讀者看的一句理由：「可以買／觀望」用簡短的判定說明；
+  // 「小心／先別買／即將開賣」用該產品的一句話結論（summary）說明原因。
+  // 不寫「尚無訊號」「編輯覆寫」這類容易誤會的字。
+  const hasSignal = p.next.grade === "A" || p.next.grade === "B";
+  const status = c.verdict === "care" || c.verdict === "no" || c.verdict === "soon" ? p.summary : meta.status;
 
   return (
     <article className="card" data-cat={p.category}>
@@ -46,7 +50,8 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
           <dt><Icon.back size={14} />上一代</dt>
           <dd><Name text={p.prev.name} /> · <span className="mono">{p.prev.date.slice(0, 7)}</span> · 相隔 {monthsBetween(p.prev.date, p.releasedTW)} 個月</dd>
         </>)}
-        <dt>下一代預期</dt><dd>{p.next.expected ? <><span className="mono">{p.next.expected.slice(0, 7)}</span> · <Name text={p.next.name} /></> : p.next.note}</dd>
+        {p.next.expected ? (<><dt>下一代預期</dt><dd><span className="mono">{p.next.expected.slice(0, 7)}</span> · <Name text={p.next.name} /></dd></>)
+          : hasSignal ? (<><dt>下一代預期</dt><dd>{p.next.note}</dd></>) : null}
       </dl>
       <Link href={`/product/${p.slug}`} className="card-link">查看判定與台灣價格<Icon.arrow size={16} /></Link>
     </article>
