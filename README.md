@@ -22,8 +22,13 @@ npm run build
 - `lib/verdict.ts` — 判定規則（企劃書 4.2）與天數計算；頁面每小時重算（ISR）。`pendingTW()` 判斷有沒有已發表、台灣尚未開賣的新款。
 - `app/page.tsx` — 首頁：全系列最新一代卡片。
 - `app/product/[slug]/page.tsx` — 產品頁：判定、週期、下一代訊號、台灣價格、電信、規格建議、判定紀錄。
-- `components/Icons.tsx` — 內嵌 SVG 圖示與自繪產品剪影（首頁卡片與產品頁的產品圖）。
-- 產品圖：一律用 `components/Icons.tsx` 的 `DeviceIcon` 自繪線條剪影（`lib/products.ts` 每筆的 `icon`），全站統一風格。不用照片，也不用 Apple 官方產品照或 logo。新增產品線時，若沒有合適的剪影，就在 `DeviceIcon` 新增一個 kind。
+- `components/Icons.tsx` — 內嵌 SVG 圖示與自繪產品剪影（照片缺席時的備援）。
+- 產品照片：`lib/products.ts` 每筆的 `photo`（Unsplash 免費圖庫，可商用，不用 Apple 官方產品照或 logo）：
+  - `unsplashId`：照片頁 id，`photoPage()` 組出 `unsplash.com/photos/<id>` 作為出處連結。
+  - `src`：CDN 路徑 `photo-<數字>-<hash>`，`photoUrl()` 組出 `images.unsplash.com/<src>?w=…&q=80&auto=format&fit=crop`。
+    不可改回 `unsplash.com/photos/<id>/download`，那個網址會被 Unsplash 的機器人驗證擋下，`<img>` 載不到。
+  - `by`：攝影師，顯示在產品頁 figcaption。
+  - 換照片時三個欄位要一起改；`src` 可從照片頁的圖片網址或 `unsplash.com/napi/photos/<id>` 的 `urls.raw` 取得。
 
 價格、降幅、電信資費等尚未接資料的欄位以 `[ ]` 佔位。
 
@@ -53,7 +58,7 @@ npm run build
 
 - 2026-10-02：新增「新款已發表、台灣尚未發售」標示（`announced` 欄位）。卡片與產品頁顯示新款名稱、發表日與台灣狀態，判定自動改為「即將開賣」。週期圖註明平均天數以美國首發日計算。截至今天，12 條產品線都沒有已發表但台灣未開賣的新款。
 
-- 2026-10-03：移除全部 Unsplash 照片，因為各張風格不一致。首頁卡片與產品頁改用統一的自繪剪影，頁尾改為註明「產品圖為本站自繪示意圖」。另新增 AirPods Pro、Watch Ultra、HomePod mini、Mac Studio、XDR 顯示器的剪影，供之後新增產品線使用。
+- 2026-10-03：曾短暫改用自繪剪影取代照片（`0f112ca`），依需求還原回 Unsplash 照片版本。
 
 ## 維護約定
 
