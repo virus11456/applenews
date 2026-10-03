@@ -71,6 +71,11 @@ export function DeviceIcon({ kind, size = 56 }: { kind: string; size?: number })
     case "airtag": return <svg {...common}><circle cx="32" cy="32" r="18" /><circle cx="32" cy="32" r="7" /></svg>;
     case "homepod": return <svg {...common}><rect x="18" y="12" width="28" height="40" rx="12" /><path d="M26 24h12M26 32h12M26 40h12" /></svg>;
     case "appletv": return <svg {...common}><rect x="10" y="24" width="44" height="16" rx="3" /><circle cx="46" cy="32" r="2" /><rect x="28" y="46" width="8" height="12" rx="3" /></svg>;
+    case "airpods-pro": return <svg {...common}><rect x="14" y="30" width="36" height="24" rx="8" /><path d="M14 40h36" /><path d="M22 12a5 5 0 0 1 10 0v6a5 5 0 0 1-5 5h-5V12z" /><path d="M27 23v5" /><path d="M42 12a5 5 0 0 0-10 0v6a5 5 0 0 0 5 5h5V12z" /><path d="M37 23v5" /></svg>;
+    case "watch-ultra": return <svg {...common}><rect x="19" y="17" width="26" height="30" rx="4" /><path d="M25 17v-8h14v8M25 47v8h14v-8" /><path d="M45 26h4v12h-4" /><path d="M19 28h-2v8h2" /></svg>;
+    case "homepod-mini": return <svg {...common}><circle cx="32" cy="34" r="18" /><ellipse cx="32" cy="20" rx="9" ry="3" /><path d="M24 50h16" /></svg>;
+    case "mac-studio": return <svg {...common}><rect x="12" y="20" width="40" height="26" rx="4" /><path d="M18 40h4M24 40h4" /><path d="M16 50h32" /></svg>;
+    case "display-xdr": return <svg {...common}><rect x="4" y="10" width="56" height="34" rx="2" /><path d="M10 16h44v22H10z" /><path d="M28 44v8h8v-8M20 54h24" /></svg>;
     default: return <svg {...common}><rect x="12" y="12" width="40" height="40" rx="4" /></svg>;
   }
 }

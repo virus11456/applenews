@@ -43,7 +43,7 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="container footer-row">
-        <div className="footer-note">本站為獨立資訊站，與 Apple Inc. 無關。Apple、iPhone、iPad、Mac 等為 Apple Inc. 之商標。傳聞內容皆為改寫摘要並附原文連結；價格以各通路當日頁面為準。產品照片來自 <a href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a>，各張出處見產品頁。</div>
+        <div className="footer-note">本站為獨立資訊站，與 Apple Inc. 無關。Apple、iPhone、iPad、Mac 等為 Apple Inc. 之商標。傳聞內容皆為改寫摘要並附原文連結；價格以各通路當日頁面為準。產品圖為本站自繪示意圖，非官方圖片。</div>
         <div className="footer-links"><Link href="/#how">判定方式</Link><Link href="/#how">資料來源</Link><Link href="/#how">聯絡我們</Link></div>
       </div>
     </footer>
