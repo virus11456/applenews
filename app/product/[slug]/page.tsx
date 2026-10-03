@@ -5,7 +5,7 @@ import { Badge } from "@/components/Badge";
 import { DeviceIcon, Icon } from "@/components/Icons";
 import { Name } from "@/components/Name";
 import { CATEGORY_LABEL, getProduct, PRODUCTS } from "@/lib/products";
-import { announcedLine, compute, daysBetween, pct, pendingTW, todayISO, VERDICT_META } from "@/lib/verdict";
+import { announcedLine, compute, daysBetween, overdueDays, pct, pctLabel, pendingTW, todayISO, VERDICT_META } from "@/lib/verdict";
 
 export const revalidate = 3600;
 
@@ -63,8 +63,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 <div><div className="muted sm">下一代預期</div><div className="mono stat">{p.next.expected?.slice(0, 7) ?? "未定"}</div></div>
               </div>
               <div className="meter">
-                <div className="meter-label"><span>週期進度</span><span className="mono">{pct(c.progress)}% / {p.avgDays ?? "首代"} 天</span></div>
+                <div className="meter-label"><span>週期進度</span><span className="mono">{c.progress === null ? "首代，無歷代平均" : `${pctLabel(c.progress)}% / ${p.avgDays} 天`}</span></div>
                 <div className="track"><div className="fill" style={{ width: `${pct(c.progress)}%`, background: meta.color }} /></div>
+                {overdueDays(c.days, p.avgDays) !== null && <div className="meter-note" style={{ color: meta.color }}>已超過平均週期 {overdueDays(c.days, p.avgDays)} 天</div>}
                 <div className="meter-scale"><span>可以買 ‹30%</span><span>觀望</span><span>小心 ›75%</span></div>
               </div>
               <div className="side-prices">

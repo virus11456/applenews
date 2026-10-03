@@ -84,7 +84,20 @@ export function announcedLine(a: Announced): string {
   return `${a.name} 已於 ${d(a.date)} 發表 · 台灣${a.twRelease ? ` ${d(a.twRelease)} 開賣` : "尚未發售"}`;
 }
 
+/** 進度條寬度（%），最多 100 */
 export function pct(progress: number | null): number {
   if (progress === null) return 0;
   return Math.min(100, Math.round(progress * 100));
+}
+
+/** 實際週期進度（%），可超過 100，用於顯示數字 */
+export function pctLabel(progress: number | null): number {
+  if (progress === null) return 0;
+  return Math.round(progress * 100);
+}
+
+/** 超過歷代平均的天數；未超過或首代為 null */
+export function overdueDays(days: number | null, avgDays: number | null): number | null {
+  if (days === null || avgDays === null || days <= avgDays) return null;
+  return days - avgDays;
 }

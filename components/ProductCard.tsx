@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CATEGORY_LABEL, type Product } from "@/lib/products";
-import { announcedLine, compute, monthsBetween, pct, pendingTW, VERDICT_META } from "@/lib/verdict";
+import { announcedLine, compute, monthsBetween, overdueDays, pct, pctLabel, pendingTW, VERDICT_META } from "@/lib/verdict";
 import { Badge } from "./Badge";
 import { DeviceIcon, Icon } from "./Icons";
 import { Name } from "./Name";
@@ -41,8 +41,10 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
         </div>
       </div>
       <div className="meter">
-        <div className="meter-label"><span>週期進度</span><span className="mono">{pct(c.progress)}%</span></div>
+        <div className="meter-label"><span>週期進度</span><span className="mono">{c.progress === null ? "首代" : `${pctLabel(c.progress)}%`}</span></div>
         <div className="track"><div className="fill" style={{ width: `${pct(c.progress)}%`, background: meta.color }} /></div>
+        {c.progress === null && <div className="meter-note muted">只有一代，無法計算週期</div>}
+        {overdueDays(c.days, p.avgDays) !== null && <div className="meter-note" style={{ color: meta.color }}>已超過平均週期 {overdueDays(c.days, p.avgDays)} 天</div>}
       </div>
       <dl className="facts">
         <dt>本代上市</dt><dd className="mono">{p.releasedTW}</dd>

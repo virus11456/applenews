@@ -91,6 +91,7 @@ p { margin: 0; }
 .tile-value span { font-size: 13px; font-weight: 400; color: var(--muted); }
 .meter { display: flex; flex-direction: column; gap: 6px; }
 .meter-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+.meter-note { font-size: 12px; font-weight: 700; margin-top: 6px; }
 .meter-scale { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
 .track { height: 8px; border-radius: 4px; background: var(--line-2); overflow: hidden; display: flex; }
 .track-lg { height: 14px; border-radius: 3px; }
