@@ -63,6 +63,13 @@ npm run build
 
 - 2026-10-03：新增分類切換。頂部選單（iPhone／iPad／Mac／穿戴／居家與配件）與首頁產品列表上方的分類列都可以點選，點了之後只顯示該分類，選中的項目會反白。網址為 `/?cat=mac` 這類形式，可直接分享。手機版分類列可橫向捲動，選中的項目會自動捲到畫面內。
 
+- 2026-10-03：新增 5 條產品線，共 17 條。資料皆經查證並附來源；照片已逐張看過，確認拍到的是正確產品。
+  - AirPods Pro 3（台灣 2025-10-31）：照片 insung yoon。
+  - Apple Watch Ultra 4（2026-09-18）：照片 Daniel Romero。
+  - Mac Studio（M5 Max／M5 Ultra，2026-09-22）：照片 Peng Originals。
+  - Studio Display XDR（2026-03-20，上一代為 Pro Display XDR）：照片 Aaditya Ailawadhi。
+  - HomePod mini（第一代 2020-11-16，傳 10/13 出第 2 代）：照片 Drew Perales。
+
 ## 維護約定
 
 每次改動（功能、資料、部署方式）都同步更新本 README 的「結構」「部署」「更新紀錄」。
