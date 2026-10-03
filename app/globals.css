@@ -12,7 +12,6 @@ button, input { font-family: inherit; }
 h1, h2, h3 { margin: 0; font-weight: 900; letter-spacing: -0.01em; font-feature-settings: "halt"; word-break: keep-all; overflow-wrap: anywhere; }
 .name-paren .nw { white-space: nowrap; }
 h3 .name-paren, .facts .name-paren, .bar-row .name-paren, .crumbs .name-paren { white-space: nowrap; }
-h1 .name-paren, h2 .name-paren, h3 .name-paren { margin-inline-start: -0.4em; }
 p { margin: 0; }
 .container { max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
 @media (min-width: 900px) { .container { padding-left: 40px; padding-right: 40px; } }
