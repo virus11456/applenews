@@ -16,7 +16,8 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
   // 「小心／先別買／即將開賣」用該產品的一句話結論（summary）說明原因。
   // 不寫「尚無訊號」「編輯覆寫」這類容易誤會的字。
   const hasSignal = p.next.grade === "A" || p.next.grade === "B";
-  const status = c.verdict === "care" || c.verdict === "no" || c.verdict === "soon" ? p.summary : meta.status;
+  // 第一代（沒有歷代平均）也用 summary：「週期中段」這類說法對第一代不成立
+  const status = c.verdict === "care" || c.verdict === "no" || c.verdict === "soon" || c.progress === null ? p.summary : meta.status;
 
   return (
     <article className="card" data-cat={p.category}>
@@ -33,21 +34,21 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
       <div className="tiles">
         <div className="tile">
           <div className="tile-label"><Icon.clock size={14} />更新多久了</div>
-          <div className="tile-value">{c.days ?? "—"}<span> 天</span></div>
+          <div className="tile-value">{c.days === null ? "未開賣" : <>{c.days}<span> 天</span></>}</div>
         </div>
         <div className="tile">
           <div className="tile-label"><Icon.refresh size={14} />平均更新間隔</div>
           <div className="tile-value">{p.avgDays ?? "首代"}{p.avgDays && <span> 天</span>}</div>
         </div>
       </div>
-      <div className="meter">
+      {c.days !== null && <div className="meter">
         <div className="meter-label"><span>週期進度</span><span className="mono">{c.progress === null ? "首代" : `${pctLabel(c.progress)}%`}</span></div>
         <div className="track"><div className="fill" style={{ width: `${pct(c.progress)}%`, background: meta.color }} /></div>
         {c.progress === null && <div className="meter-note muted">只有一代，無法計算週期</div>}
         {overdueDays(c.days, p.avgDays) !== null && <div className="meter-note" style={{ color: meta.color }}>已超過平均週期 {overdueDays(c.days, p.avgDays)} 天</div>}
-      </div>
+      </div>}
       <dl className="facts">
-        <dt>本代上市</dt><dd className="mono">{p.releasedTW}</dd>
+        <dt>{c.days === null ? "預計開賣" : "本代上市"}</dt><dd className="mono">{p.releasedTW}</dd>
         {p.prev && (<>
           <dt><Icon.back size={14} />上一代</dt>
           <dd><Name text={p.prev.name} /> · <span className="mono">{p.prev.date.slice(0, 7)}</span> · 相隔 {monthsBetween(p.prev.date, p.releasedTW)} 個月</dd>

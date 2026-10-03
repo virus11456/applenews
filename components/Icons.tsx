@@ -60,6 +60,9 @@ export function DeviceIcon({ kind, size = 56 }: { kind: string; size?: number })
   const common = { width: size, height: size, viewBox: "0 0 64 64", fill: "none", stroke: "currentColor", strokeWidth: 2.5, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": true };
   switch (kind) {
     case "phone": return <svg {...common}><rect x="22" y="6" width="20" height="52" rx="4" /><path d="M29 52h6" /><rect x="27" y="11" width="10" height="3" rx="1.5" /></svg>;
+    case "phone-max": return <svg {...common}><rect x="19" y="4" width="26" height="56" rx="5" /><path d="M28 54h8" /><rect x="25" y="9" width="12" height="3" rx="1.5" /></svg>;
+    case "phone-air": return <svg {...common}><rect x="22" y="6" width="20" height="52" rx="4" /><path d="M29 52h6" /><path d="M24 12h16" /></svg>;
+    case "phone-fold": return <svg {...common}><rect x="10" y="10" width="44" height="44" rx="4" /><path d="M32 10v44" strokeDasharray="3 3" /><path d="M18 48h6M40 48h6" /></svg>;
     case "tablet": return <svg {...common}><rect x="14" y="8" width="36" height="48" rx="4" /><path d="M29 50h6" /></svg>;
     case "laptop": return <svg {...common}><rect x="12" y="16" width="40" height="24" rx="2" /><path d="M6 44h52" /></svg>;
     case "laptop-pro": return <svg {...common}><rect x="10" y="12" width="44" height="28" rx="2" /><path d="M4 46h56" /><path d="M24 46v2h16v-2" /></svg>;

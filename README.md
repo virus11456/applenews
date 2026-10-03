@@ -86,6 +86,14 @@ npm run build
 
 - 2026-10-03：週期進度數字改為照實顯示，可以超過 100%，例如 Apple TV 為 149%；進度條最多畫滿。超過平均時加註「已超過平均週期 N 天」。首代產品（如 HomePod mini）不再顯示 0%，改為「首代」，並註明無法計算週期。程式見 `lib/verdict.ts` 的 `pct`（進度條寬度）、`pctLabel`（顯示數字）、`overdueDays`。
 
+- 2026-10-03：iPhone 拆成 5 條產品線，共 21 條。
+  - iPhone 17（數字版，台灣 2025-09-19）：判定「小心」。iPhone 18 據 Bloomberg 報導延到 2027 年上半年。
+  - iPhone 18 Pro、iPhone 18 Pro Max（台灣 2026-09-18）。
+  - iPhone Air（第一代，2025-09-19）：Air 2 傳 2027 年上半年推出。
+  - iPhone Duo：首款折疊 iPhone，9/9 發表，台灣首波，10/16 晚上 8 點預購、10/23 開賣，用 `announced` 標示。
+  - 新增剪影：phone-max、phone-air、phone-fold。
+  - 尚未開賣的產品，卡片改顯示「未開賣」「預計開賣」，不顯示週期進度。第一代產品的徽章說明改用 `summary`。
+
 ## 維護約定
 
 每次改動（功能、資料、部署方式）都同步更新本 README 的「結構」「部署」「更新紀錄」。
