@@ -21,6 +21,7 @@ npm run build
   - **新款已發表、台灣尚未開賣**時，一定要填 `announced`，包含 `name`、全球發表日 `date`、`twRelease`（未公布填 `null`）、`source`、`url`。填了之後判定自動變成「即將開賣」，卡片和產品頁上方會顯示「新款已發表：○○ 已於 MM/DD 發表 · 台灣尚未發售」，讓訪客知道已經有新款。台灣開賣後，把新款移進 `releasedTW`／`prev`／`history`，並刪掉 `announced`。
 - `lib/verdict.ts` — 判定規則（企劃書 4.2）與天數計算；頁面每小時重算（ISR）。`pendingTW()` 判斷有沒有已發表、台灣尚未開賣的新款。
 - `app/page.tsx` — 首頁：全系列最新一代卡片，可依分類切換。
+- `components/Name.tsx` — 產品名稱排版：括號內（如「（M5 Pro／Max）」）不在字中間斷行；只在括號前或「／」後換行。顯示產品名稱的地方一律用 `<Name text={…} />`。
 - `components/CategoryNav.tsx` — 分類切換（client component）：頂部選單與首頁分類列都連到 `/?cat=<分類>`，首頁只顯示該分類的卡片（`.grid[data-filter]` 以 CSS 隱藏其他分類）。分類鍵沿用 `CATEGORY_LABEL`：iphone／ipad／mac／wear／home；不帶 `cat` 即為全部。
 - `app/product/[slug]/page.tsx` — 產品頁：判定、週期、下一代訊號、台灣價格、電信、規格建議、判定紀錄。
 - `components/Icons.tsx` — 內嵌 SVG 圖示與自繪產品剪影（首頁卡片與產品頁的產品圖）。
@@ -33,7 +34,7 @@ npm run build
 - Vercel 專案：`applenews`（team `virus11456s-projects`），Production 網址 `https://applenews-five.vercel.app`（別名 `applenews-virus11456s-projects.vercel.app`）
 - GitHub repo：`https://github.com/virus11456/applenews`（`main` 分支，已 push）。
 - 目前部署方式：push `main` 到 GitHub 後，以 Vercel API（MCP `create_deployment`，`gitSource` = `virus11456/applenews@main`，`target: production`）手動觸發，從 GitHub 拉原始碼建置。
-- Vercel 專案尚未連上 Git，所以 push 不會自動部署。要改成自動部署，需在 Vercel 後台 Settings → Git 連 `virus11456/applenews`，或在本機執行 `vercel link` + `vercel git connect`；MCP 沒辦法替既有專案接 Git。
+- Vercel 新專案 `applenews-site` 已連上 GitHub `virus11456/applenews`（production branch `main`），push 即自動部署；網址 `https://applenews-site.vercel.app`。舊專案 `applenews`（未接 Git）待刪除後，把 `applenews.me`、`www.applenews.me`（308 轉址到 apex）、`applenews-five.vercel.app` 移到新專案。
 
 ## 更新紀錄
 
@@ -66,6 +67,16 @@ npm run build
   - HomePod mini（第一代 2020-11-16，傳 10/13 出第 2 代）
 
 - 2026-10-03：確定產品圖全面改用自繪剪影（先前誤解為改回照片，`73feb5d` 已再還原）。17 條產品線都使用 `DeviceIcon`，新增的 5 條各有專屬剪影：mac-studio、watch-ultra、airpods-pro、display-xdr、homepod-mini。
+
+- 2026-10-03：手機（iPhone 375／390）、iPad（直 820／橫 1180）、電腦（1440）排版全面檢查並修正，所有頁面都沒有橫向溢出。
+  - 產品名稱不再在括號中間斷行（新增 `Name` 元件）。
+  - 產品頁日期不再拆成兩行。
+  - 卡片狀態說明在窄卡片時改到徽章下方。
+  - 分類列改為自動換行，不再需要橫向滑動。
+  - 多行標題的圖示對齊第一行。
+  - 「產品週期」的標籤在 900px 以下改到長條上方。
+  - 標題使用 `halt` 收窄全形標點。
+- 2026-10-03：新建 Vercel 專案 `applenews-site` 並連上 GitHub，push `main` 即自動部署。
 
 ## 維護約定
 

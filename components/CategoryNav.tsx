@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense } from "react";
 import { CATEGORY_LABEL, type Category } from "@/lib/products";
 import { Icon } from "./Icons";
 
@@ -43,16 +43,9 @@ export function HeaderCategoryLinks() {
 
 /** 首頁產品格：上方分類切換，只顯示所選分類的卡片 */
 function FilterGrid({ active, children }: { active: Category | null; children: React.ReactNode }) {
-  const tabs = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    // 手機版分類列可橫向捲動：讓選中的分類保持在可見範圍
-    const el = tabs.current?.querySelector<HTMLElement>(".cat-tab.on");
-    const bar = tabs.current;
-    if (el && bar) bar.scrollTo({ left: el.offsetLeft - (bar.clientWidth - el.clientWidth) / 2, behavior: "smooth" });
-  }, [active]);
   return (
     <>
-      <div className="cat-tabs" role="tablist" aria-label="產品分類" ref={tabs}>
+      <div className="cat-tabs" role="tablist" aria-label="產品分類">
         {[null, ...CATS].map((c) => {
           const I = c ? CAT_ICON[c] : null;
           const on = active === c;

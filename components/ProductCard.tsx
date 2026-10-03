@@ -3,6 +3,7 @@ import { CATEGORY_LABEL, type Product } from "@/lib/products";
 import { announcedLine, compute, monthsBetween, pct, pendingTW, VERDICT_META } from "@/lib/verdict";
 import { Badge } from "./Badge";
 import { DeviceIcon, Icon } from "./Icons";
+import { Name } from "./Name";
 
 const CAT_ICON = { iphone: Icon.phone, ipad: Icon.tablet, mac: Icon.laptop, wear: Icon.watch, home: Icon.home };
 
@@ -18,7 +19,7 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
       <div className="card-art"><DeviceIcon kind={p.icon} size={76} /></div>
       <div className="card-head">
         <span className="chip"><CatIcon size={14} />{CATEGORY_LABEL[p.category]}</span>
-        <h3>{p.name}</h3>
+        <h3><Name text={p.name} /></h3>
         <div className="card-status">
           <Badge v={c.verdict} />
           {p.twAvailable ? <span className="muted">{status}</span> : <span className="warn"><Icon.info size={14} />台灣尚未販售</span>}
@@ -43,9 +44,9 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
         <dt>本代上市</dt><dd className="mono">{p.releasedTW}</dd>
         {p.prev && (<>
           <dt><Icon.back size={14} />上一代</dt>
-          <dd>{p.prev.name} · <span className="mono">{p.prev.date.slice(0, 7)}</span> · 相隔 {monthsBetween(p.prev.date, p.releasedTW)} 個月</dd>
+          <dd><Name text={p.prev.name} /> · <span className="mono">{p.prev.date.slice(0, 7)}</span> · 相隔 {monthsBetween(p.prev.date, p.releasedTW)} 個月</dd>
         </>)}
-        <dt>下一代預期</dt><dd>{p.next.expected ? `${p.next.expected.slice(0, 7)} · ${p.next.name}` : p.next.note}</dd>
+        <dt>下一代預期</dt><dd>{p.next.expected ? <><span className="mono">{p.next.expected.slice(0, 7)}</span> · <Name text={p.next.name} /></> : p.next.note}</dd>
       </dl>
       <Link href={`/product/${p.slug}`} className="card-link">查看判定與台灣價格<Icon.arrow size={16} /></Link>
     </article>

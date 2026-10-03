@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Subscribe } from "@/components/Chrome";
 import { Badge } from "@/components/Badge";
 import { DeviceIcon, Icon } from "@/components/Icons";
+import { Name } from "@/components/Name";
 import { CATEGORY_LABEL, getProduct, PRODUCTS } from "@/lib/products";
 import { announcedLine, compute, daysBetween, pct, pendingTW, todayISO, VERDICT_META } from "@/lib/verdict";
 
@@ -39,11 +40,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     <>
       <section className="hero">
         <div className="container">
-          <nav className="crumbs"><Link href="/">首頁</Link><span>/</span><Link href="/#all">{CATEGORY_LABEL[p.category]}</Link><span>/</span><span className="cur">{p.name}</span></nav>
+          <nav className="crumbs"><Link href="/">首頁</Link><span>/</span><Link href="/#all">{CATEGORY_LABEL[p.category]}</Link><span>/</span><span className="cur"><Name text={p.name} /></span></nav>
           <div className="verdict-grid">
             <div className="verdict-main">
               <div className="verdict-row"><Badge v={c.verdict} size="lg" /><span className="mono muted">判定更新 {today} · {c.overridden ? "編輯覆寫" : "自動判定"}</span></div>
-              <h1>{p.name}</h1>
+              <h1><Name text={p.name} /></h1>
               {pending && (
                 <div className="announced lg">
                   <Icon.info size={18} />
@@ -79,19 +80,19 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       <div className="container stack">
         <section id="cycle">
-          <h2 className="h-icon"><Icon.refresh size={24} />產品週期</h2>
+          <h2 className="h-icon"><Icon.refresh size={24} /><span>產品週期</span></h2>
           <div className="muted">歷代更新間隔（天），以台灣開賣日計算</div>
           <div className="panel bars">
             {intervals.map((x) => (
-              <div className="bar-row" key={x.to}><div className="muted">{x.from} → {x.to}</div><div className="track track-lg"><div className="fill" style={{ width: `${Math.round((x.days / maxDays) * 100)}%`, background: "#8E8E89" }} /></div><div className="mono r">{x.days}</div></div>
+              <div className="bar-row" key={x.to}><div className="muted"><Name text={x.from} /> → <Name text={x.to} /></div><div className="track track-lg"><div className="fill" style={{ width: `${Math.round((x.days / maxDays) * 100)}%`, background: "#8E8E89" }} /></div><div className="mono r">{x.days}</div></div>
             ))}
-            <div className="bar-row bold"><div>{p.name} → 現在</div><div className="track track-lg"><div className="fill" style={{ width: `${Math.round(((c.days ?? 0) / maxDays) * 100)}%`, background: meta.color }} /></div><div className="mono r" style={{ color: meta.color }}>{c.days ?? "—"}</div></div>
+            <div className="bar-row bold"><div><Name text={p.name} /> → 現在</div><div className="track track-lg"><div className="fill" style={{ width: `${Math.round(((c.days ?? 0) / maxDays) * 100)}%`, background: meta.color }} /></div><div className="mono r" style={{ color: meta.color }}>{c.days ?? "—"}</div></div>
             {p.avgDays && <div className="panel-foot">歷代平均 {p.avgDays} 天（以美國首發日計算，避免台灣延後上市造成失真）</div>}
           </div>
         </section>
 
         <section id="next">
-          <h2 className="h-icon"><Icon.radar size={24} />下一代：{p.next.name}</h2>
+          <h2 className="h-icon"><Icon.radar size={24} /><span>下一代：<Name text={p.next.name} /></span></h2>
           <div className="muted">{p.next.expected ? `預期 ${p.next.expected.slice(0, 7)}` : "時間未定"} · 訊號依可信度分級，點開看原文</div>
           <div className="panel table">
             <div className="tr th"><div>等級</div><div>訊號</div><div>來源</div><div>日期</div></div>
@@ -104,7 +105,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </section>
 
         <section id="price">
-          <h2 className="h-icon"><Icon.tag size={24} />台灣價格</h2>
+          <h2 className="h-icon"><Icon.tag size={24} /><span>台灣價格</span></h2>
           <div className="muted">官網價、各通路最低價與歷代降價曲線 · 每日更新，附時間戳</div>
           <div className="two">
             <div className="panel table t3">
@@ -127,7 +128,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         {p.category === "iphone" && (
           <section id="carrier">
-            <h2 className="h-icon"><Icon.sim size={24} />電信方案 vs 空機</h2>
+            <h2 className="h-icon"><Icon.sim size={24} /><span>電信方案 vs 空機</span></h2>
             <div className="muted">實付總額 ＝ 專案價 ＋ 月租 × 合約期數，與「空機 ＋ 自選資費」並列</div>
             <div className="panel table t5">
               <div className="tr th"><div>方案</div><div>專案價</div><div>月租</div><div>期數</div><div>實付總額</div></div>
@@ -138,11 +139,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         <section className="two">
           <div>
-            <h2 className="h-icon"><Icon.sliders size={24} />該買哪個規格</h2>
+            <h2 className="h-icon"><Icon.sliders size={24} /><span>該買哪個規格</span></h2>
             <div className="panel advice">{p.specAdvice.map((a) => <div key={a.label}><span className="b">{a.label}</span><span>{a.text}</span></div>)}</div>
           </div>
           <div>
-            <h2 className="h-icon"><Icon.history size={24} />判定紀錄</h2>
+            <h2 className="h-icon"><Icon.history size={24} /><span>判定紀錄</span></h2>
             <div className="panel table t3log">
               <div className="tr"><div className="mono muted">{today}</div><div><Badge v={c.verdict} /></div><div className="muted">{c.overridden ? "編輯覆寫，理由見上方。" : "每日自動判定。"}</div></div>
               <div className="tr"><div className="mono muted">{p.releasedTW}</div><div><Badge v="buy" /></div><div className="muted">台灣開賣，自動判定。</div></div>
