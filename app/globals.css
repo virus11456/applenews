@@ -29,7 +29,10 @@ p { margin: 0; }
 .logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 900; letter-spacing: 0.04em; color: var(--ink); }
 .logo:hover { text-decoration: none; }
 .nav { display: none; gap: 4px; flex-grow: 1; font-size: 14px; font-weight: 700; }
-@media (min-width: 900px) { .nav { display: flex; } }
+@media (min-width: 1240px) { .nav { display: flex; } }
+.nav a { padding: 0 9px; white-space: nowrap; flex: none; }
+.header-row > .logo, .header-row > .btn { flex: none; white-space: nowrap; }
+.nav { min-width: 0; }
 .nav a { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 12px; border-radius: 8px; color: var(--ink); }
 .nav a:hover { background: var(--ground); text-decoration: none; }
 .nav a.active { background: var(--ink); color: var(--paper); }
@@ -68,7 +71,7 @@ p { margin: 0; }
 .cat-tab:hover { text-decoration: none; border-color: #C9C9C4; }
 .cat-tab.on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .grid:not([data-filter="all"]) > [data-cat] { display: none; }
-.grid[data-filter="iphone"] > [data-cat="iphone"], .grid[data-filter="ipad"] > [data-cat="ipad"], .grid[data-filter="mac"] > [data-cat="mac"], .grid[data-filter="wear"] > [data-cat="wear"], .grid[data-filter="home"] > [data-cat="home"] { display: flex; }
+.grid[data-filter="mac"] > [data-cat="mac"], .grid[data-filter="ipad"] > [data-cat="ipad"], .grid[data-filter="iphone"] > [data-cat="iphone"], .grid[data-filter="watch"] > [data-cat="watch"], .grid[data-filter="vision"] > [data-cat="vision"], .grid[data-filter="airpods"] > [data-cat="airpods"], .grid[data-filter="tvhome"] > [data-cat="tvhome"], .grid[data-filter="accessories"] > [data-cat="accessories"] { display: flex; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); gap: 20px; }
 
 /* card */
@@ -98,6 +101,13 @@ p { margin: 0; }
 .fill { height: 100%; border-radius: inherit; }
 .facts { margin: 0; display: grid; grid-template-columns: 88px 1fr; gap: 6px 12px; font-size: 13px; line-height: 1.5; }
 .facts dt { color: var(--muted); display: flex; align-items: center; gap: 4px; }
+.facts dt.dt-top { align-items: flex-start; padding-top: 1px; }
+.gens { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.gens li { display: grid; grid-template-columns: 62px 1fr; gap: 8px; color: var(--muted); }
+.gens li.cur { color: var(--ink); font-weight: 700; }
+.gens .gap { font-weight: 400; color: var(--muted); }
+.gens li > span { min-width: 0; }
+.facts .gens .name-paren { white-space: normal; }
 .facts dd { margin: 0; min-width: 0; word-break: keep-all; overflow-wrap: anywhere; }
 .card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; margin-top: auto; }
 

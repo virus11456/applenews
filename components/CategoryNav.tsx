@@ -4,10 +4,10 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { CATEGORY_LABEL, type Category } from "@/lib/products";
-import { Icon } from "./Icons";
+import { CATEGORY_ICON } from "./Icons";
 
 export const CATS = Object.keys(CATEGORY_LABEL) as Category[];
-const CAT_ICON: Record<Category, (p: { size?: number }) => React.ReactNode> = { iphone: Icon.phone, ipad: Icon.tablet, mac: Icon.laptop, wear: Icon.watch, home: Icon.home };
+const CAT_ICON = CATEGORY_ICON;
 
 function parseCat(v: string | null): Category | null {
   return v && (CATS as string[]).includes(v) ? (v as Category) : null;

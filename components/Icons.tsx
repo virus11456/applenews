@@ -20,6 +20,10 @@ export const Icon = {
   ),
   phone: (p: P) => <I {...p}><rect x="7" y="2" width="10" height="20" rx="2" /><path d="M11 18h2" /></I>,
   tablet: (p: P) => <I {...p}><rect x="4" y="2" width="16" height="20" rx="2" /><path d="M11 18h2" /></I>,
+  vision: (p: P) => <I {...p}><rect x="2" y="8" width="20" height="9" rx="4.5" /><path d="M10 16.5c.8 1 3.2 1 4 0" /></I>,
+  airpods: (p: P) => <I {...p}><path d="M6 4a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3V20" /><path d="M18 4a3 3 0 0 0-3 3v3a3 3 0 0 0 3 3V20" /></I>,
+  tv: (p: P) => <I {...p}><rect x="3" y="5" width="18" height="12" rx="2" /><path d="M8 21h8M12 17v4" /></I>,
+  accessory: (p: P) => <I {...p}><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="3" /></I>,
   laptop: (p: P) => <I {...p}><rect x="4" y="5" width="16" height="11" rx="1.5" /><path d="M2 19h20" /></I>,
   watch: (p: P) => <I {...p}><rect x="7" y="7" width="10" height="10" rx="2.5" /><path d="M9 7V3h6v4M9 17v4h6v-4" /></I>,
   home: (p: P) => <I {...p}><path d="M3 11 12 4l9 7" /><path d="M5 10v10h14V10" /></I>,
@@ -63,6 +67,9 @@ export function DeviceIcon({ kind, size = 56 }: { kind: string; size?: number })
     case "phone-max": return <svg {...common}><rect x="19" y="4" width="26" height="56" rx="5" /><path d="M28 54h8" /><rect x="25" y="9" width="12" height="3" rx="1.5" /></svg>;
     case "phone-air": return <svg {...common}><rect x="22" y="6" width="20" height="52" rx="4" /><path d="M29 52h6" /><path d="M24 12h16" /></svg>;
     case "phone-fold": return <svg {...common}><rect x="10" y="10" width="44" height="44" rx="4" /><path d="M32 10v44" strokeDasharray="3 3" /><path d="M18 48h6M40 48h6" /></svg>;
+    case "imac": return <svg {...common}><rect x="6" y="8" width="52" height="34" rx="3" /><path d="M6 36h52" /><path d="M26 42l-2 12h16l-2-12" /></svg>;
+    case "tablet-mini": return <svg {...common}><rect x="18" y="12" width="28" height="40" rx="4" /><path d="M29 47h6" /></svg>;
+    case "headphones": return <svg {...common}><path d="M12 38v-6a20 20 0 0 1 40 0v6" /><rect x="8" y="36" width="10" height="16" rx="4" /><rect x="46" y="36" width="10" height="16" rx="4" /></svg>;
     case "tablet": return <svg {...common}><rect x="14" y="8" width="36" height="48" rx="4" /><path d="M29 50h6" /></svg>;
     case "laptop": return <svg {...common}><rect x="12" y="16" width="40" height="24" rx="2" /><path d="M6 44h52" /></svg>;
     case "laptop-pro": return <svg {...common}><rect x="10" y="12" width="44" height="28" rx="2" /><path d="M4 46h56" /><path d="M24 46v2h16v-2" /></svg>;
@@ -82,3 +89,9 @@ export function DeviceIcon({ kind, size = 56 }: { kind: string; size?: number })
     default: return <svg {...common}><rect x="12" y="12" width="40" height="40" rx="4" /></svg>;
   }
 }
+
+/** 各分類的導覽圖示（分類照 Apple 台灣官網） */
+export const CATEGORY_ICON: Record<string, (p: P) => React.ReactNode> = {
+  mac: Icon.laptop, ipad: Icon.tablet, iphone: Icon.phone, watch: Icon.watch,
+  vision: Icon.vision, airpods: Icon.airpods, tvhome: Icon.tv, accessories: Icon.accessory,
+};

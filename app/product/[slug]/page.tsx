@@ -40,7 +40,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     <>
       <section className="hero">
         <div className="container">
-          <nav className="crumbs"><Link href="/">首頁</Link><span>/</span><Link href="/#all">{CATEGORY_LABEL[p.category]}</Link><span>/</span><span className="cur"><Name text={p.name} /></span></nav>
+          <nav className="crumbs"><Link href="/">首頁</Link><span>/</span><Link href={`/?cat=${p.category}#all`}>{CATEGORY_LABEL[p.category]}</Link><span>/</span><span className="cur"><Name text={p.name} /></span></nav>
           <div className="verdict-grid">
             <div className="verdict-main">
               <div className="verdict-row"><Badge v={c.verdict} size="lg" /><span className="mono muted">判定更新 {today} · {c.overridden ? "編輯覆寫" : "自動判定"}</span></div>

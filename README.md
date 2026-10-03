@@ -13,6 +13,16 @@ npm run build
 
 ## 結構
 
+- 分類與產品線一律照 Apple 台灣官網（apple.com/tw）的頂部導覽與各分類頁的產品導覽列，順序也一致：
+  - Mac：MacBook Neo、MacBook Air、MacBook Pro、iMac、Mac mini、Mac Studio、Studio Display、Studio Display XDR
+  - iPad：iPad Pro、iPad Air、iPad、iPad mini
+  - iPhone：iPhone Duo、iPhone 18 Pro／Pro Max、iPhone Air、iPhone 17、iPhone 17e、iPhone 16
+  - Watch：Series 12、Ultra 4、SE 3（Nike、Hermès 為款式，不另列）
+  - Vision：Apple Vision Pro
+  - AirPods：AirPods 5、AirPods Pro 3、AirPods Max 2
+  - TV 和家庭：Apple TV 4K、HomePod、HomePod mini
+  - 配件：AirTag
+  官網增減產品時，`PRODUCTS` 的項目與順序要跟著改。
 - `lib/products.ts` — 產品資料（上市日、歷代平均、上一代、下一代訊號、覆寫）。改這裡就會改判定。
   - `releasedTW`／`history` 填台灣開賣日，也就是台灣第一天能正式購買的日期，預購不算。因 NCC 延後上市的 Mac／iPad，以台灣官網開放訂購日為準。不可填美國日期。
   - `avgDays` 一律用美國首發日計算。台灣常延後上市，用台灣日期會讓週期失真。
@@ -25,7 +35,7 @@ npm run build
 - `components/Name.tsx` — 產品名稱排版：括號內（如「（M5 Pro／Max）」）不在字中間斷行；只在括號前或「／」後換行。顯示產品名稱的地方一律用 `<Name text={…} />`。
 - `components/CategoryNav.tsx` — 分類切換（client component）：頂部選單與首頁分類列都連到 `/?cat=<分類>`，首頁只顯示該分類的卡片（`.grid[data-filter]` 以 CSS 隱藏其他分類）。分類鍵沿用 `CATEGORY_LABEL`：iphone／ipad／mac／wear／home；不帶 `cat` 即為全部。
 - `app/product/[slug]/page.tsx` — 產品頁：判定、週期、下一代訊號、台灣價格、電信、規格建議、判定紀錄。
-- `components/Icons.tsx` — 內嵌 SVG 圖示與自繪產品剪影（首頁卡片與產品頁的產品圖）。
+- `components/Icons.tsx` — 內嵌 SVG 圖示、`CATEGORY_ICON`（分類圖示）與自繪產品剪影（首頁卡片與產品頁的產品圖）。
 - 產品圖：一律用 `components/Icons.tsx` 的 `DeviceIcon` 自繪線條剪影（`lib/products.ts` 每筆的 `icon`），全站統一風格。不用照片，也不用 Apple 官方產品照或 logo。新增產品線時，若沒有合適的剪影，就在 `DeviceIcon` 新增一個 kind。
 
 價格、降幅、電信資費等尚未接資料的欄位以 `[ ]` 佔位。
@@ -93,6 +103,13 @@ npm run build
   - iPhone Duo：首款折疊 iPhone，9/9 發表，台灣首波，10/16 晚上 8 點預購、10/23 開賣，用 `announced` 標示。
   - 新增剪影：phone-max、phone-air、phone-fold。
   - 尚未開賣的產品，卡片改顯示「未開賣」「預計開賣」，不顯示週期進度。第一代產品的徽章說明改用 `summary`。
+
+- 2026-10-03：分類與產品線改為完全照 Apple 台灣官網，共 8 類 29 條。
+  - 8 類：Mac、iPad、iPhone、Watch、Vision、AirPods、TV 和家庭、配件。
+  - 新增 9 條，皆附台灣與美國歷代日期查證：MacBook Neo、iMac（M4）、iPad Pro（M5）、iPad（A16）、iPad mini（A17 Pro）、iPhone 17e、iPhone 16、Apple Watch SE 3、AirPods Max 2。
+  - iPhone 18 Pro 與 Pro Max 依官網合併為一條。
+  - 卡片新增「歷代上市」時間軸：每一代的上市年月與間隔月數，原本的「上一代」併入其中。
+  - 頂部選單改為 1240px 以上才顯示，較窄時用分類列切換。
 
 ## 維護約定
 

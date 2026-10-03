@@ -2,15 +2,20 @@ import Link from "next/link";
 import { CATEGORY_LABEL, type Product } from "@/lib/products";
 import { announcedLine, compute, monthsBetween, overdueDays, pct, pctLabel, pendingTW, VERDICT_META } from "@/lib/verdict";
 import { Badge } from "./Badge";
-import { DeviceIcon, Icon } from "./Icons";
+import { CATEGORY_ICON, DeviceIcon, Icon } from "./Icons";
 import { Name } from "./Name";
 
-const CAT_ICON = { iphone: Icon.phone, ipad: Icon.tablet, mac: Icon.laptop, wear: Icon.watch, home: Icon.home };
+
+/** 時間軸只顯示代別：「Mac Studio（M5 Max／M5 Ultra）」→「M5 Max／M5 Ultra」；沒有括號就顯示全名 */
+function genLabel(gen: string): string {
+  const m = gen.match(/（(.+)）$/);
+  return m ? m[1] : gen;
+}
 
 export function ProductCard({ p, today }: { p: Product; today: string }) {
   const c = compute(p, today);
   const meta = VERDICT_META[c.verdict];
-  const CatIcon = CAT_ICON[p.category];
+  const CatIcon = CATEGORY_ICON[p.category];
   const pending = pendingTW(p, today);
   // 徽章旁寫給讀者看的一句理由：「可以買／觀望」用簡短的判定說明；
   // 「小心／先別買／即將開賣」用該產品的一句話結論（summary）說明原因。
@@ -49,10 +54,17 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
       </div>}
       <dl className="facts">
         <dt>{c.days === null ? "預計開賣" : "本代上市"}</dt><dd className="mono">{p.releasedTW}</dd>
-        {p.prev && (<>
-          <dt><Icon.back size={14} />上一代</dt>
-          <dd><Name text={p.prev.name} /> · <span className="mono">{p.prev.date.slice(0, 7)}</span> · 相隔 {monthsBetween(p.prev.date, p.releasedTW)} 個月</dd>
-        </>)}
+        <dt className="dt-top"><Icon.history size={14} />歷代上市</dt>
+        <dd>
+          <ol className="gens">
+            {p.history.map((h, i) => (
+              <li key={h.gen} className={i === 0 ? "cur" : undefined}>
+                <span className="mono">{h.date.slice(0, 7)}</span>
+                <span>{genLabel(h.gen)}{i < p.history.length - 1 && <span className="gap"> · 相隔 {monthsBetween(p.history[i + 1].date, h.date)} 個月</span>}</span>
+              </li>
+            ))}
+          </ol>
+        </dd>
         {p.next.expected ? (<><dt>下一代預期</dt><dd><span className="mono">{p.next.expected.slice(0, 7)}</span> · <Name text={p.next.name} /></dd></>)
           : hasSignal ? (<><dt>下一代預期</dt><dd>{p.next.note}</dd></>) : null}
       </dl>
