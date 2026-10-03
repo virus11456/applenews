@@ -16,13 +16,14 @@ npm run build
 - 分類與產品線一律照 Apple 台灣官網（apple.com/tw）的頂部導覽與各分類頁的產品導覽列，順序也一致：
   - Mac：MacBook Neo、MacBook Air、MacBook Pro、iMac、Mac mini、Mac Studio、Studio Display、Studio Display XDR
   - iPad：iPad Pro、iPad Air、iPad、iPad mini
-  - iPhone：iPhone Duo、iPhone 18 Pro／Pro Max、iPhone Air、iPhone 17、iPhone 17e、iPhone 16
+  - iPhone：iPhone Duo、iPhone 18 Pro／Pro Max、iPhone Air、iPhone 17、iPhone 17e
   - Watch：Series 12、Ultra 4、SE 3（Nike、Hermès 為款式，不另列）
   - Vision：Apple Vision Pro
   - AirPods：AirPods 5、AirPods Pro 3、AirPods Max 2
   - TV 和家庭：Apple TV 4K、HomePod、HomePod mini
   - 配件：AirTag
   官網增減產品時，`PRODUCTS` 的項目與順序要跟著改。
+  - **每個系列只列最新一代**：Apple 仍在販售的舊款（例如 iPhone 16）不列；新一代在台灣開賣後，就取代原本那一條。
 - `lib/products.ts` — 產品資料（上市日、歷代平均、上一代、下一代訊號、覆寫）。改這裡就會改判定。
   - `releasedTW`／`history` 填台灣開賣日，也就是台灣第一天能正式購買的日期，預購不算。因 NCC 延後上市的 Mac／iPad，以台灣官網開放訂購日為準。不可填美國日期。
   - `avgDays` 一律用美國首發日計算。台灣常延後上市，用台灣日期會讓週期失真。
@@ -112,6 +113,8 @@ npm run build
   - 頂部選單改為 1240px 以上才顯示，較窄時用分類列切換。
 
 - 2026-10-03：移除標題括號的負邊距。iPhone Safari 會用 `halt` 把全形括號縮窄，再加上負邊距會讓括號蓋住前一個字，例如顯示成「iPad Ai(M4)」。
+
+- 2026-10-03：每個系列只列最新一代，移除仍在販售的舊款 iPhone 16，現在共 28 條。逐條檢查其餘產品線，皆為各自系列的最新一代。
 
 ## 維護約定
 
