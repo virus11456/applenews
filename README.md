@@ -20,7 +20,8 @@ npm run build
   - 訊號 `signals` 必須附真實可查的來源與報導日期。
   - **新款已發表、台灣尚未開賣**時，一定要填 `announced`，包含 `name`、全球發表日 `date`、`twRelease`（未公布填 `null`）、`source`、`url`。填了之後判定自動變成「即將開賣」，卡片和產品頁上方會顯示「新款已發表：○○ 已於 MM/DD 發表 · 台灣尚未發售」，讓訪客知道已經有新款。台灣開賣後，把新款移進 `releasedTW`／`prev`／`history`，並刪掉 `announced`。
 - `lib/verdict.ts` — 判定規則（企劃書 4.2）與天數計算；頁面每小時重算（ISR）。`pendingTW()` 判斷有沒有已發表、台灣尚未開賣的新款。
-- `app/page.tsx` — 首頁：全系列最新一代卡片。
+- `app/page.tsx` — 首頁：全系列最新一代卡片，可依分類切換。
+- `components/CategoryNav.tsx` — 分類切換（client component）：頂部選單與首頁分類列都連到 `/?cat=<分類>`，首頁只顯示該分類的卡片（`.grid[data-filter]` 以 CSS 隱藏其他分類）。分類鍵沿用 `CATEGORY_LABEL`：iphone／ipad／mac／wear／home；不帶 `cat` 即為全部。
 - `app/product/[slug]/page.tsx` — 產品頁：判定、週期、下一代訊號、台灣價格、電信、規格建議、判定紀錄。
 - `components/Icons.tsx` — 內嵌 SVG 圖示與自繪產品剪影（照片缺席時的備援）。
 - 產品照片：`lib/products.ts` 每筆的 `photo`（Unsplash 免費圖庫，可商用，不用 Apple 官方產品照或 logo）：
@@ -59,6 +60,8 @@ npm run build
 - 2026-10-02：新增「新款已發表、台灣尚未發售」標示（`announced` 欄位）。卡片與產品頁顯示新款名稱、發表日與台灣狀態，判定自動改為「即將開賣」。週期圖註明平均天數以美國首發日計算。截至今天，12 條產品線都沒有已發表但台灣未開賣的新款。
 
 - 2026-10-03：曾短暫改用自繪剪影取代照片（`0f112ca`），依需求還原回 Unsplash 照片版本。
+
+- 2026-10-03：新增分類切換。頂部選單（iPhone／iPad／Mac／穿戴／居家與配件）與首頁產品列表上方的分類列都可以點選，點了之後只顯示該分類，選中的項目會反白。網址為 `/?cat=mac` 這類形式，可直接分享。手機版分類列可橫向捲動，選中的項目會自動捲到畫面內。
 
 ## 維護約定
 

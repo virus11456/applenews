@@ -14,7 +14,7 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
   const status = c.overridden ? `編輯覆寫 · ${p.override!.reason.slice(0, 18)}…` : pending ? meta.status : p.next.note && c.verdict !== "wait" ? p.next.note : meta.status;
 
   return (
-    <article className="card">
+    <article className="card" data-cat={p.category}>
       {photoUrl(p) ? (
         <a href={photoPage(p)!} target="_blank" rel="noreferrer" className="card-photo" aria-label={`${p.name} 照片，來源 Unsplash`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}

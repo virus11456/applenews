@@ -1,6 +1,7 @@
 import { Subscribe } from "@/components/Chrome";
 import { Icon } from "@/components/Icons";
 import { Badge } from "@/components/Badge";
+import { CategoryGrid } from "@/components/CategoryNav";
 import { ProductCard } from "@/components/ProductCard";
 import { PRODUCTS, type Verdict } from "@/lib/products";
 import { todayISO } from "@/lib/verdict";
@@ -28,9 +29,9 @@ export default function Home() {
             <h2>全系列最新一代</h2>
             <div className="muted">每個系列只列最新一代 · 天數以台灣開賣日起算，每日自動重算</div>
           </div>
-          <div className="grid">
+          <CategoryGrid>
             {PRODUCTS.map((p) => <ProductCard key={p.slug} p={p} today={today} />)}
-          </div>
+          </CategoryGrid>
         </div>
       </section>
 

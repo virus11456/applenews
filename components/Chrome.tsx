@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeaderCategoryLinks } from "./CategoryNav";
 import { Icon } from "./Icons";
 
 export function Header() {
@@ -7,11 +8,7 @@ export function Header() {
       <div className="container header-row">
         <Link href="/" className="logo"><Icon.logo />買點</Link>
         <nav className="nav">
-          <Link href="/#all"><Icon.phone />iPhone</Link>
-          <Link href="/#all"><Icon.tablet />iPad</Link>
-          <Link href="/#all"><Icon.laptop />Mac</Link>
-          <Link href="/#all"><Icon.watch />穿戴</Link>
-          <Link href="/#all"><Icon.home />居家與配件</Link>
+          <HeaderCategoryLinks />
           <Link href="/#how" className="nav-muted"><Icon.help />判定方式</Link>
         </nav>
         <Link href="/#alerts" className="btn btn-primary"><Icon.bell />訂閱提醒</Link>
