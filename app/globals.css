@@ -154,6 +154,9 @@ p { margin: 0; }
 @media (max-width: 420px) { .stat { font-size: 15px; } .side-stats { gap: 8px; } }
 .side-prices { border-top: 1px solid var(--line); padding-top: 14px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
 .side-prices > div { display: flex; justify-content: space-between; }
+.side-prices .price-main { display: block; font-size: 15px; }
+.price-main .mono { font-size: 26px; font-weight: 700; margin-right: 2px; }
+.facts dd .b { font-weight: 700; }
 .stack { display: flex; flex-direction: column; gap: 44px; padding-top: 44px; padding-bottom: 48px; }
 .stack section { display: flex; flex-direction: column; gap: 14px; }
 .stack .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 20px; }

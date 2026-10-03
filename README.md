@@ -23,6 +23,7 @@ npm run build
   - TV 和家庭：Apple TV 4K、HomePod、HomePod mini
   - 配件：AirTag
   官網增減產品時，`PRODUCTS` 的項目與順序要跟著改。
+  - `priceTW`：Apple 台灣官網一般售價（非教育價），包含 `from` 起價、`config` 起價規格、`variants` 主要版本、`url` 官網購買頁、`checked` 查價日。價格取自官網購買頁內嵌的商品資料（curl 抓 HTML，搜尋 `"prices"` 或 `NT$`），不用媒體或通路價。官網調價時要同步更新。
   - **每個系列只列最新一代**：Apple 仍在販售的舊款（例如 iPhone 16）不列；新一代在台灣開賣後，就取代原本那一條。
 - `lib/products.ts` — 產品資料（上市日、歷代平均、上一代、下一代訊號、覆寫）。改這裡就會改判定。
   - `releasedTW`／`history` 填台灣開賣日，也就是台灣第一天能正式購買的日期，預購不算。因 NCC 延後上市的 Mac／iPad，以台灣官網開放訂購日為準。不可填美國日期。
@@ -35,11 +36,11 @@ npm run build
 - `app/page.tsx` — 首頁：全系列最新一代卡片，可依分類切換。
 - `components/Name.tsx` — 產品名稱排版：括號內（如「（M5 Pro／Max）」）不在字中間斷行；只在括號前或「／」後換行。顯示產品名稱的地方一律用 `<Name text={…} />`。
 - `components/CategoryNav.tsx` — 分類切換（client component）：頂部選單與首頁分類列都連到 `/?cat=<分類>`，首頁只顯示該分類的卡片（`.grid[data-filter]` 以 CSS 隱藏其他分類）。分類鍵沿用 `CATEGORY_LABEL`：iphone／ipad／mac／wear／home；不帶 `cat` 即為全部。
-- `app/product/[slug]/page.tsx` — 產品頁：判定、週期、下一代訊號、台灣價格、電信、規格建議、判定紀錄。
+- `app/product/[slug]/page.tsx` — 產品頁：判定、週期、Apple 台灣官網價（連到官網購買頁）、下一代訊號、規格建議、判定紀錄。
 - `components/Icons.tsx` — 內嵌 SVG 圖示、`CATEGORY_ICON`（分類圖示）與自繪產品剪影（首頁卡片與產品頁的產品圖）。
 - 產品圖：一律用 `components/Icons.tsx` 的 `DeviceIcon` 自繪線條剪影（`lib/products.ts` 每筆的 `icon`），全站統一風格。不用照片，也不用 Apple 官方產品照或 logo。新增產品線時，若沒有合適的剪影，就在 `DeviceIcon` 新增一個 kind。
 
-價格、降幅、電信資費等尚未接資料的欄位以 `[ ]` 佔位。
+台灣價格只放 Apple 台灣官網售價（`priceTW`）；通路價、降價曲線、電信方案不做。規格建議等尚未接資料的欄位以 `[ ]` 佔位。
 
 ## 部署
 
@@ -115,6 +116,12 @@ npm run build
 - 2026-10-03：移除標題括號的負邊距。iPhone Safari 會用 `halt` 把全形括號縮窄，再加上負邊距會讓括號蓋住前一個字，例如顯示成「iPad Ai(M4)」。
 
 - 2026-10-03：每個系列只列最新一代，移除仍在販售的舊款 iPhone 16，現在共 28 條。逐條檢查其餘產品線，皆為各自系列的最新一代。
+
+- 2026-10-03：台灣價格改為只列 Apple 台灣官網售價。
+  - 28 條產品線全部填入起價與主要版本價格，2026-10-03 直接取自官網購買頁。
+  - 卡片顯示「官網價 NT$… 起」；產品頁顯示起價、主要版本，以及「到 Apple 台灣官網購買」按鈕。
+  - 拿掉通路價格表、降價曲線、電信方案這三個佔位區塊。
+  - 備註：Vision Pro 官網現價為 NT$129,900 起（256GB），高於發表時的 NT$119,900。
 
 ## 維護約定
 

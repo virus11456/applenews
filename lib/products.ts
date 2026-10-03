@@ -19,6 +19,15 @@ export interface Announced {
   url?: string; // 來源連結
 }
 
+/** Apple 台灣官網售價（一般售價，非教育價）。只放官網價，不放通路價。 */
+export interface PriceTW {
+  from: number; // 起售價（新台幣）
+  config: string; // 起價對應的規格，例如「128GB」「11 吋 128GB」
+  variants?: { label: string; price: number }[]; // 其他主要版本（選填）
+  url: string; // 官網購買頁
+  checked: string; // 查價日期 YYYY-MM-DD
+}
+
 export interface Product {
   slug: string;
   name: string;
@@ -29,6 +38,7 @@ export interface Product {
   prev: { name: string; date: string } | null; // 上一代
   next: { name: string; expected: string | null; grade: Grade | null; note: string }; // 下一代
   announced?: Announced; // 新款已發表但台灣尚未開賣時填寫
+  priceTW?: PriceTW; // Apple 台灣官網售價
   twAvailable: boolean;
   discontinued?: string; // 停產日
   override?: { verdict: Verdict; reason: string };
@@ -60,6 +70,7 @@ export const PRODUCTS: Product[] = [
     avgDays: null,
     prev: null,
     next: { name: "MacBook Neo（第二代）", expected: null, grade: "B", note: "Bloomberg 報導 2027 年推出，升級 A19 Pro、12GB 記憶體" },
+    priceTW: { from: 22900, config: "256GB", variants: [{ label: "512GB", price: 25900 }], url: "https://www.apple.com/tw/shop/buy-mac/macbook-neo", checked: "2026-10-03" },
     twAvailable: true,
     summary: "今年 4 月才在台灣開賣的全新入門筆電，第二代要到 2027 年，需要就可以買。",
     reasons: ["台灣 2026-04-13 開賣，是第一代，也是第一款用 A 系列晶片的 Mac。", "Bloomberg 報導第二代 2027 年才推出。"],
@@ -78,6 +89,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 366,
     prev: { name: "MacBook Air（M4）", date: "2025-04-14" },
     next: { name: "MacBook Air（M6）", expected: "2027-03-15", grade: "B", note: "多家媒體報導 2027 年初推出、外觀不變；日期為推估，台灣近年晚約 1 個月" },
+    priceTW: { from: 42900, config: "13 吋 16GB／512GB", variants: [{ label: "15 吋 16GB／512GB", price: 49900 }], url: "https://www.apple.com/tw/shop/buy-mac/macbook-air", checked: "2026-10-03" },
     twAvailable: true,
     summary: "週期中段，M6 版傳聞 2027 年初推出，有需要就買。",
     reasons: ["台灣 4/13 開賣，週期進度約五成。", "Back to School 2026 已於 9/24 結束，目前只剩常態教育價。"],
@@ -103,6 +115,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 285,
     prev: { name: "MacBook Pro（M5）", date: "2025-11-20" },
     next: { name: "MacBook Pro（M6，14 吋基本款）", expected: "2026-10-31", grade: "B", note: "Bloomberg 報導 10 月～11 月初推出（美國）；只更新基本款，M5 Pro／Max 不在此波；台灣可能晚 1 個月以上" },
+    priceTW: { from: 64900, config: "14 吋 M5 16GB／1TB", variants: [{ label: "14 吋 M5 Pro", price: 84900 }, { label: "16 吋 M5 Pro", price: 99900 }, { label: "14 吋 M5 Max", price: 139900 }], url: "https://www.apple.com/tw/shop/buy-mac/macbook-pro", checked: "2026-10-03" },
     twAvailable: true,
     summary: "M6 基本款傳聞 10 月推出；要買 14 吋基本款建議等一下，M5 Pro／Max 不受影響。",
     reasons: ["Bloomberg 報導 M6 基本款預計 10 月推出（B 級訊號）。", "台灣過去幾代都因 NCC 電檢比美國晚 1 個月以上開賣。"],
@@ -130,6 +143,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 634,
     prev: { name: "iMac（M3）", date: "2023-12-05" },
     next: { name: "iMac（M6）", expected: "2026-10-15", grade: "B", note: "Bloomberg 報導跳過 M5，M6 iMac 10 月或 11 月初推出；日期為推估" },
+    priceTW: { from: 49900, config: "8 核心 CPU 16GB／256GB", variants: [{ label: "10 核心 CPU", price: 57900 }], url: "https://www.apple.com/tw/shop/buy-mac/imac", checked: "2026-10-03" },
     twAvailable: true,
     summary: "M4 iMac 在台灣已賣快兩年，Bloomberg 報導 M6 iMac 最快這個月發表，不急建議先等等。",
     reasons: ["台灣 2024-12-05 開賣，已超過歷代平均更新週期。", "Bloomberg 報導 M6 iMac 預計 10 月或 11 月初推出（B 級訊號）。"],
@@ -153,6 +167,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 668,
     prev: { name: "Mac mini（M4）", date: "2024-12-05" },
     next: { name: "Mac mini", expected: null, grade: null, note: "尚無訊號" },
+    priceTW: { from: 29900, config: "M6 16GB／256GB", variants: [{ label: "M5 Pro 24GB／512GB", price: 59900 }], url: "https://www.apple.com/tw/shop/buy-mac/mac-mini", checked: "2026-10-03" },
     twAvailable: true,
     summary: "剛更新，離下一代最遠。",
     reasons: ["台灣 9/22 開賣，至今不到兩週。", "Mac mini 平均約 22 個月更新一次。"],
@@ -173,6 +188,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 550,
     prev: { name: "Mac Studio（M4 Max／M3 Ultra）", date: "2025-04-14" },
     next: { name: "Mac Studio（M7 Ultra）", expected: null, grade: "B", note: "Bloomberg 報導跳過 M6 Ultra，下一代 M7 Ultra 約 2028 年" },
+    priceTW: { from: 84900, config: "M5 Max 36GB／512GB", variants: [{ label: "M5 Ultra 96GB／1TB", price: 199900 }], url: "https://www.apple.com/tw/shop/buy-mac/mac-studio", checked: "2026-10-03" },
     twAvailable: true,
     summary: "剛更新，離下一代最遠。",
     reasons: ["台灣 9/22 開賣，至今不到兩週；512GB 統一記憶體款 10 月底推出。", "Bloomberg 報導下一代要到 2028 年的 M7 Ultra。"],
@@ -197,6 +213,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 1454,
     prev: { name: "Studio Display（2022）", date: "2022-04-18" },
     next: { name: "Studio Display", expected: null, grade: null, note: "尚無訊號" },
+    priceTW: { from: 52900, config: "標準玻璃", variants: [{ label: "奈米紋理玻璃", price: 62900 }], url: "https://www.apple.com/tw/shop/buy-mac/studio-display", checked: "2026-10-03" },
     twAvailable: true,
     summary: "剛更新不久，顯示器更新週期長，可以買。",
     reasons: ["週期進度不到兩成。", "上一代相隔約四年才更新。"],
@@ -216,6 +233,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 2283,
     prev: { name: "Pro Display XDR", date: "2019-12-11" },
     next: { name: "Studio Display XDR", expected: null, grade: null, note: "尚無訊號" },
+    priceTW: { from: 107900, config: "奈米紋理玻璃＋VESA 吊架", variants: [{ label: "標準玻璃＋可調高度支架", price: 109900 }], url: "https://www.apple.com/tw/shop/buy-mac/studio-display-xdr", checked: "2026-10-03" },
     twAvailable: true,
     summary: "2026 年剛取代 Pro Display XDR，更新週期很長，可以買。",
     reasons: ["台灣 2026-03-20 開賣，週期進度不到一成。", "上一代 Pro Display XDR 賣了 6 年多才更新。"],
@@ -235,6 +253,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 546,
     prev: { name: "iPad Pro（M4）", date: "2024-06-13" },
     next: { name: "iPad Pro（M6）", expected: "2027-03-15", grade: "B", note: "Bloomberg 報導 2027 年春季推出、加均熱板散熱；日期為推估" },
+    priceTW: { from: 39900, config: "11 吋 256GB Wi-Fi", variants: [{ label: "13 吋 256GB", price: 50900 }], url: "https://www.apple.com/tw/shop/buy-ipad/ipad-pro", checked: "2026-10-03" },
     twAvailable: true,
     summary: "M5 iPad Pro 在台灣上市快一年，新款要到明年春天，急用可以買，不急可以再等等。",
     reasons: ["台灣 2025-11-20 開賣，週期進度約六成。", "Bloomberg 報導下一代 M6 版要到 2027 年春季。"],
@@ -258,6 +277,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 332,
     prev: { name: "iPad Air（M3）", date: "2025-04-11" },
     next: { name: "iPad Air（M5）", expected: "2027-03-15", grade: "B", note: "Bloomberg 報導 2027 年春季推出、可能改 OLED；日期為推估，台灣通常晚 2–4 週" },
+    priceTW: { from: 24900, config: "11 吋 128GB Wi-Fi", variants: [{ label: "13 吋 128GB", price: 31900 }], url: "https://www.apple.com/tw/shop/buy-ipad/ipad-air", checked: "2026-10-03" },
     twAvailable: true,
     summary: "週期過半，M5 版傳聞 2027 年春季推出；不急可等，有需要就買。",
     reasons: ["台灣 3/24 開賣，週期進度約六成。", "Bloomberg 報導下一代搭載 M5、2027 年春季推出（B 級訊號）。"],
@@ -283,6 +303,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 633,
     prev: { name: "iPad（第 10 代）", date: "2022-11-22" },
     next: { name: "iPad（A19）", expected: "2027-03-15", grade: "B", note: "Apple 程式碼出現 A19 新款，媒體預期 2027 年春季推出；日期為推估" },
+    priceTW: { from: 14900, config: "128GB Wi-Fi", variants: [{ label: "256GB", price: 18400 }], url: "https://www.apple.com/tw/shop/buy-ipad/ipad", checked: "2026-10-03" },
     twAvailable: true,
     summary: "這台入門 iPad 已上市一年半，新款已在 Apple 程式碼中現身、預計明年春天推出，不急建議等等。",
     reasons: ["台灣 2025-04-11 開賣，已走完平均週期約八成五。", "Apple 程式碼顯示下一代換 A19 晶片並支援 Apple Intelligence。"],
@@ -306,6 +327,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 1023,
     prev: { name: "iPad mini（第 6 代）", date: "2021-10-22" },
     next: { name: "iPad mini（A20 Pro）", expected: "2026-10-15", grade: "A", note: "Apple 程式碼與官方圖檔已出現新款；Bloomberg 報導 10 月底前在美國開賣，台灣通常晚約一個月" },
+    priceTW: { from: 19900, config: "128GB Wi-Fi", variants: [{ label: "256GB", price: 23400 }], url: "https://www.apple.com/tw/shop/buy-ipad/ipad-mini", checked: "2026-10-03" },
     twAvailable: true,
     summary: "新一代 iPad mini 已在 Apple 程式碼中曝光，預計這個月就會發表，先別買舊款。",
     reasons: ["Apple 程式碼與官方產品圖中已出現新 iPad mini（A20 Pro 晶片）。", "Bloomberg 報導新款 10 月底前在美國開賣，台灣通常晚約一個月。"],
@@ -330,6 +352,7 @@ export const PRODUCTS: Product[] = [
     prev: null,
     next: { name: "iPhone Duo", expected: null, grade: null, note: "尚無訊號" },
     announced: { name: "iPhone Duo", date: "2026-09-09", twRelease: "2026-10-23", source: "Apple 台灣新聞稿", url: "https://www.apple.com/tw/newsroom/2026/09/apple-unveils-iphone-duo/" },
+    priceTW: { from: 74900, config: "256GB", variants: [{ label: "512GB", price: 81900 }], url: "https://www.apple.com/tw/shop/buy-iphone/iphone-duo", checked: "2026-10-03" },
     twAvailable: true,
     summary: "首款折疊 iPhone，台灣 10/16 晚上 8 點開放預購、10/23 開賣。",
     reasons: ["9/9 與 iPhone 18 Pro 同場發表，台灣在首波開賣地區。", "台灣 10/16 晚上 8 點開放預購，10/23 開始供貨。"],
@@ -346,6 +369,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 366,
     prev: { name: "iPhone 17 Pro", date: "2025-09-19" },
     next: { name: "iPhone 20 Pro（暫名）", expected: "2027-09-17", grade: "A", note: "依歷年規律推估 2027 年 9 月；傳聞跳過 19 直接命名 20，未經證實" },
+    priceTW: { from: 44900, config: "iPhone 18 Pro 256GB", variants: [{ label: "iPhone 18 Pro Max 256GB", price: 49900 }], url: "https://www.apple.com/tw/shop/buy-iphone/iphone-18-pro", checked: "2026-10-03" },
     twAvailable: true,
     summary: "剛於 9 月換代，距離下一代預期發表還有約 11 個月，是整個週期裡最划算的時間點。",
     reasons: [
@@ -378,6 +402,7 @@ export const PRODUCTS: Product[] = [
     avgDays: null,
     prev: null,
     next: { name: "iPhone Air 2", expected: "2027-03-15", grade: "B", note: "Bloomberg 報導 2027 年上半年推出、改雙鏡頭；日期為推估" },
+    priceTW: { from: 39900, config: "256GB", variants: [{ label: "512GB", price: 46900 }], url: "https://www.apple.com/tw/shop/buy-iphone/iphone-air", checked: "2026-10-03" },
     twAvailable: true,
     summary: "第一代已賣一年，第二代傳 2027 年上半年推出、改雙鏡頭，不急可等。",
     reasons: ["台灣 2025-09-19 開賣，是第一代。", "Bloomberg 報導 iPhone Air 2 將在 2027 年上半年推出，加上超廣角鏡頭。"],
@@ -397,6 +422,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 366,
     prev: { name: "iPhone 16", date: "2024-09-20" },
     next: { name: "iPhone 18", expected: "2027-03-15", grade: "B", note: "Bloomberg 報導數字版改到 2027 年上半年推出；日期為推估" },
+    priceTW: { from: 32900, config: "256GB", variants: [{ label: "512GB", price: 39900 }], url: "https://www.apple.com/tw/shop/buy-iphone/iphone-17", checked: "2026-10-03" },
     twAvailable: true,
     summary: "已賣滿一年，iPhone 18 改到 2027 年上半年推出，急用可買、不急可等。",
     reasons: ["台灣 2025-09-19 開賣，已超過一年。", "Bloomberg 報導數字版 iPhone 18 不在今年 9 月推出，改到 2027 年上半年。"],
@@ -420,6 +446,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 376,
     prev: { name: "iPhone 16e", date: "2025-02-28" },
     next: { name: "iPhone 18e", expected: "2027-03-15", grade: "B", note: "Bloomberg 報導 2027 年春季推出，主要升級晶片；日期為推估" },
+    priceTW: { from: 25900, config: "256GB", variants: [{ label: "512GB", price: 32900 }], url: "https://www.apple.com/tw/shop/buy-iphone/iphone-17e", checked: "2026-10-03" },
     twAvailable: true,
     summary: "下一代 iPhone 18e 預計明年春天推出、升級幅度不大，急用現在買也行。",
     reasons: ["台灣 2026-03-11 開賣，週期進度約五成。", "Bloomberg 報導 iPhone 18e 預計 2027 年春季推出，主要只升級晶片。"],
@@ -441,6 +468,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 364,
     prev: { name: "Apple Watch Series 11", date: "2025-09-19" },
     next: { name: "Apple Watch Series 13", expected: "2027-09-17", grade: "A", note: "依歷年規律每年 9 月更新，尚無具體報導" },
+    priceTW: { from: 13900, config: "最小尺寸 GPS", url: "https://www.apple.com/tw/shop/buy-watch/apple-watch", checked: "2026-10-03" },
     twAvailable: true,
     summary: "剛更新，離下一代最遠。",
     reasons: ["Series 系列近年固定每年 9 月更新。", "台灣 9/18 開賣，至今約兩週。"],
@@ -461,6 +489,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 485,
     prev: { name: "Apple Watch Ultra 3", date: "2025-09-19" },
     next: { name: "Apple Watch Ultra 5", expected: null, grade: "C", note: "尚無可靠報導；2024 年曾停更一年" },
+    priceTW: { from: 27900, config: "49mm GPS + 行動網路", url: "https://www.apple.com/tw/shop/buy-watch/apple-watch-ultra", checked: "2026-10-03" },
     twAvailable: true,
     summary: "剛更新，離下一代最遠。",
     reasons: ["台灣 9/18 與美國同步開賣，至今約兩週。", "Ultra 系列平均約 16 個月更新一次（2024 年曾停更）。"],
@@ -481,6 +510,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 914,
     prev: { name: "Apple Watch SE（第 2 代）", date: "2022-09-16" },
     next: { name: "Apple Watch SE（第 4 代）", expected: null, grade: "C", note: "今年沒有新款 SE，下一代時程不明" },
+    priceTW: { from: 7900, config: "最小尺寸 GPS", url: "https://www.apple.com/tw/shop/buy-watch/apple-watch-se", checked: "2026-10-03" },
     twAvailable: true,
     summary: "今年沒有新款 SE，下一代最快也要明年以後，需要入門款手錶現在買不太會吃虧。",
     reasons: ["2026 年秋季只更新 Series 12 與 Ultra 4，沒有 SE。", "SE 歷代改款間隔約 2–3 年。"],
@@ -503,6 +533,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 628,
     prev: { name: "Vision Pro（第一代）", date: "2024-12-17" },
     next: { name: "新一代 Vision Pro", expected: null, grade: "C", note: "據報開發處於維生狀態，最快 2028 年底才可能推出" },
+    priceTW: { from: 129900, config: "256GB", variants: [{ label: "512GB", price: 136900 }, { label: "1TB", price: 147400 }], url: "https://www.apple.com/tw/shop/buy-vision/apple-vision-pro", checked: "2026-10-03" },
     twAvailable: true,
     summary: "台灣已開賣，週期中段；下一代前景不明，有需要就買。",
     reasons: ["M5 版 2025-11-28 在台灣開賣。", "週期進度約五成；據報下一代開發已大幅縮減，短期內不會有新款。"],
@@ -525,6 +556,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 894,
     prev: { name: "AirPods 4", date: "2024-11-12" },
     next: { name: "AirPods 6", expected: null, grade: null, note: "尚無訊號" },
+    priceTW: { from: 4490, config: "AirPods 5", variants: [{ label: "配備無線充電盒", price: 5190 }], url: "https://www.apple.com/tw/shop/buy-airpods/airpods-4", checked: "2026-10-03" },
     twAvailable: true,
     summary: "剛更新，離下一代最遠。",
     reasons: ["台灣 9/18 開賣，至今約兩週。", "標準版 AirPods 平均兩年多才更新。"],
@@ -545,6 +577,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 1076,
     prev: { name: "AirPods Pro 2", date: "2022-11-07" },
     next: { name: "AirPods Pro（鏡頭版）", expected: "2027-09-15", grade: "B", note: "Bloomberg 報導鏡頭版延到 2027 年秋季；日期為推估" },
+    priceTW: { from: 7490, config: "AirPods Pro 3", url: "https://www.apple.com/tw/shop/buy-airpods/airpods-pro-3", checked: "2026-10-03" },
     twAvailable: true,
     summary: "週期約三成，下一代鏡頭版延到 2027 年秋季，有需要就買。",
     reasons: ["台灣 2025-10-31 開賣，週期進度約三成。", "Bloomberg 報導有鏡頭的 AirPods Pro 已從 2026 年規劃移除，延到 2027 年。"],
@@ -567,6 +600,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 1933,
     prev: { name: "AirPods Max", date: "2020-12-14" },
     next: { name: "AirPods Max 3", expected: null, grade: "C", note: "只有郭明錤 2025 年預測更輕的新款 2027 年量產" },
+    priceTW: { from: 17990, config: "AirPods Max 2", url: "https://www.apple.com/tw/shop/buy-airpods/airpods-max-2", checked: "2026-10-03" },
     twAvailable: true,
     summary: "AirPods Max 2 今年春天才推出，下一代沒有可靠消息，現在買是好時機。",
     reasons: ["台灣 2026-04-23 開賣，升級 H2 晶片。", "上一次大改款隔了五年多。"],
@@ -588,6 +622,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 934,
     prev: { name: "Apple TV 4K（第 2 代）", date: "2021-06-10" },
     next: { name: "Apple TV 4K（第 4 代）", expected: "2026-10-13", grade: "A", note: "新款已在 Apple 程式碼外洩；10/13 為 Bloomberg 報導的預期發表日，未經官方確認" },
+    priceTW: { from: 6900, config: "Wi-Fi 64GB", variants: [{ label: "Wi-Fi + 乙太網路 128GB", price: 8500 }], url: "https://www.apple.com/tw/shop/buy-tv/apple-tv-4k", checked: "2026-10-03" },
     twAvailable: true,
     summary: "新款已外洩、傳聞 10/13 發表，先別買。",
     reasons: ["「Apple TV 4K（第 4 代）」已出現在 Apple 程式碼（A 級訊號）。", "Bloomberg 報導 10/13 與 HomePod mini、家庭中樞同場發表。"],
@@ -611,6 +646,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 1820,
     prev: { name: "HomePod（第一代）", date: "2019-08-23" },
     next: { name: "HomePod（第 3 代）", expected: null, grade: "B", note: "新款仍在計畫中，Bloomberg 稱不在 10/13 發表名單" },
+    priceTW: { from: 10990, config: "HomePod", url: "https://www.apple.com/tw/shop/buy-homepod/homepod", checked: "2026-10-03" },
     twAvailable: true,
     override: { verdict: "care", reason: "週期進度約七成，且多方報導新款仍在開發中，雖無明確時間仍列為小心。" },
     summary: "接近週期尾聲，新款仍在計畫中，急用再買。",
@@ -634,6 +670,7 @@ export const PRODUCTS: Product[] = [
     avgDays: null,
     prev: null,
     next: { name: "HomePod mini（第 2 代）", expected: "2026-10-13", grade: "B", note: "Bloomberg 報導 10/13 與 Apple TV、家庭中樞同場推出" },
+    priceTW: { from: 3990, config: "HomePod mini", url: "https://www.apple.com/tw/shop/buy-homepod/homepod-mini", checked: "2026-10-03" },
     twAvailable: true,
     summary: "第一代已賣近 6 年，第 2 代傳 10/13 推出，先等一下。",
     reasons: ["現行款是 2020 年的第一代，台灣 2020-11-16 開賣。", "Bloomberg 報導第 2 代將於 10/13 推出（B 級訊號）。"],
@@ -653,6 +690,7 @@ export const PRODUCTS: Product[] = [
     avgDays: 1734,
     prev: { name: "AirTag（第一代）", date: "2021-05-24" },
     next: { name: "AirTag（第 3 代）", expected: null, grade: null, note: "尚無訊號" },
+    priceTW: { from: 990, config: "單入", variants: [{ label: "四入", price: 3390 }], url: "https://www.apple.com/tw/shop/buy-airtag/airtag", checked: "2026-10-03" },
     twAvailable: true,
     summary: "第二代剛推出，可以買。",
     reasons: ["上一代相隔近五年才更新。"],
@@ -664,6 +702,10 @@ export const PRODUCTS: Product[] = [
     ],
   },
 ];
+
+export function formatNT(n: number): string {
+  return "NT$" + n.toLocaleString("en-US");
+}
 
 export function getProduct(slug: string): Product | undefined {
   return PRODUCTS.find((p) => p.slug === slug);

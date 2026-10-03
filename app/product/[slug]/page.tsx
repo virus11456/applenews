@@ -4,7 +4,7 @@ import { Subscribe } from "@/components/Chrome";
 import { Badge } from "@/components/Badge";
 import { DeviceIcon, Icon } from "@/components/Icons";
 import { Name } from "@/components/Name";
-import { CATEGORY_LABEL, getProduct, PRODUCTS } from "@/lib/products";
+import { CATEGORY_LABEL, formatNT, getProduct, PRODUCTS } from "@/lib/products";
 import { announcedLine, compute, daysBetween, overdueDays, pct, pctLabel, pendingTW, todayISO, VERDICT_META } from "@/lib/verdict";
 
 export const revalidate = 3600;
@@ -23,8 +23,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-const CHANNELS = ["Apple 官網", "momo", "PChome 24h", "蝦皮商城", "燦坤 / 全國電子"];
-const CARRIERS = ["空機 ＋ 自選資費", "中華電信", "遠傳", "台灣大哥大"];
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const p = getProduct((await params).slug);
@@ -68,12 +66,14 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 {overdueDays(c.days, p.avgDays) !== null && <div className="meter-note" style={{ color: meta.color }}>已超過平均週期 {overdueDays(c.days, p.avgDays)} 天</div>}
                 <div className="meter-scale"><span>可以買 ‹30%</span><span>觀望</span><span>小心 ›75%</span></div>
               </div>
-              <div className="side-prices">
-                <div><span className="muted">官網價（起）</span><span className="mono">[NT$ 官網價]</span></div>
-                <div><span className="muted">通路最低</span><span className="mono" style={{ color: "#1A6B43" }}>[NT$ 最低價] · [通路]</span></div>
-              </div>
-              <a href="#price" className="btn btn-primary btn-block"><Icon.tag />看台灣通路最低價</a>
-              <a href="#carrier" className="btn btn-outline btn-block"><Icon.phone />比較三大電信方案</a>
+              {p.priceTW && (
+                <div className="side-prices">
+                  <div className="price-head"><span className="muted">Apple 台灣官網價</span><span className="muted sm">查價 {p.priceTW.checked}</span></div>
+                  <div className="price-main"><span className="mono">{formatNT(p.priceTW.from)}</span> 起<span className="muted sm">（{p.priceTW.config}）</span></div>
+                  {p.priceTW.variants?.map((v) => <div key={v.label}><span className="muted">{v.label}</span><span className="mono">{formatNT(v.price)}</span></div>)}
+                </div>
+              )}
+              {p.priceTW && <a href={p.priceTW.url} target="_blank" rel="noreferrer" className="btn btn-primary btn-block"><Icon.tag />到 Apple 台灣官網購買</a>}
             </aside>
           </div>
         </div>
@@ -105,38 +105,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
         </section>
 
-        <section id="price">
-          <h2 className="h-icon"><Icon.tag size={24} /><span>台灣價格</span></h2>
-          <div className="muted">官網價、各通路最低價與歷代降價曲線 · 每日更新，附時間戳</div>
-          <div className="two">
-            <div className="panel table t3">
-              <div className="tr th"><div>通路</div><div>價格</div><div>回饋／分期</div></div>
-              {CHANNELS.map((ch) => <div className="tr" key={ch}><div className="b">{ch}</div><div className="mono">[NT$ —]</div><div className="muted">[回饋]</div></div>)}
-              <div className="panel-foot row"><span>更新 {today}</span><a href="#price">查看歷史價格 →</a></div>
-            </div>
-            <div className="panel">
-              <div className="b">歷代降價曲線</div>
-              <div className="muted sm">上市後各時點通路平均降幅（依歷代資料計算）</div>
-              <div className="bars">
-                {[["1 個月", 8], ["3 個月", 22], ["6 個月", 40], ["12 個月", 64]].map(([l, w]) => (
-                  <div className="bar-row s" key={l as string}><div className="muted">{l}</div><div className="track"><div className="fill" style={{ width: `${w}%`, background: "#1F4FA6" }} /></div><div className="mono r">[X%]</div></div>
-                ))}
-              </div>
-              <div className="panel-foot">示意長條，正式版由 prices 資料表自動計算。</div>
-            </div>
-          </div>
-        </section>
-
-        {p.category === "iphone" && (
-          <section id="carrier">
-            <h2 className="h-icon"><Icon.sim size={24} /><span>電信方案 vs 空機</span></h2>
-            <div className="muted">實付總額 ＝ 專案價 ＋ 月租 × 合約期數，與「空機 ＋ 自選資費」並列</div>
-            <div className="panel table t5">
-              <div className="tr th"><div>方案</div><div>專案價</div><div>月租</div><div>期數</div><div>實付總額</div></div>
-              {CARRIERS.map((cr) => <div className="tr" key={cr}><div className="b">{cr}</div><div className="mono">[價格]</div><div className="mono">[月租]</div><div className="mono">30</div><div className="mono b">[總額]</div></div>)}
-            </div>
-          </section>
-        )}
 
         <section className="two">
           <div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CATEGORY_LABEL, type Product } from "@/lib/products";
+import { CATEGORY_LABEL, formatNT, type Product } from "@/lib/products";
 import { announcedLine, compute, monthsBetween, overdueDays, pct, pctLabel, pendingTW, VERDICT_META } from "@/lib/verdict";
 import { Badge } from "./Badge";
 import { CATEGORY_ICON, DeviceIcon, Icon } from "./Icons";
@@ -53,6 +53,7 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
         {overdueDays(c.days, p.avgDays) !== null && <div className="meter-note" style={{ color: meta.color }}>已超過平均週期 {overdueDays(c.days, p.avgDays)} 天</div>}
       </div>}
       <dl className="facts">
+        {p.priceTW && <><dt><Icon.tag size={14} />官網價</dt><dd><span className="mono b">{formatNT(p.priceTW.from)}</span> 起</dd></>}
         <dt>{c.days === null ? "預計開賣" : "本代上市"}</dt><dd className="mono">{p.releasedTW}</dd>
         <dt className="dt-top"><Icon.history size={14} />歷代上市</dt>
         <dd>
@@ -68,7 +69,7 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
         {p.next.expected ? (<><dt>下一代預期</dt><dd><span className="mono">{p.next.expected.slice(0, 7)}</span> · <Name text={p.next.name} /></dd></>)
           : hasSignal ? (<><dt>下一代預期</dt><dd>{p.next.note}</dd></>) : null}
       </dl>
-      <Link href={`/product/${p.slug}`} className="card-link">查看判定與台灣價格<Icon.arrow size={16} /></Link>
+      <Link href={`/product/${p.slug}`} className="card-link">查看完整判定與歷代<Icon.arrow size={16} /></Link>
     </article>
   );
 }
