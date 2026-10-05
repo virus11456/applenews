@@ -628,6 +628,7 @@ export const PRODUCTS: Product[] = [
     summary: "新款已外洩、傳聞 10/13 發表，先別買。",
     reasons: ["「Apple TV 4K（第 4 代）」已出現在 Apple 程式碼（A 級訊號）。", "Bloomberg 報導 10/13 與 HomePod mini、家庭中樞同場發表。"],
     signals: [
+      { grade: "B", text: "Gurman：Apple 計畫 10/13 舉辦發表活動，推出家庭中樞、新 HomePod mini 與 Apple TV 4K。", source: "Bloomberg Power On／MacRumors", date: "2026-10-04" },
       { grade: "A", text: "「Apple TV 4K（第 4 代）」圖檔出現在 Apple 程式碼，型號 AppleTV18,1 已於 9/8 被發現。", source: "MacRumors（程式碼分析）", date: "2026-09-25" },
       { grade: "B", text: "Bloomberg 報導新款 Apple TV 將於 10/13 與 HomePod mini、家庭中樞同場發表。", source: "Bloomberg／9to5Mac", date: "2026-09-30" },
     ],
@@ -676,6 +677,7 @@ export const PRODUCTS: Product[] = [
     summary: "第一代已賣近 6 年，第 2 代傳 10/13 推出，先等一下。",
     reasons: ["現行款是 2020 年的第一代，台灣 2020-11-16 開賣。", "Bloomberg 報導第 2 代將於 10/13 推出（B 級訊號）。"],
     signals: [
+      { grade: "B", text: "Gurman：Apple 計畫 10/13 舉辦發表活動，推出家庭中樞、新 HomePod mini 與 Apple TV 4K。", source: "Bloomberg Power On／MacRumors", date: "2026-10-04" },
       { grade: "B", text: "Gurman：Apple 將在 10/13 推出新 HomePod mini、家庭中樞與 Apple TV。", source: "Bloomberg／MacRumors", date: "2026-09-30" },
       { grade: "B", text: "Gurman：家庭中樞與更新的 HomePod mini 最快 10 月推出。", source: "Bloomberg／MacRumors", date: "2026-09-21" },
     ],
