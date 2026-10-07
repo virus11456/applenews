@@ -120,6 +120,7 @@ export const PRODUCTS: Product[] = [
     summary: "M6 基本款與 OLED 觸控螢幕高階款都傳 10–11 月推出，不管買哪一款都建議先等等。",
     reasons: ["Bloomberg 報導 M6 基本款預計 10 月推出（B 級訊號）。", "Gurman 10/1 表示 OLED 觸控螢幕的 14、16 吋高階款（M5 Pro／Max）最快 10 月、可能 11 月推出。"],
     signals: [
+      { grade: "B", text: "macOS 27.2 測試版 3 新增 Dock 圖示長按放大動畫，和 iPhone／iPad 的觸控操作一樣，觸控 MacBook 跡象更明顯。", source: "MacRumors", date: "2026-10-06" },
       { grade: "C", text: "macOS 27.2 測試版 3 加入多個 app 的觸控手勢程式碼，可能是為 OLED 觸控 MacBook 準備，但也可能只是 iPad 並行（Sidecar）功能。", source: "MacRumors（程式碼分析）", date: "2026-10-05" },
       { grade: "B", text: "Gurman：首款 OLED 觸控螢幕 MacBook Pro（14、16 吋，M5 Pro／M5 Max）今年秋天推出，最快 10 月，可能延到 11 月。", source: "Bloomberg Power On／MacRumors", date: "2026-10-01" },
       { grade: "B", text: "Bloomberg（Gurman）報導 M6 版 14 吋 MacBook Pro 基本款預計 10 月推出，M6 不會有 Pro／Max 版。", source: "Bloomberg／MacRumors", date: "2026-08-25" },
@@ -629,6 +630,7 @@ export const PRODUCTS: Product[] = [
     summary: "新款已外洩、傳聞 10/13 發表，先別買。",
     reasons: ["「Apple TV 4K（第 4 代）」已出現在 Apple 程式碼（A 級訊號）。", "Bloomberg 報導 10/13 與 HomePod mini、家庭中樞同場發表。"],
     signals: [
+      { grade: "B", text: "audioOS 與 macOS 27.2 測試版出現四顆 HomePod 環繞音效的程式碼與圖示，傳為新 Apple TV 4K 功能。", source: "MacRumors", date: "2026-10-06" },
       { grade: "A", text: "tvOS 27.2 測試版 3 程式碼加入 Apple Intelligence 設定與 Siri 訊息介面，為支援 Siri AI 的新 Apple TV 鋪路。", source: "MacRumors（程式碼分析）", date: "2026-10-05" },
       { grade: "B", text: "Gurman：Apple 計畫 10/13 舉辦發表活動，推出家庭中樞、新 HomePod mini 與 Apple TV 4K。", source: "Bloomberg Power On／MacRumors", date: "2026-10-04" },
       { grade: "A", text: "「Apple TV 4K（第 4 代）」圖檔出現在 Apple 程式碼，型號 AppleTV18,1 已於 9/8 被發現。", source: "MacRumors（程式碼分析）", date: "2026-09-25" },
@@ -679,6 +681,7 @@ export const PRODUCTS: Product[] = [
     summary: "第一代已賣近 6 年，第 2 代傳 10/13 推出，先等一下。",
     reasons: ["現行款是 2020 年的第一代，台灣 2020-11-16 開賣。", "Bloomberg 報導第 2 代將於 10/13 推出（B 級訊號）。"],
     signals: [
+      { grade: "B", text: "HomePod mini 在美國、英國、日本等地官網出貨等待拉長到最多 8 週，部分顏色缺貨，常見於換代前。", source: "MacRumors", date: "2026-10-06" },
       { grade: "B", text: "Gurman：Apple 計畫 10/13 舉辦發表活動，推出家庭中樞、新 HomePod mini 與 Apple TV 4K。", source: "Bloomberg Power On／MacRumors", date: "2026-10-04" },
       { grade: "B", text: "Gurman：Apple 將在 10/13 推出新 HomePod mini、家庭中樞與 Apple TV。", source: "Bloomberg／MacRumors", date: "2026-09-30" },
       { grade: "B", text: "Gurman：家庭中樞與更新的 HomePod mini 最快 10 月推出。", source: "Bloomberg／MacRumors", date: "2026-09-21" },

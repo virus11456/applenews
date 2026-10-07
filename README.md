@@ -125,6 +125,7 @@ npm run build
 
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
+- 2026-10-07：每日檢查。官網產品線與 28 條價格都沒有變動。HomePod mini 新增訊號（海外官網出貨拉長到 8 週、部分顏色缺貨）；Apple TV 4K 新增四顆 HomePod 環繞音效程式碼；MacBook Pro 新增 macOS 27.2 Dock 長按觸控動畫。
 - 2026-10-06：每日檢查。官網產品線與 28 條價格都沒有變動。Apple TV 4K 新增 A 級訊號（tvOS 27.2 beta 3 出現 Apple Intelligence 設定）；MacBook Pro 新增 C 級訊號（macOS 27.2 beta 3 觸控手勢程式碼，也可能只是 Sidecar）。
 - 2026-10-05：每日檢查。官網產品線與 28 條價格都沒有變動（Mac 頁導覽把兩款顯示器合併成「顯示器」入口，兩款仍在販售）。Apple TV 4K、HomePod mini 新增 Bloomberg 10/4 訊號：Apple 計畫 10/13 舉辦發表活動。
 
