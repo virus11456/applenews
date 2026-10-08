@@ -44,10 +44,10 @@ npm run build
 
 ## 部署
 
-- Vercel 專案：`applenews`（team `virus11456s-projects`），Production 網址 `https://applenews-five.vercel.app`（別名 `applenews-virus11456s-projects.vercel.app`）
-- GitHub repo：`https://github.com/virus11456/applenews`（`main` 分支，已 push）。
-- 目前部署方式：push `main` 到 GitHub 後，以 Vercel API（MCP `create_deployment`，`gitSource` = `virus11456/applenews@main`，`target: production`）手動觸發，從 GitHub 拉原始碼建置。
-- Vercel 新專案 `applenews-site` 已連上 GitHub `virus11456/applenews`（production branch `main`），push 即自動部署；網址 `https://applenews-site.vercel.app`。舊專案 `applenews`（未接 Git）待刪除後，把 `applenews.me`、`www.applenews.me`（308 轉址到 apex）、`applenews-five.vercel.app` 移到新專案。
+- Vercel 專案：`applenews-site`（team `virus11456s-projects`），已連上 GitHub `virus11456/applenews`（production branch `main`），push `main` 即自動部署，不需手動觸發。
+- 正式網址：`https://applenews.me`；`www.applenews.me` 308 轉址到 apex；`applenews-five.vercel.app`、`applenews-site.vercel.app` 也指向同一專案。
+- GitHub repo：`https://github.com/virus11456/applenews`（`main` 分支）。
+- 舊專案 `applenews`（未接 Git、需手動部署）已於 2026-10-08 刪除，網域全部移到 `applenews-site`。
 
 ## 更新紀錄
 
@@ -125,6 +125,7 @@ npm run build
 
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
+- 2026-10-08：每日檢查，官網產品線、價格與新聞皆無變動。刪除舊 Vercel 專案 `applenews`，`applenews.me`、`www.applenews.me`（308 轉址）、`applenews-five.vercel.app` 移到 `applenews-site`，之後 push `main` 即自動上線。
 - 2026-10-07：每日檢查。官網產品線與 28 條價格都沒有變動。HomePod mini 新增訊號（海外官網出貨拉長到 8 週、部分顏色缺貨）；Apple TV 4K 新增四顆 HomePod 環繞音效程式碼；MacBook Pro 新增 macOS 27.2 Dock 長按觸控動畫。
 - 2026-10-06：每日檢查。官網產品線與 28 條價格都沒有變動。Apple TV 4K 新增 A 級訊號（tvOS 27.2 beta 3 出現 Apple Intelligence 設定）；MacBook Pro 新增 C 級訊號（macOS 27.2 beta 3 觸控手勢程式碼，也可能只是 Sidecar）。
 - 2026-10-05：每日檢查。官網產品線與 28 條價格都沒有變動（Mac 頁導覽把兩款顯示器合併成「顯示器」入口，兩款仍在販售）。Apple TV 4K、HomePod mini 新增 Bloomberg 10/4 訊號：Apple 計畫 10/13 舉辦發表活動。
