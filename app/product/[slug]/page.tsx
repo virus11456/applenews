@@ -19,6 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${p.name} 現在買划算嗎？${VERDICT_META[c.verdict].label}`,
     description: p.summary,
+    alternates: { canonical: `/product/${p.slug}` },
+    openGraph: { title: `${p.name} 現在該買嗎？${VERDICT_META[c.verdict].label}`, description: p.summary, url: `/product/${p.slug}` },
   };
 }
 
