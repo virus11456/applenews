@@ -125,6 +125,7 @@ npm run build
 
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
+- 2026-10-09：每日檢查。官網產品線與 28 條價格都沒有變動。Apple 官方預告 10/13「Welcome home」家庭產品發表：Apple TV 4K、HomePod mini 新增 A 級訊號（HomePod mini 下一代升為 A 級）。Bloomberg 10/8 報導 OLED 觸控 MacBook Pro、M6 MacBook Pro、OLED iPad mini、M6 iMac 約 10/27 發表：三條預期日改為 2026-10-27 並改寫 summary／reasons。
 - 2026-10-08：每日檢查，官網產品線、價格與新聞皆無變動。刪除舊 Vercel 專案 `applenews`，`applenews.me`、`www.applenews.me`（308 轉址）、`applenews-five.vercel.app` 移到 `applenews-site`，之後 push `main` 即自動上線。
 - 2026-10-07：每日檢查。官網產品線與 28 條價格都沒有變動。HomePod mini 新增訊號（海外官網出貨拉長到 8 週、部分顏色缺貨）；Apple TV 4K 新增四顆 HomePod 環繞音效程式碼；MacBook Pro 新增 macOS 27.2 Dock 長按觸控動畫。
 - 2026-10-06：每日檢查。官網產品線與 28 條價格都沒有變動。Apple TV 4K 新增 A 級訊號（tvOS 27.2 beta 3 出現 Apple Intelligence 設定）；MacBook Pro 新增 C 級訊號（macOS 27.2 beta 3 觸控手勢程式碼，也可能只是 Sidecar）。
