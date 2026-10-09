@@ -38,6 +38,7 @@ npm run build
 - `components/CategoryNav.tsx` — 分類切換（client component）：頂部選單與首頁分類列都連到 `/?cat=<分類>`，首頁只顯示該分類的卡片（`.grid[data-filter]` 以 CSS 隱藏其他分類）。分類鍵沿用 `CATEGORY_LABEL`：iphone／ipad／mac／wear／home；不帶 `cat` 即為全部。
 - `app/sitemap.ts`、`app/robots.ts` — 網站地圖與 robots（網址一律 `https://applenews.me`）。
 - `app/opengraph-image.tsx`、`app/product/[slug]/opengraph-image.tsx`、`lib/og.tsx` — 分享預覽圖（1200×630）：產品頁含剪影、判定徽章與一句結論；中文字型從 Google Fonts 只抓用到的字。
+- `app/updates/page.tsx` — 「最近消息」頁：彙整所有產品線的 signals，依日期新到舊排列，同一則消息影響多條產品線時合併顯示；首頁發表倒數與頁尾有連結。
 - `lib/events.ts` — 即將到來的 Apple 發表會（日期、官方確認或媒體報導、來源、相關產品線）；過了日期自動從首頁消失。每日檢查時一併維護。
 - `components/EventStrip.tsx` — 首頁「即將到來的發表」倒數區塊，連到相關產品頁。
 - `app/product/[slug]/page.tsx` — 產品頁：判定、週期、Apple 台灣官網價（連到官網購買頁）、下一代訊號、規格建議、歷代上市時間。
@@ -129,6 +130,7 @@ npm run build
 
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
+- 2026-10-09：新增「最近消息」頁（/updates），彙整所有產品線的下一代消息與來源，並加入 sitemap。
 - 2026-10-09：Google 搜尋與分享：新增 sitemap.xml、robots.txt、每頁 canonical 網址；新增分享預覽圖（貼到 LINE／FB 會顯示產品剪影、判定與結論）。
 - 2026-10-09：首頁新增「即將到來的發表」倒數：10/13「Welcome home」（官方確認：Apple TV 4K、HomePod mini）、10/27 Mac 與 iPad mini（Bloomberg 報導：MacBook Pro、iMac、iPad mini）。
 - 2026-10-09：移除尚未實作功能的宣稱：首頁與產品頁的訂閱／LINE 區塊、頁首「訂閱提醒」、產品頁「NCC 認證監看中」、假的「判定紀錄」（改成歷代上市時間表）、頁尾無作用連結；判定說明改為實際的每日檢查方式；無訊號時改顯示「目前沒有關於下一代的可靠消息」；頁尾價格說明改為以 Apple 台灣官網為準。

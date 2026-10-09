@@ -40,6 +40,7 @@ export function EventStrip({ today }: { today: string }) {
             );
           })}
         </div>
+        <Link href="/updates" className="events-more">看所有最近消息<Icon.arrow size={16} /></Link>
       </div>
     </section>
   );

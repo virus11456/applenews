@@ -216,3 +216,16 @@ p { margin: 0; }
 .event-chip:hover { background: var(--line-2); text-decoration: none; }
 @media (max-width: 480px) { .event { flex-direction: column; gap: 8px; } .event-when { width: auto; display: flex; gap: 10px; align-items: baseline; } }
 .event-note .nowrap { white-space: nowrap; }
+
+/* 最近消息 */
+.updates h1.h-icon { font-size: 26px; }
+.upd-day { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.upd-date { font-size: 14px; font-weight: 600; color: var(--muted); }
+.upd-list { gap: 0; padding: 4px 20px; }
+.upd { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line-2); }
+.upd:last-child { border-bottom: 0; }
+.upd .grade-box { flex: none; }
+.upd-body { min-width: 0; display: flex; flex-direction: column; gap: 8px; line-height: 1.6; overflow-wrap: anywhere; }
+.upd-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-size: 13px; }
+.upd-meta .event-chip { white-space: normal; }
+.events-more { margin-top: 12px; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
