@@ -1,4 +1,3 @@
-import { Subscribe } from "@/components/Chrome";
 import { Icon } from "@/components/Icons";
 import { Badge } from "@/components/Badge";
 import { CategoryGrid } from "@/components/CategoryNav";
@@ -39,8 +38,7 @@ export default function Home() {
         <div className="container how">
           <div>
             <h2 className="h-icon"><Icon.scale size={24} />我們怎麼判定</h2>
-            <p>週期進度 ＝ 台灣開賣至今天數 ÷ 歷代平均更新天數。進度低於 30% 為「可以買」；超過 75% 且下一代有 B 級以上訊號為「小心」；A 級訊號且預期 60 天內推出為「先別買」。NCC 認證資料庫每日爬取，出現新型號即列為 A 級訊號。</p>
-            <a href="#how" className="card-link">完整判定規則與訊號分級<Icon.arrow size={16} /></a>
+            <p>週期進度 ＝ 台灣開賣至今天數 ÷ 歷代平均更新天數。進度低於 30% 為「可以買」；超過 75% 且下一代有 B 級以上訊號為「小心」；A 級訊號且預期 60 天內推出為「先別買」。每天比對 Apple 台灣官網與價格，並追蹤 Apple 新聞稿、Bloomberg、MacRumors、9to5Mac 等報導，有新消息就更新訊號與判定。</p>
           </div>
           <div className="grades">
             <div className="grade"><div className="mono grade-l">A</div><div className="grade-t">官方或實證</div><div className="muted">新聞稿、邀請函、程式碼、NCC／BSMI、通路到貨</div></div>
@@ -49,8 +47,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Subscribe title="判定一變，先通知你" sub="選擇你在意的產品線，判定變動或台灣通路降價時透過 Email 或 LINE 推播。" />
     </>
   );
 }

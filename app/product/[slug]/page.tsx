@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Subscribe } from "@/components/Chrome";
 import { Badge } from "@/components/Badge";
 import { DeviceIcon, Icon } from "@/components/Icons";
 import { Name } from "@/components/Name";
@@ -97,11 +96,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <div className="muted">{p.next.expected ? `預期 ${p.next.expected.slice(0, 7)}` : "時間未定"} · 訊號依可信度分級，點開看原文</div>
           <div className="panel table">
             <div className="tr th"><div>等級</div><div>訊號</div><div>來源</div><div>日期</div></div>
-            {p.signals.length === 0 && <div className="tr"><div><span className="grade-box dim">—</span></div><div className="muted">[尚無 B／C 級傳聞 — 編輯審核後自動加入此處]</div><div className="muted">—</div><div className="mono muted">—</div></div>}
+            {p.signals.length === 0 && <div className="tr"><div><span className="grade-box dim">—</span></div><div className="muted">目前沒有關於下一代的可靠消息。</div><div className="muted">—</div><div className="mono muted">—</div></div>}
             {p.signals.map((s, i) => (
               <div className="tr" key={i}><div><span className={`grade-box g-${s.grade}`}>{s.grade}</span></div><div>{s.text}</div><div className="muted">{s.source}</div><div className="mono muted">{s.date}</div></div>
             ))}
-            <div className="tr ncc"><div><span className="grade-box dashed"><Icon.shield size={18} /></span></div><div><strong>NCC 認證監看中</strong> — 每日爬取 Apple Inc. 新型號；出現即列為 A 級並推播。</div><div className="muted">NCC 型式認證</div><div className="mono muted">每日</div></div>
           </div>
         </section>
 
@@ -112,16 +110,13 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div className="panel advice">{p.specAdvice.map((a) => <div key={a.label}><span className="b">{a.label}</span><span>{a.text}</span></div>)}</div>
           </div>
           <div>
-            <h2 className="h-icon"><Icon.history size={24} /><span>判定紀錄</span></h2>
-            <div className="panel table t3log">
-              <div className="tr"><div className="mono muted">{today}</div><div><Badge v={c.verdict} /></div><div className="muted">{c.overridden ? "編輯覆寫，理由見上方。" : "每日自動判定。"}</div></div>
-              <div className="tr"><div className="mono muted">{p.releasedTW}</div><div><Badge v="buy" /></div><div className="muted">台灣開賣，自動判定。</div></div>
+            <h2 className="h-icon"><Icon.history size={24} /><span>歷代上市時間</span></h2>
+            <div className="panel table t2log">
+              {p.history.map((h) => <div className="tr" key={h.gen + h.date}><div className="mono muted">{h.date}</div><div><Name text={h.gen} /></div></div>)}
             </div>
           </div>
         </section>
       </div>
-
-      <Subscribe title={`${p.name} 判定改變或降價時通知我`} sub="只追蹤這一條產品線，不會收到其他通知。" />
     </>
   );
 }
