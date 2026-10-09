@@ -2,6 +2,7 @@ import { Icon } from "@/components/Icons";
 import { Badge } from "@/components/Badge";
 import { CategoryGrid } from "@/components/CategoryNav";
 import { ProductCard } from "@/components/ProductCard";
+import { EventStrip } from "@/components/EventStrip";
 import { PRODUCTS, type Verdict } from "@/lib/products";
 import { todayISO } from "@/lib/verdict";
 
@@ -21,6 +22,8 @@ export default function Home() {
           <div className="legend">{VERDICTS.map((v) => <Badge key={v} v={v} />)}</div>
         </div>
       </section>
+
+      <EventStrip today={today} />
 
       <section id="all" className="section">
         <div className="container">

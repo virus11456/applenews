@@ -36,6 +36,8 @@ npm run build
 - `app/page.tsx` — 首頁：全系列最新一代卡片，可依分類切換。
 - `components/Name.tsx` — 產品名稱排版：括號內（如「（M5 Pro／Max）」）不在字中間斷行；只在括號前或「／」後換行。顯示產品名稱的地方一律用 `<Name text={…} />`。
 - `components/CategoryNav.tsx` — 分類切換（client component）：頂部選單與首頁分類列都連到 `/?cat=<分類>`，首頁只顯示該分類的卡片（`.grid[data-filter]` 以 CSS 隱藏其他分類）。分類鍵沿用 `CATEGORY_LABEL`：iphone／ipad／mac／wear／home；不帶 `cat` 即為全部。
+- `lib/events.ts` — 即將到來的 Apple 發表會（日期、官方確認或媒體報導、來源、相關產品線）；過了日期自動從首頁消失。每日檢查時一併維護。
+- `components/EventStrip.tsx` — 首頁「即將到來的發表」倒數區塊，連到相關產品頁。
 - `app/product/[slug]/page.tsx` — 產品頁：判定、週期、Apple 台灣官網價（連到官網購買頁）、下一代訊號、規格建議、歷代上市時間。
 - `components/Icons.tsx` — 內嵌 SVG 圖示、`CATEGORY_ICON`（分類圖示）與自繪產品剪影（首頁卡片與產品頁的產品圖）。
 - 產品圖：一律用 `components/Icons.tsx` 的 `DeviceIcon` 自繪線條剪影（`lib/products.ts` 每筆的 `icon`），全站統一風格。不用照片，也不用 Apple 官方產品照或 logo。新增產品線時，若沒有合適的剪影，就在 `DeviceIcon` 新增一個 kind。
@@ -125,6 +127,7 @@ npm run build
 
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
+- 2026-10-09：首頁新增「即將到來的發表」倒數：10/13「Welcome home」（官方確認：Apple TV 4K、HomePod mini）、10/27 Mac 與 iPad mini（Bloomberg 報導：MacBook Pro、iMac、iPad mini）。
 - 2026-10-09：移除尚未實作功能的宣稱：首頁與產品頁的訂閱／LINE 區塊、頁首「訂閱提醒」、產品頁「NCC 認證監看中」、假的「判定紀錄」（改成歷代上市時間表）、頁尾無作用連結；判定說明改為實際的每日檢查方式；無訊號時改顯示「目前沒有關於下一代的可靠消息」；頁尾價格說明改為以 Apple 台灣官網為準。
 - 2026-10-09：每日檢查。官網產品線與 28 條價格都沒有變動。Apple 官方預告 10/13「Welcome home」家庭產品發表：Apple TV 4K、HomePod mini 新增 A 級訊號（HomePod mini 下一代升為 A 級）。Bloomberg 10/8 報導 OLED 觸控 MacBook Pro、M6 MacBook Pro、OLED iPad mini、M6 iMac 約 10/27 發表：三條預期日改為 2026-10-27 並改寫 summary／reasons。
 - 2026-10-08：每日檢查，官網產品線、價格與新聞皆無變動。刪除舊 Vercel 專案 `applenews`，`applenews.me`、`www.applenews.me`（308 轉址）、`applenews-five.vercel.app` 移到 `applenews-site`，之後 push `main` 即自動上線。
