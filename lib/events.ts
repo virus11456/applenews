@@ -14,7 +14,7 @@ export const EVENTS: AppleEvent[] = [
     date: "2026-10-13",
     title: "「Welcome home」家庭產品發表",
     confirmed: true,
-    note: "線上發表，預期推出全新家庭中樞",
+    note: "線上發表，預期推出全新家庭中樞 HomeView；Bloomberg 報導新 Apple TV、HomePod mini 10/30 美國開賣",
     source: "Apple（Greg Joswiak）",
     url: "https://www.macrumors.com/2026/10/08/apple-product-launch-october-13/",
     products: [

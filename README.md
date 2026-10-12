@@ -130,6 +130,7 @@ npm run build
 
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
+- 2026-10-12：每日檢查。官網產品線與 28 條價格都沒有變動。新增 Bloomberg（Gurman）10/10–11 訊號：Apple TV 4K（A19）與 HomePod mini（S10）10/30 美國開賣；OLED iPad mini 會明顯漲價（iPad mini reasons 同步補充）；入門 iPad 延到 2027 年初；iPad Air 2027 年改 OLED；M7 入門 MacBook Pro 2027 春季換新設計。10/13 發表倒數說明補上 10/30 開賣。
 - 2026-10-09：新增「最近消息」頁（/updates），彙整所有產品線的下一代消息與來源，並加入 sitemap。
 - 2026-10-09：Google 搜尋與分享：新增 sitemap.xml、robots.txt、每頁 canonical 網址；新增分享預覽圖（貼到 LINE／FB 會顯示產品剪影、判定與結論）。
 - 2026-10-09：首頁新增「即將到來的發表」倒數：10/13「Welcome home」（官方確認：Apple TV 4K、HomePod mini）、10/27 Mac 與 iPad mini（Bloomberg 報導：MacBook Pro、iMac、iPad mini）。

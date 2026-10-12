@@ -120,6 +120,7 @@ export const PRODUCTS: Product[] = [
     summary: "Bloomberg 報導 OLED 觸控高階款與 M6 基本款約 10/27 發表，不管買哪一款都建議先等等。",
     reasons: ["Bloomberg 10/8 報導 OLED 觸控 14、16 吋高階款與 M6 14 吋基本款約 10/27 推出（B 級訊號）。", "新款更輕薄、OLED 觸控螢幕、加入動態島。"],
     signals: [
+      { grade: "B", text: "Bloomberg 報導 2027 年春季的 M7 入門 MacBook Pro 也會換新設計；10/27 的 M6 基本款仍是舊外型。", source: "Bloomberg／9to5Mac", date: "2026-10-10" },
       { grade: "B", text: "Bloomberg：OLED 觸控 MacBook Pro（14、16 吋）與 M6 14 吋基本款約 10/27 發表，會有線上影片發表。", source: "Bloomberg／MacRumors", date: "2026-10-08" },
       { grade: "B", text: "macOS 27.2 測試版 3 新增 Dock 圖示長按放大動畫，和 iPhone／iPad 的觸控操作一樣，觸控 MacBook 跡象更明顯。", source: "MacRumors", date: "2026-10-06" },
       { grade: "C", text: "macOS 27.2 測試版 3 加入多個 app 的觸控手勢程式碼，可能是為 OLED 觸控 MacBook 準備，但也可能只是 iPad 並行（Sidecar）功能。", source: "MacRumors（程式碼分析）", date: "2026-10-05" },
@@ -287,6 +288,7 @@ export const PRODUCTS: Product[] = [
     summary: "週期過半，M5 版傳聞 2027 年春季推出；不急可等，有需要就買。",
     reasons: ["台灣 3/24 開賣，週期進度約六成。", "Bloomberg 報導下一代搭載 M5、2027 年春季推出（B 級訊號）。"],
     signals: [
+      { grade: "B", text: "Gurman：iPad Air 2027 年大改款、改用 OLED 螢幕。", source: "Bloomberg Power On／MacRumors", date: "2026-10-11" },
       { grade: "B", text: "Bloomberg 報導下一代 iPad Air 搭載 M5，預計 2027 年春季推出，可能改用 OLED。", source: "Bloomberg／AppleInsider", date: "2026-07-16" },
     ],
     specAdvice: [
@@ -313,6 +315,7 @@ export const PRODUCTS: Product[] = [
     summary: "這台入門 iPad 已上市一年半，新款已在 Apple 程式碼中現身、預計明年春天推出，不急建議等等。",
     reasons: ["台灣 2025-04-11 開賣，已走完平均週期約八成五。", "Apple 程式碼顯示下一代換 A19 晶片並支援 Apple Intelligence。"],
     signals: [
+      { grade: "B", text: "Gurman：下一代入門 iPad（J581／J582）要到 2027 年初才推出。", source: "Bloomberg Power On／MacRumors", date: "2026-10-11" },
       { grade: "B", text: "Apple 程式碼顯示新入門 iPad 搭載 A19、8GB 記憶體，預期 2027 年春季推出。", source: "MacRumors／AppleInsider", date: "2026-09-25" },
       { grade: "B", text: "Gurman 曾稱新入門 iPad 在 2026 上半年推出，後來延期。", source: "9to5Mac", date: "2026-03-22" },
     ],
@@ -335,8 +338,9 @@ export const PRODUCTS: Product[] = [
     priceTW: { from: 19900, config: "128GB Wi-Fi", variants: [{ label: "256GB", price: 23400 }], url: "https://www.apple.com/tw/shop/buy-ipad/ipad-mini", checked: "2026-10-03" },
     twAvailable: true,
     summary: "新一代 OLED iPad mini 已在 Apple 程式碼中曝光，Bloomberg 報導約 10/27 發表，先別買舊款。",
-    reasons: ["Apple 程式碼與官方產品圖中已出現新 iPad mini（A20 Pro 晶片）。", "Bloomberg 報導 OLED iPad mini 約 10/27 發表，台灣通常晚約一個月。"],
+    reasons: ["Apple 程式碼與官方產品圖中已出現新 iPad mini（A20 Pro 晶片）。", "Bloomberg 報導 OLED iPad mini 約 10/27 發表，台灣通常晚約一個月。", "新款傳聞會明顯漲價，若預算有限，等新款發表後現行款可能更划算。"],
     signals: [
+      { grade: "B", text: "Gurman：OLED iPad mini 會「明顯更貴」，美國起價可能接近 799 美元（現行 599 美元）。", source: "Bloomberg／9to5Mac", date: "2026-10-11" },
       { grade: "B", text: "Bloomberg：OLED iPad mini 約 10/27 與新 MacBook Pro、iMac 同批發表。", source: "Bloomberg／MacRumors", date: "2026-10-08" },
       { grade: "A", text: "Apple 程式碼與官方圖檔曝光新 iPad mini：A20 Pro、橫向前鏡頭、新揚聲器。", source: "MacRumors", date: "2026-09-25" },
       { grade: "B", text: "Gurman：新 iPad mini 將在 10 月底前推出。", source: "Bloomberg／MacRumors", date: "2026-08-24" },
@@ -633,6 +637,7 @@ export const PRODUCTS: Product[] = [
     summary: "Apple 已確定 10/13 發表家庭新品，新 Apple TV 幾乎確定登場，先別買。",
     reasons: ["Apple 官方預告 10/13「Welcome home」發表（A 級訊號）。", "「Apple TV 4K（第 4 代）」已出現在 Apple 程式碼，Bloomberg 報導將與 HomePod mini、家庭中樞同場發表。"],
     signals: [
+      { grade: "B", text: "Gurman：新 Apple TV 4K 搭載 A19 晶片，10/30 在美國出貨與上架；另測試可發聲尋找的新 Siri 遙控器。", source: "Bloomberg Power On／MacRumors", date: "2026-10-11" },
       { grade: "A", text: "Apple 行銷副總裁 Joswiak 正式預告 10/13「Welcome home」產品發表，主題為家庭產品。", source: "Apple（Greg Joswiak）／MacRumors", date: "2026-10-08" },
       { grade: "B", text: "audioOS 與 macOS 27.2 測試版出現四顆 HomePod 環繞音效的程式碼與圖示，傳為新 Apple TV 4K 功能。", source: "MacRumors", date: "2026-10-06" },
       { grade: "A", text: "tvOS 27.2 測試版 3 程式碼加入 Apple Intelligence 設定與 Siri 訊息介面，為支援 Siri AI 的新 Apple TV 鋪路。", source: "MacRumors（程式碼分析）", date: "2026-10-05" },
@@ -685,6 +690,7 @@ export const PRODUCTS: Product[] = [
     summary: "第一代已賣近 6 年，Apple 已確定 10/13 發表家庭新品，先等一下。",
     reasons: ["現行款是 2020 年的第一代，台灣 2020-11-16 開賣。", "Apple 官方預告 10/13「Welcome home」發表，Bloomberg 報導包含第 2 代（A 級訊號）。"],
     signals: [
+      { grade: "B", text: "Gurman：新 HomePod mini 搭載 S10 晶片，10/30 在美國出貨與上架。", source: "Bloomberg Power On／MacRumors", date: "2026-10-11" },
       { grade: "A", text: "Apple 行銷副總裁 Joswiak 正式預告 10/13「Welcome home」產品發表，主題為家庭產品。", source: "Apple（Greg Joswiak）／MacRumors", date: "2026-10-08" },
       { grade: "B", text: "HomePod mini 在美國、英國、日本等地官網出貨等待拉長到最多 8 週，部分顏色缺貨，常見於換代前。", source: "MacRumors", date: "2026-10-06" },
       { grade: "B", text: "Gurman：Apple 計畫 10/13 舉辦發表活動，推出家庭中樞、新 HomePod mini 與 Apple TV 4K。", source: "Bloomberg Power On／MacRumors", date: "2026-10-04" },
