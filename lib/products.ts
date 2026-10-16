@@ -120,6 +120,8 @@ export const PRODUCTS: Product[] = [
     summary: "Bloomberg 報導 OLED 觸控高階款與 M6 基本款約 10/27 發表，不管買哪一款都建議先等等。",
     reasons: ["Bloomberg 10/8 報導 OLED 觸控 14、16 吋高階款與 M6 14 吋基本款約 10/27 推出（B 級訊號）。", "新款更輕薄、OLED 觸控螢幕、加入動態島。"],
     signals: [
+      { grade: "B", text: "Gurman：Apple 已邀媒體參加 10/28 全天發表體驗；新 MacBook Pro 可能 11/6 在美國開賣（直營店 11/5 晚間有大規模陳列調整）。", source: "Bloomberg／MacRumors", date: "2026-10-15" },
+      { grade: "B", text: "Gurman：OLED 觸控 MacBook Pro 沿用 M5 Pro／M5 Max，M7 Pro／Max 要到 2027 年底。", source: "Bloomberg／MacRumors", date: "2026-10-15" },
       { grade: "B", text: "Bloomberg 報導 2027 年春季的 M7 入門 MacBook Pro 也會換新設計；10/27 的 M6 基本款仍是舊外型。", source: "Bloomberg／9to5Mac", date: "2026-10-10" },
       { grade: "B", text: "Bloomberg：OLED 觸控 MacBook Pro（14、16 吋）與 M6 14 吋基本款約 10/27 發表，會有線上影片發表。", source: "Bloomberg／MacRumors", date: "2026-10-08" },
       { grade: "B", text: "macOS 27.2 測試版 3 新增 Dock 圖示長按放大動畫，和 iPhone／iPad 的觸控操作一樣，觸控 MacBook 跡象更明顯。", source: "MacRumors", date: "2026-10-06" },
@@ -153,6 +155,7 @@ export const PRODUCTS: Product[] = [
     summary: "M4 iMac 在台灣已賣快兩年，Bloomberg 報導 M6 iMac 約 10/27 發表，不急建議先等等。",
     reasons: ["台灣 2024-12-05 開賣，已超過歷代平均更新週期。", "Bloomberg 10/8 報導 M6 iMac 約 10/27 發表（B 級訊號）。"],
     signals: [
+      { grade: "B", text: "Gurman：Apple 已邀媒體參加 10/28 全天發表體驗，含 M6 Mac 與新 iPad mini。", source: "Bloomberg／MacRumors", date: "2026-10-15" },
       { grade: "B", text: "Bloomberg：M6 iMac 約 10/27 與新 MacBook Pro、iPad mini 同批發表。", source: "Bloomberg／MacRumors", date: "2026-10-08" },
       { grade: "B", text: "Gurman：M6 iMac 年底前推出、會有新顏色。", source: "Bloomberg／MacRumors", date: "2026-08-23" },
       { grade: "B", text: "M6 MacBook Pro 與 iMac 預計秋季推出，最可能 10 月或 11 月初。", source: "9to5Mac", date: "2026-09-30" },
@@ -340,6 +343,7 @@ export const PRODUCTS: Product[] = [
     summary: "新一代 OLED iPad mini 已在 Apple 程式碼中曝光，Bloomberg 報導約 10/27 發表，先別買舊款。",
     reasons: ["Apple 程式碼與官方產品圖中已出現新 iPad mini（A20 Pro 晶片）。", "Bloomberg 報導 OLED iPad mini 約 10/27 發表，台灣通常晚約一個月。", "新款傳聞會明顯漲價，若預算有限，等新款發表後現行款可能更划算。"],
     signals: [
+      { grade: "A", text: "Apple 法國法規網站列出未發表的 iPad mini 聰穎雙面夾（型號 A3632），代表新款外型改變、舊保護套可能不合用。", source: "Apple 法國法規網站／MacRumors", date: "2026-10-15" },
       { grade: "B", text: "Gurman：OLED iPad mini 會「明顯更貴」，美國起價可能接近 799 美元（現行 599 美元）。", source: "Bloomberg／9to5Mac", date: "2026-10-11" },
       { grade: "B", text: "Bloomberg：OLED iPad mini 約 10/27 與新 MacBook Pro、iMac 同批發表。", source: "Bloomberg／MacRumors", date: "2026-10-08" },
       { grade: "A", text: "Apple 程式碼與官方圖檔曝光新 iPad mini：A20 Pro、橫向前鏡頭、新揚聲器。", source: "MacRumors", date: "2026-09-25" },
