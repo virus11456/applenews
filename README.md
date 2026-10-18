@@ -130,6 +130,7 @@ npm run build
 
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
+- 2026-10-18：每日檢查。官網產品線與 28 條價格都沒有變動。iPhone Duo reasons 修正：拿掉「開賣日到直營店碰運氣」，改為 MacRumors 10/17 報導美國直營店開賣日很可能沒有現場現貨。
 - 2026-10-17：每日檢查。官網產品線與 28 條價格都沒有變動。iPhone Duo summary／reasons 補上供貨狀況：Apple 向 FT 表示預購需求「非常驚人」，美國官網出貨已排到 2027 年 1 月（MacRumors 10/16）。
 - 2026-10-16：每日檢查。官網產品線與 28 條價格都沒有變動。Bloomberg 10/15：Apple 邀媒體參加 10/28 發表體驗、新 MacBook Pro 可能 11/6 美國開賣、OLED MacBook Pro 的 M7 要到 2027 年底（MacBook Pro、iMac 新增訊號，10/27 倒數說明更新）；iPad mini 新增 A 級訊號（Apple 法國法規網站出現新聰穎雙面夾 A3632）。
 - 2026-10-14：每日檢查。Apple 10/13 發表 Apple TV 4K（第 4 代）與 HomePod mini 2：兩條改為新一代並填 announced（台灣 10/15 預購；Apple TV 11/13、HomePod mini 10/30 開賣），官網價改為 NT$9,900、NT$4,790（台灣官網已不再列出舊款），history 與 avgDays 依美國首發日重算（Apple TV 1113 天、HomePod mini 2174 天）。HomeView 台灣未開賣、不列。HomePod（大）新增 C 級訊號。其他 26 條價格無變動。

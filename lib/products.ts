@@ -369,7 +369,7 @@ export const PRODUCTS: Product[] = [
     priceTW: { from: 74900, config: "256GB", variants: [{ label: "512GB", price: 81900 }], url: "https://www.apple.com/tw/shop/buy-iphone/iphone-duo", checked: "2026-10-03" },
     twAvailable: true,
     summary: "首款折疊 iPhone，台灣 10/23 開賣；美國預購已排到明年 1 月，貨很緊。",
-    reasons: ["9/9 與 iPhone 18 Pro 同場發表，台灣在首波開賣地區，10/16 晚上 8 點已開放預購，10/23 開始供貨。", "Apple 稱預購需求「非常驚人」；美國官網開放預購半小時內出貨就排到 2027 年 1 月，台灣想早拿到建議盡快下單或開賣日到直營店碰運氣。"],
+    reasons: ["9/9 與 iPhone 18 Pro 同場發表，台灣在首波開賣地區，10/16 晚上 8 點已開放預購，10/23 開始供貨。", "Apple 稱預購需求「非常驚人」；美國官網開放預購半小時內出貨就排到 2027 年 1 月，台灣想早拿到建議盡快在官網下單。", "MacRumors 10/17 報導美國直營店員工被告知開賣日現場很可能沒有現貨，不建議沒預購就去排隊（是否適用台灣未知）。"],
     signals: [],
     specAdvice: [{ label: "容量", text: "[編輯建議：依台灣售價級距與常見用途填入]" }],
     history: [{ gen: "iPhone Duo", date: "2026-10-23" }],
