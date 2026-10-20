@@ -23,12 +23,12 @@ export const EVENTS: AppleEvent[] = [
     ],
   },
   {
-    date: "2026-10-27",
-    title: "Mac 與 iPad mini 發表",
-    confirmed: false,
-    note: "OLED 觸控 MacBook Pro、M6 MacBook Pro 與 iMac、OLED iPad mini；Apple 已邀媒體 10/28 到洛杉磯體驗，無直播；新 Mac 可能 11/6 美國開賣",
-    source: "Bloomberg",
-    url: "https://www.macrumors.com/2026/10/15/apple-inviting-media-to-october-28-experience/",
+    date: "2026-10-28",
+    title: "「Pro and Tell」Mac 與 iPad mini 發表",
+    confirmed: true,
+    note: "Apple 預告下週發表，媒體 10/28 受邀到洛杉磯體驗、無直播；預期有 OLED 觸控 MacBook Pro、M6 MacBook Pro 與 iMac、OLED iPad mini，新 Mac 可能 11/6 美國開賣",
+    source: "Apple（Greg Joswiak）",
+    url: "https://www.macrumors.com/2026/10/19/apple-pro-and-tell/",
     products: [
       { slug: "macbook-pro", label: "MacBook Pro" },
       { slug: "imac", label: "iMac" },

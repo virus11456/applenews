@@ -130,6 +130,7 @@ npm run build
 
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
+- 2026-10-20：每日檢查。官網產品線與 28 條價格都沒有變動。Apple（Joswiak）10/19 預告下週「Pro and Tell」發表，媒體 10/28 受邀體驗：MacBook Pro、iMac、iPad mini 下一代預期日改為 2026-10-28 並升為 A 級、改寫 summary／reasons；首頁倒數改為 10/28「官方確認」。iPhone Duo reasons 改為台灣官網「現僅供線上預訂、每人限購兩部」與日韓不提供現場購買。
 - 2026-10-18：每日檢查。官網產品線與 28 條價格都沒有變動。iPhone Duo reasons 修正：拿掉「開賣日到直營店碰運氣」，改為 MacRumors 10/17 報導美國直營店開賣日很可能沒有現場現貨。
 - 2026-10-17：每日檢查。官網產品線與 28 條價格都沒有變動。iPhone Duo summary／reasons 補上供貨狀況：Apple 向 FT 表示預購需求「非常驚人」，美國官網出貨已排到 2027 年 1 月（MacRumors 10/16）。
 - 2026-10-16：每日檢查。官網產品線與 28 條價格都沒有變動。Bloomberg 10/15：Apple 邀媒體參加 10/28 發表體驗、新 MacBook Pro 可能 11/6 美國開賣、OLED MacBook Pro 的 M7 要到 2027 年底（MacBook Pro、iMac 新增訊號，10/27 倒數說明更新）；iPad mini 新增 A 級訊號（Apple 法國法規網站出現新聰穎雙面夾 A3632）。
