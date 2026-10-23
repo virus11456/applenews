@@ -130,6 +130,7 @@ npm run build
 
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
+- 2026-10-23：每日檢查。官網產品線與 28 條價格都沒有變動。iPhone Duo 今天台灣開賣（判定自動轉為一般判定）；新增下一代訊號：Gurman 10/22 稱 iPhone Duo 2 原型機測試螢幕下 Face ID、預計明年秋天，並考慮加大內螢幕；summary 改寫。
 - 2026-10-22：每日檢查。官網產品線與 28 條價格都沒有變動。iPhone Duo reasons 更新：Apple 向 MacRumors 證實台灣直營店開賣日不提供現場購買，需線上預約取貨時段（MacRumors 10/21）。
 - 2026-10-20：每日檢查。官網產品線與 28 條價格都沒有變動。Apple（Joswiak）10/19 預告下週「Pro and Tell」發表，媒體 10/28 受邀體驗：MacBook Pro、iMac、iPad mini 下一代預期日改為 2026-10-28 並升為 A 級、改寫 summary／reasons；首頁倒數改為 10/28「官方確認」。iPhone Duo reasons 改為台灣官網「現僅供線上預訂、每人限購兩部」與日韓不提供現場購買。
 - 2026-10-18：每日檢查。官網產品線與 28 條價格都沒有變動。iPhone Duo reasons 修正：拿掉「開賣日到直營店碰運氣」，改為 MacRumors 10/17 報導美國直營店開賣日很可能沒有現場現貨。
