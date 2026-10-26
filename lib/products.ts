@@ -372,7 +372,7 @@ export const PRODUCTS: Product[] = [
     priceTW: { from: 74900, config: "256GB", variants: [{ label: "512GB", price: 81900 }], url: "https://www.apple.com/tw/shop/buy-iphone/iphone-duo", checked: "2026-10-03" },
     twAvailable: true,
     summary: "首款折疊 iPhone，台灣 10/23 開賣但貨很緊；下一代傳明年秋天、可能加 Face ID。",
-    reasons: ["9/9 與 iPhone 18 Pro 同場發表，台灣在首波開賣地區，10/16 晚上 8 點已開放預購，10/23 開始供貨。", "Apple 稱預購需求「非常驚人」；美國官網開放預購半小時內出貨就排到 2027 年 1 月，台灣想早拿到建議盡快在官網下單。", "Apple 證實台灣直營店 10/23 開賣日不提供現場購買，要先在官網預約指定時段到店取貨；台灣官網也標示「現僅供線上預訂」、每位顧客限購兩部。"],
+    reasons: ["9/9 與 iPhone 18 Pro 同場發表，台灣在首波開賣地區，10/16 晚上 8 點已開放預購，10/23 開始供貨。", "Apple 稱預購需求「非常驚人」；美國官網開放預購半小時內出貨就排到 2027 年 1 月，台灣想早拿到建議盡快在官網下單。", "Apple 證實台灣直營店 10/23 開賣日不提供現場購買，要先在官網預約指定時段到店取貨；台灣官網也標示「現僅供線上預訂」、每位顧客限購兩部。", "首批用戶回報螢幕沿折痕裂開，iFixit 拆解發現灰塵進入轉軸可能造成損傷，Apple 尚未回應；建議加購 AppleCare+，並避免在沙灘等多灰塵環境使用。"],
     signals: [
       { grade: "B", text: "Gurman：iPhone Duo 2 原型機在外螢幕下測試 Face ID，預計明年秋天推出，是否量產未定。", source: "Bloomberg Power On／MacRumors", date: "2026-10-22" },
       { grade: "B", text: "Gurman：Apple 考慮讓之後的 iPhone Duo 內螢幕加大約半吋（7.9–8.1 吋），不會另出 Max 版。", source: "Bloomberg Power On／MacRumors", date: "2026-10-22" },
