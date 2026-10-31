@@ -132,6 +132,7 @@ npm run build
 
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
+- 2026-10-31：修正分享預覽圖建置失敗：Vercel 建置時 Google Fonts 偶爾下載失敗，原本會傳空字型清單導致整個部署失敗；改為重試三次，仍失敗就用 next/og 內建字型。
 - 2026-10-31：新增「起價變化」：28 條產品加上 `priceHistory`（依 git 紀錄回填 10/03 起的實際變動），產品頁顯示每次變化的金額與百分比、比較對象，首頁卡片顯示近 60 天變化。目前有變化的：MacBook Neo +NT$1,000（+4.4%，官網調價）、iPad mini +NT$3,000（+15.1%）、Apple TV 4K +NT$3,000（+43.5%）、HomePod mini +NT$800（+20.1%）、MacBook Pro PROLED +NT$13,000（+15.3%，比非 OLED M5 Pro）、iMac 與 M6 MacBook Pro 基本款價格不變。
 - 2026-10-31：每日檢查。MacBook Pro（PROLED XDR）在台灣官網上架獨立購買頁（buy-mac/macbook-pro-proled-xdr），價格與新聞稿一致；priceTW 改指向該頁、起價改為 PROLED 14 吋 M5 Pro NT$97,900（M6 基本款 NT$64,900 寫在 summary／reasons）。iPhone Duo reasons 更新：Apple 已承認少數內螢幕裂痕並通知直營店維修或換新（MacRumors 10/30）。其他價格無變動。
 - 2026-10-29：每日檢查。Apple 10/28 發表配備 PROLED XDR（串聯式 OLED 觸控）顯示器的 MacBook Pro：MacBook Pro 改為新一代並填 announced（台灣 10/30 預購、11/6 開賣），官網價依 Apple 台灣新聞稿：PROLED 14 吋 M5 Pro NT$97,900、16 吋 NT$114,900、14 吋 M5 Max NT$152,900，起價仍為 M6 14 吋 NT$64,900；avgDays 依美國首發日重算（274 天）；下一代改為 M7 Pro／Max（2027 年底，B）。其他價格無變動。

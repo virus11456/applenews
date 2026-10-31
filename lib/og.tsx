@@ -3,15 +3,26 @@ import { ImageResponse } from "next/og";
 export const OG_SIZE = { width: 1200, height: 630 };
 
 // 只抓這張圖用到的字，減少字型大小；抓不到就退回預設字型，不讓整頁壞掉。
-async function loadFont(text: string): Promise<ArrayBuffer | null> {
+async function loadFontOnce(text: string): Promise<ArrayBuffer | null> {
   try {
     const css = await (await fetch(`https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&text=${encodeURIComponent(text)}`)).text();
     const url = css.match(/src: url\((.+?)\) format\('(opentype|truetype)'\)/)?.[1];
     if (!url) return null;
-    return await (await fetch(url)).arrayBuffer();
+    const res = await fetch(url);
+    return res.ok ? await res.arrayBuffer() : null;
   } catch {
     return null;
   }
+}
+
+// 網路偶爾失敗：重試三次，仍失敗就用 next/og 內建字型（中文可能缺字，但不會讓整個建置失敗）
+async function loadFont(text: string): Promise<ArrayBuffer | null> {
+  for (let i = 0; i < 3; i++) {
+    const f = await loadFontOnce(text);
+    if (f) return f;
+    await new Promise((r) => setTimeout(r, 500 * (i + 1)));
+  }
+  return null;
 }
 
 export async function ogImage(opts: { eyebrow: string; title: string; sub: string; badge?: { label: string; color: string }; icon?: React.ReactNode }) {
@@ -19,7 +30,7 @@ export async function ogImage(opts: { eyebrow: string; title: string; sub: strin
   const font = await loadFont(text);
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", background: "#F6F6F3", padding: "64px 72px", fontFamily: "NotoTC", color: "#141413" }}>
+      <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", background: "#F6F6F3", padding: "64px 72px", ...(font ? { fontFamily: "NotoTC" } : {}), color: "#141413" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "flex", fontSize: 40, fontWeight: 900, letterSpacing: 4 }}>買點</div>
           <div style={{ display: "flex", fontSize: 26, color: "#5C5C5C" }}>{opts.eyebrow}</div>
@@ -37,6 +48,6 @@ export async function ogImage(opts: { eyebrow: string; title: string; sub: strin
         </div>
       </div>
     ),
-    { ...OG_SIZE, fonts: font ? [{ name: "NotoTC", data: font, weight: 900, style: "normal" }] : [] },
+    font ? { ...OG_SIZE, fonts: [{ name: "NotoTC", data: font, weight: 900, style: "normal" }] } : OG_SIZE,
   );
 }
