@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Icon } from "@/components/Icons";
+import UpdatesFilterSync from "@/components/UpdatesFilterSync";
 import { CATEGORY_LABEL, formatNT, PRODUCTS } from "@/lib/products";
 import { deltaDir, deltaText, priceChanges } from "@/lib/price";
 
@@ -45,10 +46,11 @@ export default function UpdatesPage() {
           <h1 className="h-icon"><Icon.radar size={26} /><span>最近消息</span></h1>
           <div className="muted">A 官方或實證 · B 高信譽報導 · C 單一來源傳聞 · 價 台灣官網價格變化</div>
         </div>
-        {/* 篩選用 radio + CSS，不需要 JavaScript，頁面仍是靜態產生 */}
+        {/* 篩選用 radio + CSS，頁面仍是靜態產生；UpdatesFilterSync 讓 #price／#news 網址直接開到對應篩選 */}
         <input type="radio" name="upd-f" id="f-all" className="upd-radio" defaultChecked />
         <input type="radio" name="upd-f" id="f-price" className="upd-radio" />
         <input type="radio" name="upd-f" id="f-news" className="upd-radio" />
+        <UpdatesFilterSync />
         <div className="upd-filter" role="group" aria-label="篩選">
           <label htmlFor="f-all">全部 <span className="mono">{rows.length}</span></label>
           <label htmlFor="f-price">價格變化 <span className="mono">{prices.length}</span></label>
