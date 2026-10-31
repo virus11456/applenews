@@ -244,3 +244,6 @@ p { margin: 0; }
 .phist-top .b { margin-left: auto; }
 .phist-kind { font-size: 12px; font-weight: 700; padding: 1px 6px; border-radius: 6px; background: var(--ground); white-space: nowrap; }
 .phist-sub { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 13px; }
+.side-prices .pgen { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; padding: 8px 10px; border-radius: 8px; background: var(--ground); }
+.side-prices .pgen .pchg { font-size: 15px; }
+.side-prices .pgen-note { display: block; margin-top: -4px; overflow-wrap: anywhere; }

@@ -4,7 +4,7 @@ import { Badge } from "@/components/Badge";
 import { DeviceIcon, Icon } from "@/components/Icons";
 import { Name } from "@/components/Name";
 import { CATEGORY_LABEL, formatNT, getProduct, PRODUCTS } from "@/lib/products";
-import { deltaDir, deltaText, priceChanges, priceKindLabel } from "@/lib/price";
+import { deltaDir, deltaText, genChange, priceChanges, priceKindLabel } from "@/lib/price";
 import { announcedLine, compute, daysBetween, overdueDays, pct, pctLabel, pendingTW, todayISO, VERDICT_META } from "@/lib/verdict";
 
 export const revalidate = 3600;
@@ -72,6 +72,13 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 <div className="side-prices">
                   <div className="price-head"><span className="muted">Apple 台灣官網價</span><span className="muted sm">查價 {p.priceTW.checked}</span></div>
                   <div className="price-main"><span className="mono">{formatNT(p.priceTW.from)}</span> 起<span className="muted sm">（{p.priceTW.config}）</span></div>
+                  {(() => {
+                    const g = genChange(p);
+                    if (g) return <div className="pgen"><span className="muted">比上一代</span><span className={`pchg pchg-${deltaDir(g)} mono b`}>{deltaText(g)}</span></div>;
+                    if (!p.prev) return <div className="pgen"><span className="muted">比上一代</span><span className="muted">首代，無上一代</span></div>;
+                    return null;
+                  })()}
+                  {genChange(p)?.vsLabel && <div className="muted sm pgen-note">以上市價比較：{genChange(p)!.label} vs {genChange(p)!.vsLabel}</div>}
                   {p.priceTW.variants?.map((v) => <div key={v.label}><span className="muted">{v.label}</span><span className="mono">{formatNT(v.price)}</span></div>)}
                 </div>
               )}
