@@ -96,6 +96,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                       </li>
                     ))}
                   </ol>
+                  <a href="/updates#price" className="phist-all sm">看所有產品的價格變化 →</a>
                 </div>
               )}
               {p.priceTW && <a href={p.priceTW.url} target="_blank" rel="noreferrer" className="btn btn-primary btn-block"><Icon.tag />到 Apple 台灣官網購買</a>}
