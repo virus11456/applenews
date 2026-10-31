@@ -45,10 +45,20 @@ export default function UpdatesPage() {
           <h1 className="h-icon"><Icon.radar size={26} /><span>最近消息</span></h1>
           <div className="muted">A 官方或實證 · B 高信譽報導 · C 單一來源傳聞 · 價 台灣官網價格變化</div>
         </div>
+        {/* 篩選用 radio + CSS，不需要 JavaScript，頁面仍是靜態產生 */}
+        <input type="radio" name="upd-f" id="f-all" className="upd-radio" defaultChecked />
+        <input type="radio" name="upd-f" id="f-price" className="upd-radio" />
+        <input type="radio" name="upd-f" id="f-news" className="upd-radio" />
+        <div className="upd-filter" role="group" aria-label="篩選">
+          <label htmlFor="f-all">全部 <span className="mono">{rows.length}</span></label>
+          <label htmlFor="f-price">價格變化 <span className="mono">{prices.length}</span></label>
+          <label htmlFor="f-news">消息 <span className="mono">{signals.length}</span></label>
+        </div>
         {[...byDate.entries()].map(([date, its]) => {
           const [y, m, d] = date.split("-").map(Number);
+          const kinds = `${its.some((r) => r.price) ? " has-price" : ""}${its.some((r) => r.signal) ? " has-news" : ""}`;
           return (
-            <div className="upd-day" key={date}>
+            <div className={`upd-day${kinds}`} key={date}>
               <div className="mono upd-date">{y}/{m}/{d}（{WEEKDAY[new Date(`${date}T00:00:00Z`).getUTCDay()]}）</div>
               <div className="panel upd-list">
                 {its.map((r, i) => {
@@ -56,7 +66,7 @@ export default function UpdatesPage() {
                     const { c, p } = r.price;
                     const was = c.vs?.price ?? c.price - (c.delta ?? 0);
                     return (
-                      <div className="upd" key={i}>
+                      <div className="upd upd-price" key={i}>
                         <span className="grade-box g-price">價</span>
                         <div className="upd-body">
                           <div>
@@ -74,7 +84,7 @@ export default function UpdatesPage() {
                   }
                   const it = r.signal!;
                   return (
-                    <div className="upd" key={i}>
+                    <div className="upd upd-news" key={i}>
                       <span className={`grade-box g-${it.grade}`}>{it.grade}</span>
                       <div className="upd-body">
                         <div>{it.text}</div>

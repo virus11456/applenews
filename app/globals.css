@@ -224,6 +224,24 @@ p { margin: 0; }
 .upd-list { gap: 0; padding: 4px 20px; }
 .upd { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line-2); }
 .upd:last-child { border-bottom: 0; }
+.upd-radio { position: absolute; opacity: 0; pointer-events: none; }
+.upd-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.upd .pchg { display: inline-block; white-space: nowrap; }
+.upd-filter label { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; min-height: 40px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; font-weight: 600; cursor: pointer; user-select: none; background: var(--panel, #fff); }
+.upd-filter label .mono { color: var(--muted); font-weight: 500; }
+#f-all:checked ~ .upd-filter label[for="f-all"],
+#f-price:checked ~ .upd-filter label[for="f-price"],
+#f-news:checked ~ .upd-filter label[for="f-news"] { background: var(--ink, #1d1d1f); border-color: var(--ink, #1d1d1f); color: #fff; }
+#f-all:checked ~ .upd-filter label[for="f-all"] .mono,
+#f-price:checked ~ .upd-filter label[for="f-price"] .mono,
+#f-news:checked ~ .upd-filter label[for="f-news"] .mono { color: rgba(255,255,255,.75); }
+#f-all:focus-visible ~ .upd-filter label[for="f-all"],
+#f-price:focus-visible ~ .upd-filter label[for="f-price"],
+#f-news:focus-visible ~ .upd-filter label[for="f-news"] { outline: 2px solid #0071e3; outline-offset: 2px; }
+#f-price:checked ~ .upd-day:not(.has-price), #f-price:checked ~ .upd-day .upd-news,
+#f-news:checked ~ .upd-day:not(.has-news), #f-news:checked ~ .upd-day .upd-price { display: none; }
+/* 同一天價格排在消息前面：只看價格時，最後一筆價格下面不畫線 */
+#f-price:checked ~ .upd-day .upd-price:has(+ .upd-news) { border-bottom: 0; }
 .upd .grade-box { flex: none; }
 .upd-body { min-width: 0; display: flex; flex-direction: column; gap: 8px; line-height: 1.6; overflow-wrap: anywhere; }
 .upd-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-size: 13px; }
