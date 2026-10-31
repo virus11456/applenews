@@ -27,10 +27,10 @@ export function priceChanges(p: Product): PriceChange[] {
   });
 }
 
-/** 最近一次有漲跌的變化（today 往前 days 天內），供卡片顯示。 */
+/** 最近一次官網調價（today 往前 days 天內），供卡片顯示；新一代的比較另由 genChange 顯示。 */
 export function recentChange(p: Product, today: string, days = 60): PriceChange | null {
   // 日期不明的調價（dateNote）不算「最近」，避免卡片誤標成某天調價
-  const c = priceChanges(p).filter((x) => x.delta !== null && !x.dateNote);
+  const c = priceChanges(p).filter((x) => x.kind === "adjust" && x.delta !== null && !x.dateNote);
   const last = c[c.length - 1];
   return last && daysBetween(last.date, today) <= days ? last : null;
 }
@@ -44,3 +44,9 @@ export function deltaText(c: PriceChange): string {
 }
 
 export const deltaDir = (c: PriceChange) => (c.delta === null ? "none" : c.delta > 0 ? "up" : c.delta < 0 ? "down" : "flat");
+
+/** 最近一次「新一代比上一代」的上市價比較，供卡片顯示。 */
+export function genChange(p: Product): PriceChange | null {
+  const c = priceChanges(p).filter((x) => x.kind === "newgen" && x.delta !== null);
+  return c[c.length - 1] ?? null;
+}
