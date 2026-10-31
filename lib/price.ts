@@ -29,7 +29,8 @@ export function priceChanges(p: Product): PriceChange[] {
 
 /** 最近一次有漲跌的變化（today 往前 days 天內），供卡片顯示。 */
 export function recentChange(p: Product, today: string, days = 60): PriceChange | null {
-  const c = priceChanges(p).filter((x) => x.delta !== null);
+  // 日期不明的調價（dateNote）不算「最近」，避免卡片誤標成某天調價
+  const c = priceChanges(p).filter((x) => x.delta !== null && !x.dateNote);
   const last = c[c.length - 1];
   return last && daysBetween(last.date, today) <= days ? last : null;
 }

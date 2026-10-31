@@ -77,14 +77,15 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               )}
               {p.priceHistory && p.priceHistory.length > 0 && (
                 <div className="phist">
-                  <div className="price-head"><span className="muted">起價變化</span><span className="muted sm">本站 2026-10-03 起記錄</span></div>
-                  {p.priceHistory.length === 1 && <div className="muted sm">記錄以來官網起價沒有變動。</div>}
+                  <div className="price-head"><span className="muted">起價變化</span><span className="muted sm">上市價取自 Apple 台灣新聞稿，10/03 起每日記錄</span></div>
+                  {p.priceHistory.length === 1 && <div className="muted sm">{p.prev ? "記錄以來官網起價沒有變動。" : "首代產品，沒有上一代可比較；記錄以來官網起價沒有變動。"}</div>}
                   <ol>
                     {priceChanges(p).slice().reverse().map((c) => (
                       <li key={c.date + c.label}>
-                        <div className="phist-top"><span className="mono muted sm">{c.date}</span><span className="phist-kind">{priceKindLabel(c.kind)}</span><span className="mono b">{formatNT(c.price)}</span></div>
+                        <div className="phist-top"><span className={c.dateNote ? "muted sm" : "mono muted sm"}>{c.dateNote ?? c.date}</span><span className="phist-kind">{priceKindLabel(c.kind)}</span><span className="mono b">{formatNT(c.price)}</span></div>
                         <div className="phist-sub"><span className="muted">{c.label}</span>{c.delta !== null && <span className={`pchg pchg-${deltaDir(c)} mono`}>{deltaText(c)}</span>}</div>
                         {c.vsLabel && c.delta !== null && <div className="muted sm">比較對象：{c.vsLabel}</div>}
+                        {c.source && <a className="sm" href={c.source} target="_blank" rel="noreferrer">來源：Apple 台灣新聞稿</a>}
                       </li>
                     ))}
                   </ol>
