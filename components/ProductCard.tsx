@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CATEGORY_LABEL, formatNT, type Product } from "@/lib/products";
+import { deltaDir, deltaText, priceKindLabel, recentChange } from "@/lib/price";
 import { announcedLine, compute, monthsBetween, overdueDays, pct, pctLabel, pendingTW, VERDICT_META } from "@/lib/verdict";
 import { Badge } from "./Badge";
 import { CATEGORY_ICON, DeviceIcon, Icon } from "./Icons";
@@ -14,6 +15,7 @@ function genLabel(gen: string): string {
 
 export function ProductCard({ p, today }: { p: Product; today: string }) {
   const c = compute(p, today);
+  const rc = recentChange(p, today);
   const meta = VERDICT_META[c.verdict];
   const CatIcon = CATEGORY_ICON[p.category];
   const pending = pendingTW(p, today);
@@ -54,6 +56,7 @@ export function ProductCard({ p, today }: { p: Product; today: string }) {
       </div>}
       <dl className="facts">
         {p.priceTW && <><dt><Icon.tag size={14} />官網價</dt><dd><span className="mono b">{formatNT(p.priceTW.from)}</span> 起</dd></>}
+        {rc && <><dt>價格變化</dt><dd className={`pchg pchg-${deltaDir(rc)}`}><span className="mono">{deltaText(rc)}</span> <span className="muted">{priceKindLabel(rc.kind)} {Number(rc.date.slice(5, 7))}/{Number(rc.date.slice(8))}</span></dd></>}
         <dt>{c.days === null ? "預計開賣" : "本代上市"}</dt><dd className="mono">{p.releasedTW}</dd>
         <dt className="dt-top"><Icon.history size={14} />歷代上市</dt>
         <dd>

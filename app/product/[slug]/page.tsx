@@ -4,6 +4,7 @@ import { Badge } from "@/components/Badge";
 import { DeviceIcon, Icon } from "@/components/Icons";
 import { Name } from "@/components/Name";
 import { CATEGORY_LABEL, formatNT, getProduct, PRODUCTS } from "@/lib/products";
+import { deltaDir, deltaText, priceChanges, priceKindLabel } from "@/lib/price";
 import { announcedLine, compute, daysBetween, overdueDays, pct, pctLabel, pendingTW, todayISO, VERDICT_META } from "@/lib/verdict";
 
 export const revalidate = 3600;
@@ -72,6 +73,21 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   <div className="price-head"><span className="muted">Apple 台灣官網價</span><span className="muted sm">查價 {p.priceTW.checked}</span></div>
                   <div className="price-main"><span className="mono">{formatNT(p.priceTW.from)}</span> 起<span className="muted sm">（{p.priceTW.config}）</span></div>
                   {p.priceTW.variants?.map((v) => <div key={v.label}><span className="muted">{v.label}</span><span className="mono">{formatNT(v.price)}</span></div>)}
+                </div>
+              )}
+              {p.priceHistory && p.priceHistory.length > 0 && (
+                <div className="phist">
+                  <div className="price-head"><span className="muted">起價變化</span><span className="muted sm">本站 2026-10-03 起記錄</span></div>
+                  {p.priceHistory.length === 1 && <div className="muted sm">記錄以來官網起價沒有變動。</div>}
+                  <ol>
+                    {priceChanges(p).slice().reverse().map((c) => (
+                      <li key={c.date + c.label}>
+                        <div className="phist-top"><span className="mono muted sm">{c.date}</span><span className="phist-kind">{priceKindLabel(c.kind)}</span><span className="mono b">{formatNT(c.price)}</span></div>
+                        <div className="phist-sub"><span className="muted">{c.label}</span>{c.delta !== null && <span className={`pchg pchg-${deltaDir(c)} mono`}>{deltaText(c)}</span>}</div>
+                        {c.vsLabel && c.delta !== null && <div className="muted sm">比較對象：{c.vsLabel}</div>}
+                      </li>
+                    ))}
+                  </ol>
                 </div>
               )}
               {p.priceTW && <a href={p.priceTW.url} target="_blank" rel="noreferrer" className="btn btn-primary btn-block"><Icon.tag />到 Apple 台灣官網購買</a>}

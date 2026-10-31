@@ -229,3 +229,18 @@ p { margin: 0; }
 .upd-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-size: 13px; }
 .upd-meta .event-chip { white-space: normal; }
 .events-more { margin-top: 12px; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
+
+/* 價格變化 */
+.pchg { font-size: 13px; overflow-wrap: anywhere; }
+.pchg-up { color: #A8291C; }
+.pchg-down { color: #1A6B43; }
+.pchg-flat { color: var(--muted); }
+.pchg .muted { font-size: 12px; white-space: nowrap; }
+.phist { border-top: 1px solid var(--line); padding-top: 14px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+.phist .price-head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.phist ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.phist li { display: flex; flex-direction: column; gap: 2px; padding-left: 10px; border-left: 2px solid var(--line); }
+.phist-top { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.phist-top .b { margin-left: auto; }
+.phist-kind { font-size: 12px; font-weight: 700; padding: 1px 6px; border-radius: 6px; background: var(--ground); white-space: nowrap; }
+.phist-sub { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 13px; }
