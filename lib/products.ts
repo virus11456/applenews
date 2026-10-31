@@ -117,9 +117,9 @@ export const PRODUCTS: Product[] = [
     prev: { name: "MacBook Pro（M5 Pro／Max）", date: "2026-04-13" },
     next: { name: "MacBook Pro（M7 Pro／Max）", expected: null, grade: "B", note: "Bloomberg 報導 M7 Pro／Max 版要到 2027 年底" },
     announced: { name: "MacBook Pro（PROLED XDR）", date: "2026-10-28", twRelease: "2026-11-06", source: "Apple 台灣新聞稿", url: "https://www.apple.com/tw/newsroom/2026/10/apple-unveils-groundbreaking-macbook-pro-with-proled-xdr-display/" },
-    priceTW: { from: 64900, config: "14 吋 M6（非 OLED，11/6 開賣）", variants: [{ label: "14 吋 PROLED M5 Pro", price: 97900 }, { label: "16 吋 PROLED M5 Pro", price: 114900 }, { label: "14 吋 PROLED M5 Max", price: 152900 }], url: "https://www.apple.com/tw/shop/buy-mac/macbook-pro", checked: "2026-10-29" },
+    priceTW: { from: 97900, config: "14 吋 PROLED M5 Pro", variants: [{ label: "16 吋 PROLED M5 Pro", price: 114900 }, { label: "14 吋 PROLED M5 Max", price: 152900 }, { label: "16 吋 PROLED M5 Max", price: 159900 }], url: "https://www.apple.com/tw/shop/buy-mac/macbook-pro-proled-xdr", checked: "2026-10-31" },
     twAvailable: true,
-    summary: "首款 OLED 觸控 MacBook Pro 已發表，台灣 10/30 預購、11/6 開賣，NT$97,900 起；M6 基本款同天開賣。",
+    summary: "首款 OLED 觸控 MacBook Pro 台灣已開放預購、11/6 開賣，NT$97,900 起；不需要 OLED 可選 NT$64,900 起的 M6 基本款。",
     reasons: ["10/28 發表：14、16 吋 PROLED XDR 串聯式 OLED 觸控螢幕，M5 Pro／Max，更輕薄；台灣 10/30 開放預購、11/6 開始供貨。", "14 吋 M6 基本款（非 OLED）NT$64,900 起，10/29 預購、11/6 開賣；舊款 M5 Pro／Max 目前仍在官網，想要 OLED 觸控就等新款。", "Bloomberg 報導下一次晶片升級（M7 Pro／Max）要到 2027 年底，近期買不用怕馬上被取代。"],
     signals: [
       { grade: "B", text: "Gurman：OLED 觸控 MacBook Pro 沿用 M5 Pro／M5 Max，M7 Pro／Max 要到 2027 年底。", source: "Bloomberg／MacRumors", date: "2026-10-15" },
@@ -358,7 +358,7 @@ export const PRODUCTS: Product[] = [
     priceTW: { from: 74900, config: "256GB", variants: [{ label: "512GB", price: 81900 }], url: "https://www.apple.com/tw/shop/buy-iphone/iphone-duo", checked: "2026-10-03" },
     twAvailable: true,
     summary: "首款折疊 iPhone，台灣 10/23 開賣但貨很緊；下一代傳明年秋天、可能加 Face ID。",
-    reasons: ["9/9 與 iPhone 18 Pro 同場發表，台灣在首波開賣地區，10/16 晚上 8 點已開放預購，10/23 開始供貨。", "Apple 稱預購需求「非常驚人」；美國官網開放預購半小時內出貨就排到 2027 年 1 月，台灣想早拿到建議盡快在官網下單。", "Apple 證實台灣直營店 10/23 開賣日不提供現場購買，要先在官網預約指定時段到店取貨；台灣官網也標示「現僅供線上預訂」、每位顧客限購兩部。", "首批用戶回報螢幕沿折痕裂開，iFixit 拆解發現灰塵進入轉軸可能造成損傷，Apple 尚未回應；建議加購 AppleCare+，並避免在沙灘等多灰塵環境使用。"],
+    reasons: ["9/9 與 iPhone 18 Pro 同場發表，台灣在首波開賣地區，10/16 晚上 8 點已開放預購，10/23 開始供貨。", "Apple 稱預購需求「非常驚人」；美國官網開放預購半小時內出貨就排到 2027 年 1 月，台灣想早拿到建議盡快在官網下單。", "Apple 證實台灣直營店 10/23 開賣日不提供現場購買，要先在官網預約指定時段到店取貨；台灣官網也標示「現僅供線上預訂」、每位顧客限購兩部。", "Apple 已承認「少數」iPhone Duo 內螢幕有裂痕問題，並通知直營店依標準流程維修或換新（未召回）；問題多在使用初期出現，買到後頭幾週留意螢幕，有狀況就找 AppleCare。iFixit 也發現灰塵進入轉軸可能造成損傷，建議加購 AppleCare+、避免沙灘等多灰塵環境。"],
     signals: [
       { grade: "B", text: "Gurman：iPhone Duo 2 原型機在外螢幕下測試 Face ID，預計明年秋天推出，是否量產未定。", source: "Bloomberg Power On／MacRumors", date: "2026-10-22" },
       { grade: "B", text: "Gurman：Apple 考慮讓之後的 iPhone Duo 內螢幕加大約半吋（7.9–8.1 吋），不會另出 Max 版。", source: "Bloomberg Power On／MacRumors", date: "2026-10-22" },
