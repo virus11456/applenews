@@ -271,8 +271,9 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2025-11-20", price: 32900, label: "M5 11 吋 Wi-Fi 上市價", kind: "newgen", vs: { price: 34900, label: "上一代 M4 11 吋 Wi-Fi 上市價" }, source: "https://www.apple.com/tw/newsroom/2025/10/apple-introduces-the-powerful-new-ipad-pro-with-the-m5-chip/" }, { date: "2026-10-03", price: 39900, label: "11 吋 256GB Wi-Fi", kind: "adjust", dateNote: "上市後至 2026-10-03 之間（確切日期不明）" }],
     twAvailable: true,
     summary: "M5 iPad Pro 在台灣上市快一年，新款要到明年春天，急用可以買，不急可以再等等。",
-    reasons: ["台灣 2025-11-20 開賣，週期進度約六成。", "Bloomberg 報導下一代 M6 版要到 2027 年春季。"],
+    reasons: ["台灣 2025-11-20 開賣，週期進度約六成。", "Bloomberg 11/1 再次報導下一代要到 2027 年上半年，加均熱板散熱（B 級訊號）。"],
     signals: [
+      { grade: "B", text: "Gurman：Apple 計畫 2027 年上半年推出新款 iPad Air、iPad Pro 與入門 iPad；iPad Air 改用 OLED，iPad Pro 加均熱板散熱。", source: "Bloomberg Power On／MacRumors", date: "2026-11-01" },
       { grade: "B", text: "Gurman：下一代 iPad Pro 2027 年春季推出，搭載 M6 與均熱板。", source: "Bloomberg／AppleInsider", date: "2026-03-01" },
       { grade: "B", text: "M5 iPad Pro 預計 2027 年前不會更新。", source: "9to5Mac", date: "2026-06-03" },
     ],
@@ -296,8 +297,9 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2026-03-24", price: 19900, label: "M4 11 吋 Wi-Fi 上市價", kind: "newgen", vs: { price: 19900, label: "上一代 M3 11 吋 Wi-Fi 上市價" }, source: "https://www.apple.com/tw/newsroom/2026/03/apple-introduces-the-new-ipad-air-powered-by-m4/" }, { date: "2026-10-03", price: 24900, label: "11 吋 128GB Wi-Fi", kind: "adjust", dateNote: "上市後至 2026-10-03 之間（確切日期不明）" }],
     twAvailable: true,
     summary: "週期過半，M5 版傳聞 2027 年春季推出；不急可等，有需要就買。",
-    reasons: ["台灣 3/24 開賣，週期進度約六成。", "Bloomberg 報導下一代搭載 M5、2027 年春季推出（B 級訊號）。"],
+    reasons: ["台灣 3/24 開賣，週期進度約六成。", "Bloomberg 11/1 再次報導下一代 2027 年上半年推出、改用 OLED 螢幕（B 級訊號）。"],
     signals: [
+      { grade: "B", text: "Gurman：Apple 計畫 2027 年上半年推出新款 iPad Air、iPad Pro 與入門 iPad；iPad Air 改用 OLED，iPad Pro 加均熱板散熱。", source: "Bloomberg Power On／MacRumors", date: "2026-11-01" },
       { grade: "B", text: "Gurman：iPad Air 2027 年大改款、改用 OLED 螢幕。", source: "Bloomberg Power On／MacRumors", date: "2026-10-11" },
       { grade: "B", text: "Bloomberg 報導下一代 iPad Air 搭載 M5，預計 2027 年春季推出，可能改用 OLED。", source: "Bloomberg／AppleInsider", date: "2026-07-16" },
     ],
@@ -324,8 +326,9 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2025-04-11", price: 11900, label: "A16 Wi-Fi 上市價", kind: "newgen", vs: { price: 14900, label: "上一代 第 10 代 Wi-Fi 上市價" }, source: "https://www.apple.com/tw/newsroom/2025/03/apple-introduces-ipad-air-with-powerful-m3-chip-and-new-magic-keyboard/" }, { date: "2026-10-03", price: 14900, label: "128GB Wi-Fi", kind: "adjust", dateNote: "上市後至 2026-10-03 之間（確切日期不明）" }],
     twAvailable: true,
     summary: "這台入門 iPad 已上市一年半，新款已在 Apple 程式碼中現身、預計明年春天推出，不急建議等等。",
-    reasons: ["台灣 2025-04-11 開賣，已走完平均週期約八成五。", "Apple 程式碼顯示下一代換 A19 晶片並支援 Apple Intelligence。"],
+    reasons: ["台灣 2025-04-11 開賣，已走完平均週期約八成五。", "Apple 程式碼顯示下一代換 A19 晶片並支援 Apple Intelligence；Bloomberg 11/1 報導 2027 年上半年推出。"],
     signals: [
+      { grade: "B", text: "Gurman：Apple 計畫 2027 年上半年推出新款 iPad Air、iPad Pro 與入門 iPad；iPad Air 改用 OLED，iPad Pro 加均熱板散熱。", source: "Bloomberg Power On／MacRumors", date: "2026-11-01" },
       { grade: "B", text: "Gurman：下一代入門 iPad（J581／J582）要到 2027 年初才推出。", source: "Bloomberg Power On／MacRumors", date: "2026-10-11" },
       { grade: "B", text: "Apple 程式碼顯示新入門 iPad 搭載 A19、8GB 記憶體，預期 2027 年春季推出。", source: "MacRumors／AppleInsider", date: "2026-09-25" },
       { grade: "B", text: "Gurman 曾稱新入門 iPad 在 2026 上半年推出，後來延期。", source: "9to5Mac", date: "2026-03-22" },
