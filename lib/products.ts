@@ -456,8 +456,9 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2025-09-19", price: 29900, label: "iPhone 17 上市價", kind: "newgen", vs: { price: 29900, label: "上一代 iPhone 16 上市價" }, source: "https://www.apple.com/tw/newsroom/2025/09/apple-introduces-iphone-17/" }, { date: "2026-10-03", price: 32900, label: "256GB", kind: "adjust", dateNote: "上市後至 2026-10-03 之間（確切日期不明）" }],
     twAvailable: true,
     summary: "已賣滿一年，iPhone 18 改到 2027 年上半年推出，急用可買、不急可等。",
-    reasons: ["台灣 2025-09-19 開賣，已超過一年。", "Bloomberg 報導數字版 iPhone 18 不在今年 9 月推出，改到 2027 年上半年。"],
+    reasons: ["台灣 2025-09-19 開賣，已超過一年。", "Bloomberg 報導數字版 iPhone 18 不在今年 9 月推出，改到 2027 年上半年。", "微博爆料者「數碼閒聊站」稱 iPhone 18 電池比 iPhone 17 大、售價可能調漲（單一來源傳聞，漲價幅度與地區不明）。"],
     signals: [
+      { grade: "C", text: "數碼閒聊站：iPhone 18 電池比 iPhone 17（3,692 mAh）大，售價可能調漲，2027 年上半年與 iPhone 18e、iPhone Air 2 一起推出。", source: "微博／MacRumors", date: "2026-11-03" },
       { grade: "B", text: "Gurman：數字版 iPhone 18、iPhone Air 2、iPhone 18e 都在 2027 年上半年推出。", source: "Bloomberg／TechSpot", date: "2026-09-15" },
     ],
     specAdvice: [{ label: "容量", text: "[編輯建議：依台灣售價級距與常見用途填入]" }],
