@@ -400,13 +400,14 @@ export const PRODUCTS: Product[] = [
     priceTW: { from: 44900, config: "iPhone 18 Pro 256GB", variants: [{ label: "iPhone 18 Pro Max 256GB", price: 49900 }], url: "https://www.apple.com/tw/shop/buy-iphone/iphone-18-pro", checked: "2026-10-03" },
     priceHistory: [{ date: "2026-09-18", price: 44900, label: "iPhone 18 Pro 上市價", kind: "newgen", vs: { price: 39900, label: "上一代 iPhone 17 Pro 上市價" }, source: "https://www.apple.com/tw/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/" }],
     twAvailable: true,
-    summary: "剛於 9 月換代，距離下一代預期發表還有約 11 個月，是整個週期裡最划算的時間點。",
+    summary: "9 月才換代，下一代預期要到 2027 年 9 月，現在是整個週期裡最划算的時間點。",
     reasons: [
-      "台灣 9/18 開賣，至今約兩週，遠低於「可以買」門檻的 30% 週期進度。",
+      "台灣 2026-09-18 開賣，週期進度還遠低於「可以買」門檻的 30%。",
       "Pro 系列自 13 Pro 起連續 6 代於 9 月發表，平均間隔約 366 天。",
     ],
     signals: [
       { grade: "A", text: "歷代規律：Pro 系列自 13 Pro 起連續 6 代於 9 月發表（12 Pro 因疫情延至 10 月），下一代最可能為 2027 年 9 月。", source: "本站歷代紀錄", date: "2026-10-02" },
+      { grade: "C", text: "數碼閒聊站：明年 iPhone Pro 改用四邊曲面螢幕，但仍保留螢幕挖孔（動態島），不是先前傳的全螢幕無挖孔。", source: "微博／9to5Mac", date: "2026-11-04" },
       { grade: "B", text: "多方報導 2027 年機種可能跳號命名為 iPhone 20 Pro。", source: "MacRumors", date: "2026-09-21" },
     ],
     specAdvice: [
@@ -505,7 +506,7 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2026-09-18", price: 13900, label: "Series 12 上市價", kind: "newgen", vs: { price: 12900, label: "上一代 Series 11 上市價" }, source: "https://www.apple.com/tw/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/" }],
     twAvailable: true,
     summary: "剛更新，離下一代最遠。",
-    reasons: ["Series 系列近年固定每年 9 月更新。", "台灣 9/18 開賣，至今約兩週。"],
+    reasons: ["Series 系列近年固定每年 9 月更新。", "台灣 2026-09-18 開賣，剛換代不久。"],
     signals: [{ grade: "A", text: "歷代規律：近年固定 9 月發表、9 月中下旬開賣，多與 iPhone 同場。", source: "本站歷代紀錄", date: "2026-10-02" }],
     specAdvice: [{ label: "行動網路版", text: "[編輯建議：電信 One Number 方案]" }],
     history: [
@@ -527,7 +528,7 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2026-09-18", price: 27900, label: "Ultra 4 上市價", kind: "newgen", vs: { price: 26900, label: "上一代 Ultra 3 上市價" }, source: "https://www.apple.com/tw/newsroom/2026/09/apple-unveils-apple-watch-ultra-4/" }],
     twAvailable: true,
     summary: "剛更新，離下一代最遠。",
-    reasons: ["台灣 9/18 與美國同步開賣，至今約兩週。", "Ultra 系列平均約 16 個月更新一次（2024 年曾停更）。"],
+    reasons: ["台灣 2026-09-18 與美國同步開賣，剛換代不久。", "Ultra 系列平均約 16 個月更新一次（2024 年曾停更）。"],
     signals: [{ grade: "C", text: "爆料者稱 2027 年 Apple Watch 將大改。", source: "9to5Mac", date: "2026-06-30" }],
     specAdvice: [{ label: "錶帶", text: "[編輯建議：錶帶款式與尺寸]" }],
     history: [
@@ -597,7 +598,7 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2026-09-18", price: 4490, label: "AirPods 5 上市價", kind: "newgen", vs: { price: 4490, label: "上一代 AirPods 4 上市價" }, source: "https://www.apple.com/tw/newsroom/2026/09/apple-introduces-airpods-5-featuring-best-in-class-open-ear-active-noise-cancellation/" }],
     twAvailable: true,
     summary: "剛更新，離下一代最遠。",
-    reasons: ["台灣 9/18 開賣，至今約兩週。", "標準版 AirPods 平均兩年多才更新。"],
+    reasons: ["台灣 2026-09-18 開賣，剛換代不久。", "標準版 AirPods 平均兩年多才更新。"],
     signals: [],
     specAdvice: [{ label: "版本", text: "[編輯建議：是否選主動降噪版]" }],
     history: [

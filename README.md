@@ -133,6 +133,7 @@ npm run build
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
 - 2026-10-31：修正分享預覽圖建置失敗：Vercel 建置時 Google Fonts 偶爾下載失敗，原本會傳空字型清單導致整個部署失敗；改為重試三次，仍失敗就用 next/og 內建字型。
+- 2026-11-05：每日檢查。iPhone 18 Pro：微博爆料者「數碼閒聊站」（9to5Mac 11/4 轉述）稱明年 Pro 改四邊曲面螢幕但仍保留挖孔（動態島），新增 C 級訊號；順手修正 summary／reasons 過期的「至今約兩週」「還有約 11 個月」，改成不會隨時間過期的寫法；Apple Watch Series 12、Ultra 4、AirPods 的「至今約兩週」也一併改掉。MacBook Pro 觸控／非觸控合併、MacBook Neo 2 出貨預測為既有消息的延伸，未新增。官網產品線與 28 條價格都沒有變動。
 - 2026-11-04：每日檢查。iPhone 17：微博爆料者「數碼閒聊站」（MacRumors 11/3 轉述）稱 iPhone 18 電池比 iPhone 17 大、售價可能調漲，2027 年上半年與 iPhone 18e、iPhone Air 2 一起推出；新增 C 級訊號並在 reasons 註明單一來源、漲價幅度與地區不明。官網產品線與 28 條價格都沒有變動。
 - 2026-11-03：每日檢查。MacBook Pro：Gurman（Bloomberg Power On 11/1，9to5Mac 轉述）稱 2027 年推出改用新薄型設計的 M7 基本款與第二代觸控版（M7 Pro／Max），新增 B 級訊號，next 說明與 reasons 改為「2027 年」（各次報導時間點不一，不再寫死年底）。iPhone Duo：Apple 執行長 Ternus 11/2 財報後受訪（Reuters／MacRumors）稱仍缺貨、無法預估何時供需平衡，內螢幕問題退回比例很小並提供換新，新增 A 級訊號並更新 reasons。官網產品線與 28 條價格都沒有變動。
 - 2026-11-02：每日檢查。Gurman（Bloomberg Power On，MacRumors 11/1 轉述）：Apple 計畫 2027 年上半年推出新款 iPad Air（改 OLED）、iPad Pro（加均熱板）與入門 iPad；三條各加一則 B 級訊號並更新 reasons，預估日期不變。官網產品線與 28 條價格都沒有變動；HomeView 台灣官網仍未上架，不列。
