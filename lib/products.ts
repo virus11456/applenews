@@ -126,8 +126,8 @@ export const PRODUCTS: Product[] = [
     priceTW: { from: 97900, config: "14 吋 PROLED M5 Pro", variants: [{ label: "16 吋 PROLED M5 Pro", price: 114900 }, { label: "14 吋 PROLED M5 Max", price: 152900 }, { label: "16 吋 PROLED M5 Max", price: 159900 }], url: "https://www.apple.com/tw/shop/buy-mac/macbook-pro-proled-xdr", checked: "2026-10-31" },
     priceHistory: [{ date: "2026-10-03", price: 64900, label: "14 吋 M5（基本款）", kind: "start" }, { date: "2026-10-28", price: 64900, label: "14 吋 M6（基本款）", kind: "newgen" }, { date: "2026-10-29", price: 97900, label: "14 吋 PROLED M5 Pro", kind: "newgen", vs: { price: 84900, label: "上一代 14 吋 M5 Pro（非 OLED）" } }],
     twAvailable: true,
-    summary: "首款 OLED 觸控 MacBook Pro 台灣已開放預購、11/6 開賣，NT$97,900 起；不需要 OLED 可選 NT$64,900 起的 M6 基本款。",
-    reasons: ["10/28 發表：14、16 吋 PROLED XDR 串聯式 OLED 觸控螢幕，M5 Pro／Max，更輕薄；台灣 10/30 開放預購、11/6 開始供貨。", "14 吋 M6 基本款（非 OLED）NT$64,900 起，10/29 預購、11/6 開賣；舊款 M5 Pro／Max 目前仍在官網，想要 OLED 觸控就等新款。", "Bloomberg 報導下一次晶片升級（M7 Pro／Max 第二代觸控版）要到 2027 年，近期買不用怕馬上被取代。", "Gurman 11/1 報導：2027 年的 M7 基本款也會換成同樣更薄的新設計；如果想要新設計又不需要觸控，可以等基本款。"],
+    summary: "首款 OLED 觸控 MacBook Pro 台灣 11/6 開賣，NT$97,900 起；不需要 OLED 可選 NT$64,900 起的 M6 基本款。",
+    reasons: ["10/28 發表：14、16 吋 PROLED XDR 串聯式 OLED 觸控螢幕，M5 Pro／Max，更輕薄；台灣 10/30 開放預購、11/6 開賣。", "14 吋 M6 基本款（非 OLED）NT$64,900 起，10/29 預購、11/6 開賣；舊款 M5 Pro／Max（非 OLED）仍在官網販售，想要 OLED 觸控就選 PROLED 版。", "Bloomberg 報導下一次晶片升級（M7 Pro／Max 第二代觸控版）要到 2027 年，近期買不用怕馬上被取代。", "Gurman 11/1 報導：2027 年的 M7 基本款也會換成同樣更薄的新設計；如果想要新設計又不需要觸控，可以等基本款。"],
     signals: [
       { grade: "B", text: "Gurman：2027 年推出 M7 基本款 MacBook Pro（改用跟 PROLED 版相同的更薄設計）與第二代觸控版（M7 Pro／Max）。", source: "Bloomberg Power On／9to5Mac", date: "2026-11-01" },
       { grade: "B", text: "Gurman：OLED 觸控 MacBook Pro 沿用 M5 Pro／M5 Max，M7 Pro／Max 要到 2027 年底。", source: "Bloomberg／MacRumors", date: "2026-10-15" },
@@ -158,8 +158,8 @@ export const PRODUCTS: Product[] = [
     priceTW: { from: 49900, config: "M6 10 核心 CPU／GPU", variants: [{ label: "M6 12 核心 CPU／GPU", price: 57900 }], url: "https://www.apple.com/tw/shop/buy-mac/imac", checked: "2026-10-28" },
     priceHistory: [{ date: "2026-10-03", price: 49900, label: "M4 8 核心 CPU", kind: "start" }, { date: "2026-10-28", price: 49900, label: "M6 10 核心 CPU／GPU", kind: "newgen" }],
     twAvailable: true,
-    summary: "M6 iMac 已發表，台灣 10/29 凌晨 1:10 開放預購、11/6 開賣，NT$49,900 起。",
-    reasons: ["10/27 發表：M6 晶片、Siri AI，維持七種顏色；起價與 M4 版相同，但入門款升級為 10 核心 CPU／GPU。", "台灣在首波地區：10/29 凌晨 1 點 10 分預購、11/6 開始供貨；官網已不再列出 M4 版。"],
+    summary: "M6 iMac 台灣 11/6 開賣，NT$49,900 起，起價和上一代相同。",
+    reasons: ["10/27 發表：M6 晶片、Siri AI，維持七種顏色；起價與 M4 版相同，但入門款升級為 10 核心 CPU／GPU。", "台灣在首波地區：10/29 凌晨 1 點 10 分預購、11/6 開賣；官網已不再列出 M4 版。"],
     signals: [],
     specAdvice: [{ label: "配置", text: "[編輯建議：連接埠數量與顏色]" }],
     history: [
@@ -354,8 +354,8 @@ export const PRODUCTS: Product[] = [
     priceTW: { from: 22900, config: "128GB Wi-Fi", variants: [{ label: "256GB Wi-Fi", price: 26400 }, { label: "128GB Wi-Fi + 行動網路", price: 27900 }, { label: "256GB 奈米紋理玻璃", price: 29900 }], url: "https://www.apple.com/tw/shop/buy-ipad/ipad-mini", checked: "2026-10-27" },
     priceHistory: [{ date: "2026-10-03", price: 19900, label: "A17 Pro 128GB Wi-Fi", kind: "start" }, { date: "2026-10-27", price: 22900, label: "A20 Pro 128GB Wi-Fi", kind: "newgen" }],
     twAvailable: true,
-    summary: "OLED 新款已發表，台灣 10/29 凌晨 1:10 開放預購、11/6 開賣，NT$22,900 起。",
-    reasons: ["10/26 發表：8.5 吋 OLED（可選奈米紋理玻璃）、A20 Pro、更輕薄並具防水防塵。", "台灣在首波地區：10/29 凌晨 1 點 10 分預購、11/6 開始供貨；起價比上一代貴 NT$3,000，官網已不再列出舊款。"],
+    summary: "OLED 新款 iPad mini 台灣 11/6 開賣，NT$22,900 起，比上一代貴 NT$3,000。",
+    reasons: ["10/26 發表：8.5 吋 OLED（可選奈米紋理玻璃）、A20 Pro、更輕薄並具防水防塵。", "台灣在首波地區：10/29 凌晨 1 點 10 分預購、11/6 開賣；起價比上一代貴 NT$3,000，官網已不再列出舊款。"],
     signals: [],
     specAdvice: [{ label: "容量", text: "[編輯建議：容量與行動網路版]" }],
     history: [
@@ -717,8 +717,8 @@ export const PRODUCTS: Product[] = [
     priceTW: { from: 4790, config: "五色同價", url: "https://www.apple.com/tw/shop/buy-homepod/homepod-mini", checked: "2026-10-14" },
     priceHistory: [{ date: "2026-10-03", price: 3990, label: "HomePod mini（第 1 代）", kind: "start" }, { date: "2026-10-14", price: 4790, label: "HomePod mini 2", kind: "newgen" }],
     twAvailable: true,
-    summary: "第 2 代已發表，台灣 10/15 上午 9 點開放預購、10/30 開賣，NT$4,790。",
-    reasons: ["10/13 發表，S10 晶片、五種新顏色，可和新 Apple TV 4K 組四顆環繞音效；Siri AI 之後以軟體更新加入，Apple 表示繁體中文版年底前推出。", "台灣在首波地區：10/15 上午 9 點預購、10/30 開始供貨；比第一代貴 NT$800。"],
+    summary: "第 2 代台灣 10/30 開賣，NT$4,790，比第一代貴 NT$800。",
+    reasons: ["10/13 發表，S10 晶片、五種新顏色，可和新 Apple TV 4K 組四顆環繞音效；Siri AI 之後以軟體更新加入，Apple 表示繁體中文版年底前推出。", "台灣在首波地區：10/15 上午 9 點預購、10/30 開賣；比第一代貴 NT$800。"],
     signals: [],
     specAdvice: [{ label: "顏色", text: "[編輯建議：顏色與立體聲配對]" }],
     history: [
