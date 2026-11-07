@@ -407,6 +407,7 @@ export const PRODUCTS: Product[] = [
     ],
     signals: [
       { grade: "A", text: "歷代規律：Pro 系列自 13 Pro 起連續 6 代於 9 月發表（12 Pro 因疫情延至 10 月），下一代最可能為 2027 年 9 月。", source: "本站歷代紀錄", date: "2026-10-02" },
+      { grade: "C", text: "微博爆料者 Instant Digital：2027 年下半年的 iPhone 拿掉動作按鈕，功能併入相機控制鍵（長按觸發）。", source: "微博／MacRumors", date: "2026-11-06" },
       { grade: "C", text: "數碼閒聊站：明年 iPhone Pro 改用四邊曲面螢幕，但仍保留螢幕挖孔（動態島），不是先前傳的全螢幕無挖孔。", source: "微博／9to5Mac", date: "2026-11-04" },
       { grade: "B", text: "多方報導 2027 年機種可能跳號命名為 iPhone 20 Pro。", source: "MacRumors", date: "2026-09-21" },
     ],
