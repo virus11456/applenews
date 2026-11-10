@@ -484,8 +484,9 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2026-03-11", price: 21900, label: "iPhone 17e 上市價（256GB）", kind: "newgen", vs: { price: 21900, label: "上一代 iPhone 16e 上市價（128GB）" }, source: "https://www.apple.com/tw/newsroom/2026/03/apple-introduces-iphone-17e/" }, { date: "2026-10-03", price: 25900, label: "256GB", kind: "adjust", dateNote: "上市後至 2026-10-03 之間（確切日期不明）" }],
     twAvailable: true,
     summary: "下一代 iPhone 18e 預計明年春天推出、升級幅度不大，急用現在買也行。",
-    reasons: ["台灣 2026-03-11 開賣，週期進度約五成。", "Bloomberg 報導 iPhone 18e 預計 2027 年春季推出，主要只升級晶片。"],
+    reasons: ["台灣 2026-03-11 開賣，已走過週期一半以上。", "Bloomberg 報導 iPhone 18e 預計 2027 年春季推出，主要只升級晶片。", "微博另有爆料稱 18e 螢幕加大到 6.3 吋、電池加大，但和其他爆料說法互相矛盾，尚未證實。"],
     signals: [
+      { grade: "C", text: "定焦數碼：iPhone 18e 螢幕加大到 6.3 吋（17e 為 6.1 吋）、電池 4,430 mAh；與數碼閒聊站「維持 6.1 吋」的說法矛盾。", source: "微博／MacRumors", date: "2026-11-09" },
       { grade: "B", text: "Gurman：iPhone 18e 與數字版 iPhone 18、Air 2 在 2027 年春季推出。", source: "Bloomberg", date: "2026-09-14" },
     ],
     specAdvice: [{ label: "容量", text: "[編輯建議：依台灣售價級距與常見用途填入]" }],
@@ -719,7 +720,7 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2026-10-03", price: 3990, label: "HomePod mini（第 1 代）", kind: "start" }, { date: "2026-10-14", price: 4790, label: "HomePod mini 2", kind: "newgen" }],
     twAvailable: true,
     summary: "第 2 代台灣 10/30 開賣，NT$4,790，比第一代貴 NT$800。",
-    reasons: ["10/13 發表，S10 晶片、五種新顏色，可和新 Apple TV 4K 組四顆環繞音效；Siri AI 之後以軟體更新加入，Apple 表示繁體中文版年底前推出。", "台灣在首波地區：10/15 上午 9 點預購、10/30 開賣；比第一代貴 NT$800。"],
+    reasons: ["10/13 發表，S10 晶片、五種新顏色，可和新 Apple TV 4K 組四顆環繞音效；Siri AI 之後以軟體更新加入，Apple 表示繁體中文版年底前推出。", "台灣在首波地區：10/15 上午 9 點預購、10/30 開賣；比第一代貴 NT$800。", "MacRumors 11/9 報導：部分用戶把它設成 Mac 預設喇叭時，連線會在睡眠、重開機後跳回內建喇叭，Apple 尚未回應；主要想當 Mac 喇叭用的話，可以等軟體更新再買。"],
     signals: [],
     specAdvice: [{ label: "顏色", text: "[編輯建議：顏色與立體聲配對]" }],
     history: [
