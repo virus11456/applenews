@@ -133,6 +133,7 @@ npm run build
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
 - 2026-10-31：修正分享預覽圖建置失敗：Vercel 建置時 Google Fonts 偶爾下載失敗，原本會傳空字型清單導致整個部署失敗；改為重試三次，仍失敗就用 next/og 內建字型。
+- 2026-11-11：每日檢查。iPad Air：DigiTimes（MacRumors 11/10 轉述）報導兩種尺寸 2027 年上半年改 OLED、三星顯示器為主要供應商，與 Gurman 11/1 時程一致，新增 B 級訊號並更新 reasons。官網產品線與 28 條價格都沒有變動。
 - 2026-11-10：每日檢查。iPhone 17e：微博爆料者「定焦數碼」（MacRumors 11/9 轉述）稱 iPhone 18e 改 6.3 吋螢幕、4,430 mAh 電池，與數碼閒聊站說法矛盾，新增 C 級訊號並在 reasons 註明未證實；「週期進度約五成」改成不會過期的寫法。HomePod mini 2：MacRumors 11/9 報導當 Mac 預設喇叭時連線不穩、Apple 未回應，reasons 加上購買提醒。官網產品線與 28 條價格都沒有變動。
 - 2026-11-07：每日檢查。iPhone 18 Pro：微博爆料者 Instant Digital（MacRumors 11/6 轉述）稱 2027 年下半年的 iPhone 拿掉動作按鈕、功能併入相機控制鍵，新增 C 級訊號。台灣官網 Mac、iPad 頁已不再顯示「預訂」，確認 MacBook Pro、iMac、iPad mini 11/6 開賣。官網產品線與 28 條價格都沒有變動；Apple TV 4K 仍是預購（11/13 開賣）。
 - 2026-11-06：每日檢查。MacBook Pro（PROLED XDR／M6 基本款）、iMac（M6）、iPad mini（A20 Pro）今天在台灣開賣：台灣官網購買頁標示「11 月 6 日開始發售」，與 releasedTW 一致，判定自動轉為「可以買」；summary／reasons 從「已開放預購、11/6 開賣」改寫成開賣後的說法。HomePod mini 2（10/30 已開賣）的 summary 同樣改寫。官網產品線與 28 條價格都沒有變動；Apple TV 4K 仍是預購（11/13 開賣）。

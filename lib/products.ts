@@ -298,8 +298,9 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2026-03-24", price: 19900, label: "M4 11 吋 Wi-Fi 上市價", kind: "newgen", vs: { price: 19900, label: "上一代 M3 11 吋 Wi-Fi 上市價" }, source: "https://www.apple.com/tw/newsroom/2026/03/apple-introduces-the-new-ipad-air-powered-by-m4/" }, { date: "2026-10-03", price: 24900, label: "11 吋 128GB Wi-Fi", kind: "adjust", dateNote: "上市後至 2026-10-03 之間（確切日期不明）" }],
     twAvailable: true,
     summary: "週期過半，M5 版傳聞 2027 年春季推出；不急可等，有需要就買。",
-    reasons: ["台灣 3/24 開賣，週期進度約六成。", "Bloomberg 11/1 再次報導下一代 2027 年上半年推出、改用 OLED 螢幕（B 級訊號）。"],
+    reasons: ["台灣 3/24 開賣，週期進度約六成。", "Bloomberg 11/1 再次報導下一代 2027 年上半年推出、改用 OLED 螢幕；供應鏈媒體 DigiTimes 11/10 也報導同樣時程（B 級訊號）。"],
     signals: [
+      { grade: "B", text: "DigiTimes：iPad Air 兩種尺寸 2027 年上半年改用 OLED（三星顯示器為主要供應商），預估 2027 年出貨 400–500 萬台。", source: "DigiTimes／MacRumors", date: "2026-11-10" },
       { grade: "B", text: "Gurman：Apple 計畫 2027 年上半年推出新款 iPad Air、iPad Pro 與入門 iPad；iPad Air 改用 OLED，iPad Pro 加均熱板散熱。", source: "Bloomberg Power On／MacRumors", date: "2026-11-01" },
       { grade: "B", text: "Gurman：iPad Air 2027 年大改款、改用 OLED 螢幕。", source: "Bloomberg Power On／MacRumors", date: "2026-10-11" },
       { grade: "B", text: "Bloomberg 報導下一代 iPad Air 搭載 M5，預計 2027 年春季推出，可能改用 OLED。", source: "Bloomberg／AppleInsider", date: "2026-07-16" },
