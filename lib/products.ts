@@ -670,8 +670,8 @@ export const PRODUCTS: Product[] = [
     priceTW: { from: 9900, config: "128GB（Wi-Fi 7＋乙太網路）", url: "https://www.apple.com/tw/shop/buy-tv/apple-tv-4k", checked: "2026-10-14" },
     priceHistory: [{ date: "2026-10-03", price: 6900, label: "第 3 代 Wi-Fi 64GB", kind: "start" }, { date: "2026-10-14", price: 9900, label: "第 4 代 128GB", kind: "newgen" }],
     twAvailable: true,
-    summary: "第 4 代已發表，台灣 10/15 上午 9 點開放預購、11/13 開賣，NT$9,900。",
-    reasons: ["10/13 發表，A19 晶片、內建麥克風可直接跟 Siri 對話，支援四顆 HomePod 環繞音效。", "台灣在首波地區：10/15 上午 9 點預購、11/13 開始供貨；官網已改賣新款，舊款不再列出。"],
+    summary: "第 4 代 Apple TV 4K 台灣 11/13 開賣，NT$9,900，只有 128GB 一種版本。",
+    reasons: ["10/13 發表，A19 晶片、內建麥克風可直接跟 Siri 對話，支援四顆 HomePod 環繞音效。", "台灣在首波地區：10/15 上午 9 點預購、11/13 開賣；官網已改賣新款，舊款不再列出。"],
     signals: [],
     specAdvice: [{ label: "容量", text: "[編輯建議：第 4 代與舊款差異、是否需要搭配 HomePod]" }],
     history: [
