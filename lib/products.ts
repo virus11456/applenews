@@ -380,7 +380,7 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2026-10-03", price: 74900, label: "256GB", kind: "start" }],
     twAvailable: true,
     summary: "首款折疊 iPhone，台灣 10/23 開賣但貨很緊；下一代傳明年秋天、可能加 Face ID。",
-    reasons: ["9/9 與 iPhone 18 Pro 同場發表，台灣在首波開賣地區，10/16 晚上 8 點已開放預購，10/23 開始供貨。", "Apple 稱預購需求「非常驚人」；美國官網開放預購半小時內出貨就排到 2027 年 1 月。Apple 執行長 Ternus 11/2 表示目前仍缺貨、無法預估何時供需平衡，台灣想早拿到建議盡快在官網下單。", "Apple 證實台灣直營店 10/23 開賣日不提供現場購買，要先在官網預約指定時段到店取貨；台灣官網也標示「現僅供線上預訂」、每位顧客限購兩部。", "Apple 已承認「少數」iPhone Duo 內螢幕有裂痕問題，並通知直營店依標準流程維修或換新（未召回）；問題多在使用初期出現，買到後頭幾週留意螢幕，有狀況就找 AppleCare。iFixit 也發現灰塵進入轉軸可能造成損傷，建議加購 AppleCare+、避免沙灘等多灰塵環境。"],
+    reasons: ["9/9 與 iPhone 18 Pro 同場發表，台灣在首波開賣地區，10/16 晚上 8 點已開放預購，10/23 開始供貨。", "Apple 稱預購需求「非常驚人」；美國官網開放預購半小時內出貨就排到 2027 年 1 月。Apple 執行長 Ternus 11/2 表示目前仍缺貨、無法預估何時供需平衡，台灣想早拿到建議盡快在官網下單。", "Apple 證實台灣直營店 10/23 開賣日不提供現場購買，要先在官網預約指定時段到店取貨；台灣官網也標示「現僅供線上預訂」、每位顧客限購兩部。", "Apple 已承認「少數」iPhone Duo 內螢幕有裂痕問題，並通知直營店依標準流程維修或換新（未召回）；問題多在使用初期出現，買到後頭幾週留意螢幕，有狀況就找 AppleCare。iFixit 也發現灰塵進入轉軸可能造成損傷，建議加購 AppleCare+、避免沙灘等多灰塵環境。", "CNET 用機器連續摺疊測試：超過 45 萬次仍能正常使用（以每天摺 100 次計算超過十年），約 39 萬次後轉軸開始變鬆；這項測試不涵蓋內螢幕裂痕問題。"],
     signals: [
       { grade: "A", text: "Apple 執行長 Ternus：iPhone Duo 目前供不應求，無法預估何時供需平衡；內螢幕問題退回的比例「非常小」，Apple 提供換新。", source: "Reuters／MacRumors", date: "2026-11-02" },
       { grade: "B", text: "Gurman：iPhone Duo 2 原型機在外螢幕下測試 Face ID，預計明年秋天推出，是否量產未定。", source: "Bloomberg Power On／MacRumors", date: "2026-10-22" },
@@ -721,7 +721,7 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2026-10-03", price: 3990, label: "HomePod mini（第 1 代）", kind: "start" }, { date: "2026-10-14", price: 4790, label: "HomePod mini 2", kind: "newgen" }],
     twAvailable: true,
     summary: "第 2 代台灣 10/30 開賣，NT$4,790，比第一代貴 NT$800。",
-    reasons: ["10/13 發表，S10 晶片、五種新顏色，可和新 Apple TV 4K 組四顆環繞音效；Siri AI 之後以軟體更新加入，Apple 表示繁體中文版年底前推出。", "台灣在首波地區：10/15 上午 9 點預購、10/30 開賣；比第一代貴 NT$800。", "MacRumors 11/9 報導：部分用戶把它設成 Mac 預設喇叭時，連線會在睡眠、重開機後跳回內建喇叭，Apple 尚未回應；主要想當 Mac 喇叭用的話，可以等軟體更新再買。"],
+    reasons: ["10/13 發表，S10 晶片、五種新顏色，可和新 Apple TV 4K 組四顆環繞音效；Siri AI 之後以軟體更新加入，Apple 表示繁體中文版年底前推出；不過 11/13 的 HomePod 軟體 27.2.1 仍未開放，Apple 官網只寫「未來軟體更新」、沒給時程。", "台灣在首波地區：10/15 上午 9 點預購、10/30 開賣；比第一代貴 NT$800。", "MacRumors 11/9 報導：部分用戶把它設成 Mac 預設喇叭時，連線會在睡眠、重開機後跳回內建喇叭，Apple 尚未回應；主要想當 Mac 喇叭用的話，可以等軟體更新再買。"],
     signals: [],
     specAdvice: [{ label: "顏色", text: "[編輯建議：顏色與立體聲配對]" }],
     history: [
