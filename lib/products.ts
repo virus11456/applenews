@@ -101,6 +101,7 @@ export const PRODUCTS: Product[] = [
     summary: "週期中段，M6 版傳聞 2027 年初推出，有需要就買。",
     reasons: ["台灣 4/13 開賣，週期進度約五成。", "Back to School 2026 已於 9/24 結束，目前只剩常態教育價。"],
     signals: [
+      { grade: "B", text: "Gurman 列出的 2027 年新品清單包含 M6 MacBook Air。", source: "Bloomberg／MacRumors", date: "2026-11-15" },
       { grade: "B", text: "M6 MacBook Air 預計 2027 年初推出，外觀不變；OLED 版傳聞 2028 年。", source: "9to5Mac／MacRumors", date: "2026-09-30" },
     ],
     specAdvice: [
@@ -406,9 +407,11 @@ export const PRODUCTS: Product[] = [
     reasons: [
       "台灣 2026-09-18 開賣，週期進度還遠低於「可以買」門檻的 30%。",
       "Pro 系列自 13 Pro 起連續 6 代於 9 月發表，平均間隔約 366 天。",
+      "Bloomberg 報導 2027 年的 Pro 是 iPhone X 以來最大改款（四邊曲面玻璃）；很在意外觀設計的話可以考慮等，但要再等約一年。",
     ],
     signals: [
       { grade: "A", text: "歷代規律：Pro 系列自 13 Pro 起連續 6 代於 9 月發表（12 Pro 因疫情延至 10 月），下一代最可能為 2027 年 9 月。", source: "本站歷代紀錄", date: "2026-10-02" },
+      { grade: "B", text: "Gurman：2027 年 20 週年 Pro 機種換 A21 Pro，前後玻璃包覆四邊、邊框更窄，是 iPhone X 以來 Pro 系列最大改款。", source: "Bloomberg／MacRumors", date: "2026-11-15" },
       { grade: "C", text: "微博爆料者 Instant Digital：2027 年下半年的 iPhone 拿掉動作按鈕，功能併入相機控制鍵（長按觸發）。", source: "微博／MacRumors", date: "2026-11-06" },
       { grade: "C", text: "數碼閒聊站：明年 iPhone Pro 改用四邊曲面螢幕，但仍保留螢幕挖孔（動態島），不是先前傳的全螢幕無挖孔。", source: "微博／9to5Mac", date: "2026-11-04" },
       { grade: "B", text: "多方報導 2027 年機種可能跳號命名為 iPhone 20 Pro。", source: "MacRumors", date: "2026-09-21" },
@@ -511,7 +514,10 @@ export const PRODUCTS: Product[] = [
     twAvailable: true,
     summary: "剛更新，離下一代最遠。",
     reasons: ["Series 系列近年固定每年 9 月更新。", "台灣 2026-09-18 開賣，剛換代不久。"],
-    signals: [{ grade: "A", text: "歷代規律：近年固定 9 月發表、9 月中下旬開賣，多與 iPhone 同場。", source: "本站歷代紀錄", date: "2026-10-02" }],
+    signals: [
+      { grade: "C", text: "未具名爆料者：Apple Watch Series 13 改款，換新的錶帶連接方式（這類傳聞幾乎每年都有）。", source: "MacRumors", date: "2026-11-16" },
+      { grade: "A", text: "歷代規律：近年固定 9 月發表、9 月中下旬開賣，多與 iPhone 同場。", source: "本站歷代紀錄", date: "2026-10-02" },
+    ],
     specAdvice: [{ label: "行動網路版", text: "[編輯建議：電信 One Number 方案]" }],
     history: [
       { gen: "Series 12", date: "2026-09-18" },
