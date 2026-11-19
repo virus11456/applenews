@@ -383,6 +383,7 @@ export const PRODUCTS: Product[] = [
     summary: "首款折疊 iPhone，台灣 10/23 開賣但貨很緊；下一代傳明年秋天，Face ID 可能要等到第三代。",
     reasons: ["9/9 與 iPhone 18 Pro 同場發表，台灣在首波開賣地區，10/16 晚上 8 點已開放預購，10/23 開始供貨。", "Apple 稱預購需求「非常驚人」；美國官網開放預購半小時內出貨就排到 2027 年 1 月。Apple 執行長 Ternus 11/2 表示目前仍缺貨、無法預估何時供需平衡，台灣想早拿到建議盡快在官網下單。", "Apple 證實台灣直營店 10/23 開賣日不提供現場購買，要先在官網預約指定時段到店取貨；台灣官網也標示「現僅供線上預訂」、每位顧客限購兩部。", "Apple 已承認「少數」iPhone Duo 內螢幕有裂痕問題，並通知直營店依標準流程維修或換新（未召回）；問題多在使用初期出現，買到後頭幾週留意螢幕，有狀況就找 AppleCare。iFixit 也發現灰塵進入轉軸可能造成損傷，建議加購 AppleCare+、避免沙灘等多灰塵環境。", "CNET 用機器連續摺疊測試：超過 45 萬次仍能正常使用（以每天摺 100 次計算超過十年），約 39 萬次後轉軸開始變鬆；這項測試不涵蓋內螢幕裂痕問題。"],
     signals: [
+      { grade: "C", text: "數碼閒聊站：iPhone Duo 2 工程機仍是側邊 Touch ID，看不到 Face ID；內外螢幕尺寸（7.6／5.4 吋）與第一代相同。", source: "微博／MacRumors", date: "2026-11-18" },
       { grade: "B", text: "Gurman：之後的 iPhone Duo 會加入 Face ID、動作按鈕、望遠鏡頭，機身更薄更輕；但 Face ID 可能來不及放進 Duo 2，要等到 Duo 3。", source: "Bloomberg／MacRumors", date: "2026-11-15" },
       { grade: "A", text: "Apple 執行長 Ternus：iPhone Duo 目前供不應求，無法預估何時供需平衡；內螢幕問題退回的比例「非常小」，Apple 提供換新。", source: "Reuters／MacRumors", date: "2026-11-02" },
       { grade: "B", text: "Gurman：iPhone Duo 2 原型機在外螢幕下測試 Face ID，預計明年秋天推出，是否量產未定。", source: "Bloomberg Power On／MacRumors", date: "2026-10-22" },
@@ -442,8 +443,10 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2026-10-03", price: 39900, label: "256GB", kind: "start" }],
     twAvailable: true,
     summary: "第一代已賣一年，第二代傳 2027 年上半年推出、改雙鏡頭，不急可等。",
-    reasons: ["台灣 2025-09-19 開賣，是第一代。", "Bloomberg 報導 iPhone Air 2 將在 2027 年上半年推出，加上超廣角鏡頭。"],
+    reasons: ["台灣 2025-09-19 開賣，是第一代。", "Bloomberg 報導 iPhone Air 2 將在 2027 年上半年推出，加上超廣角鏡頭；韓國 ETNews 11/18 報導面板 1 月開始生產，推估 3 月推出，螢幕規格不變。"],
     signals: [
+      { grade: "B", text: "ETNews：三星、LG 顯示器預計 12 月底到 1 月初開始量產 iPhone 18 與 iPhone Air 2 的面板，對應 2027 年 3 月推出。", source: "ETNews／MacRumors", date: "2026-11-18" },
+      { grade: "B", text: "ETNews：iPhone Air 2 沿用第一代的螢幕規格（可用現有面板庫存），三星為唯一面板供應商。", source: "ETNews／MacRumors", date: "2026-11-18" },
       { grade: "B", text: "Gurman：iPhone Air 2 改用雙鏡頭，2027 年上半年與數字版 iPhone 18 一起推出。", source: "Bloomberg／TechSpot", date: "2026-09-15" },
       { grade: "B", text: "iPhone Air 2 與 iPhone 18e 預計明年初推出。", source: "MacRumors", date: "2026-04-08" },
     ],
@@ -463,8 +466,9 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2025-09-19", price: 29900, label: "iPhone 17 上市價", kind: "newgen", vs: { price: 29900, label: "上一代 iPhone 16 上市價" }, source: "https://www.apple.com/tw/newsroom/2025/09/apple-introduces-iphone-17/" }, { date: "2026-10-03", price: 32900, label: "256GB", kind: "adjust", dateNote: "上市後至 2026-10-03 之間（確切日期不明）" }],
     twAvailable: true,
     summary: "已賣滿一年，iPhone 18 改到 2027 年上半年推出，急用可買、不急可等。",
-    reasons: ["台灣 2025-09-19 開賣，已超過一年。", "Bloomberg 報導數字版 iPhone 18 不在今年 9 月推出，改到 2027 年上半年。", "微博爆料者「數碼閒聊站」稱 iPhone 18 電池比 iPhone 17 大、售價可能調漲（單一來源傳聞，漲價幅度與地區不明）。"],
+    reasons: ["台灣 2025-09-19 開賣，已超過一年。", "Bloomberg 報導數字版 iPhone 18 不在今年 9 月推出，改到 2027 年上半年；韓國 ETNews 11/18 報導面板年底開始量產，推估 3 月推出。", "微博爆料者「數碼閒聊站」稱 iPhone 18 電池比 iPhone 17 大、售價可能調漲（單一來源傳聞，漲價幅度與地區不明）。"],
     signals: [
+      { grade: "B", text: "ETNews：三星、LG 顯示器預計 12 月底到 1 月初開始量產 iPhone 18 與 iPhone Air 2 的面板，對應 2027 年 3 月推出。", source: "ETNews／MacRumors", date: "2026-11-18" },
       { grade: "C", text: "數碼閒聊站：iPhone 18 電池比 iPhone 17（3,692 mAh）大，售價可能調漲，2027 年上半年與 iPhone 18e、iPhone Air 2 一起推出。", source: "微博／MacRumors", date: "2026-11-03" },
       { grade: "B", text: "Gurman：數字版 iPhone 18、iPhone Air 2、iPhone 18e 都在 2027 年上半年推出。", source: "Bloomberg／TechSpot", date: "2026-09-15" },
     ],

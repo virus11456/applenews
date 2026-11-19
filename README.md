@@ -133,6 +133,7 @@ npm run build
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
 - 2026-10-31：修正分享預覽圖建置失敗：Vercel 建置時 Google Fonts 偶爾下載失敗，原本會傳空字型清單導致整個部署失敗；改為重試三次，仍失敗就用 next/og 內建字型。
+- 2026-11-19：每日檢查。韓國 ETNews（MacRumors 11/18 轉述）：iPhone 18 與 iPhone Air 2 面板 12 月底到 1 月初量產、推估 2027 年 3 月推出，Air 2 沿用第一代螢幕規格；iPhone 17、iPhone Air 各新增 B 級訊號並更新 reasons。iPhone Duo：數碼閒聊站稱 Duo 2 工程機仍為側邊 Touch ID、螢幕尺寸不變，新增 C 級訊號。iPhone 20 Pro 鈦金屬邊框傳聞為工程機階段，未新增。官網產品線與 28 條價格都沒有變動。
 - 2026-11-17：每日檢查。依 Gurman 11/15 的 2027 新品清單（MacRumors 11/16 整理）：iPhone 18 Pro 新增 B 級訊號（20 週年 Pro 換 A21 Pro、四邊曲面玻璃、iPhone X 以來最大改款）並在 reasons 提醒可考慮等待；MacBook Air 新增 B 級訊號（清單含 M6 版）；Apple Watch 新增 C 級訊號（Series 13 改錶帶連接方式，未具名爆料）。iPhone Duo 相機解鎖仍在 iOS 27.3 測試版，正式推出再寫入。官網產品線與 28 條價格都沒有變動。
 - 2026-11-16：每日檢查。iPhone Duo：Gurman（Bloomberg，MacRumors 11/15 轉述）稱之後的 Duo 會加入 Face ID、動作按鈕、望遠鏡頭並更輕薄，但 Face ID 可能延到 Duo 3；新增 B 級訊號，next 說明與 summary 同步改寫。官網產品線與 28 條價格都沒有變動。
 - 2026-11-14：每日檢查。iPhone Duo：reasons 加入 CNET 摺疊測試結果（MacRumors 11/13：超過 45 萬次仍可使用、約 39 萬次後轉軸變鬆）。HomePod mini 2：MacRumors 11/13 報導 27.2.1 更新仍未開放 Siri AI、Apple 未給時程，reasons 補上。TV 與家庭頁已不再顯示「預訂」，確認 Apple TV 4K 11/13 開賣。Gurman 再提 iPhone 18／18e 2027 春季推出，與既有訊號一致，未新增。官網產品線與 28 條價格都沒有變動。
