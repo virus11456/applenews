@@ -161,7 +161,9 @@ export const PRODUCTS: Product[] = [
     twAvailable: true,
     summary: "M6 iMac 台灣 11/6 開賣，NT$49,900 起，起價和上一代相同。",
     reasons: ["10/27 發表：M6 晶片、Siri AI，維持七種顏色；起價與 M4 版相同，但入門款升級為 10 核心 CPU／GPU。", "台灣在首波地區：10/29 凌晨 1 點 10 分預購、11/6 開賣；官網已不再列出 M4 版。"],
-    signals: [],
+    signals: [
+      { grade: "C", text: "The Elec：Apple 考慮延後或取消原傳 2029–2030 年的 OLED iMac，並向 LCD 供應商詢問約 2029 年新款 iMac 的面板；近期新款時程沒有報導。", source: "The Elec／MacRumors", date: "2026-11-19" },
+    ],
     specAdvice: [{ label: "配置", text: "[編輯建議：連接埠數量與顏色]" }],
     history: [
       { gen: "iMac（M6）", date: "2026-11-06" },
