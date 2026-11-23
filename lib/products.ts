@@ -80,6 +80,7 @@ export const PRODUCTS: Product[] = [
     summary: "今年 4 月才在台灣開賣的全新入門筆電，第二代要到 2027 年，需要就可以買。",
     reasons: ["台灣 2026-04-13 開賣，是第一代，也是第一款用 A 系列晶片的 Mac。", "Bloomberg 報導第二代 2027 上半年才推出。", "10/28 台灣官網調漲 NT$1,000（256GB NT$23,900、512GB NT$26,900）。"],
     signals: [
+      { grade: "B", text: "Gurman：Apple 計畫 2027 年 2 月或 3 月推出第一波新品：iPhone 18、iPhone 18e、入門 iPad（A19）、MacBook Neo（A19 Pro）、MacBook Air（M6）。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "B", text: "Gurman：第二代 MacBook Neo 預計 2027 上半年推出。", source: "Bloomberg／MacRumors", date: "2026-10-27" },
       { grade: "B", text: "Gurman：第二代 MacBook Neo 升級 A19 Pro、12GB 記憶體與新顏色，2027 年推出。", source: "Bloomberg／MacRumors", date: "2026-09-04" },
     ],
@@ -101,6 +102,7 @@ export const PRODUCTS: Product[] = [
     summary: "週期中段，M6 版傳聞 2027 年初推出，有需要就買。",
     reasons: ["台灣 4/13 開賣，週期進度約五成。", "Back to School 2026 已於 9/24 結束，目前只剩常態教育價。"],
     signals: [
+      { grade: "B", text: "Gurman：Apple 計畫 2027 年 2 月或 3 月推出第一波新品：iPhone 18、iPhone 18e、入門 iPad（A19）、MacBook Neo（A19 Pro）、MacBook Air（M6）。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "B", text: "Gurman 列出的 2027 年新品清單包含 M6 MacBook Air。", source: "Bloomberg／MacRumors", date: "2026-11-15" },
       { grade: "B", text: "M6 MacBook Air 預計 2027 年初推出，外觀不變；OLED 版傳聞 2028 年。", source: "9to5Mac／MacRumors", date: "2026-09-30" },
     ],
@@ -277,6 +279,7 @@ export const PRODUCTS: Product[] = [
     summary: "M5 iPad Pro 在台灣上市快一年，新款要到明年春天，急用可以買，不急可以再等等。",
     reasons: ["台灣 2025-11-20 開賣，週期進度約六成。", "Bloomberg 11/1 再次報導下一代要到 2027 年上半年，加均熱板散熱（B 級訊號）。"],
     signals: [
+      { grade: "B", text: "Gurman：iPhone Air 2、iPad Air（OLED）、iPad Pro 排在 2027 年上半年的第二波，比 2–3 月那一波稍晚推出。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "B", text: "Gurman：Apple 計畫 2027 年上半年推出新款 iPad Air、iPad Pro 與入門 iPad；iPad Air 改用 OLED，iPad Pro 加均熱板散熱。", source: "Bloomberg Power On／MacRumors", date: "2026-11-01" },
       { grade: "B", text: "Gurman：下一代 iPad Pro 2027 年春季推出，搭載 M6 與均熱板。", source: "Bloomberg／AppleInsider", date: "2026-03-01" },
       { grade: "B", text: "M5 iPad Pro 預計 2027 年前不會更新。", source: "9to5Mac", date: "2026-06-03" },
@@ -303,6 +306,7 @@ export const PRODUCTS: Product[] = [
     summary: "週期過半，M5 版傳聞 2027 年春季推出；不急可等，有需要就買。",
     reasons: ["台灣 3/24 開賣，週期進度約六成。", "Bloomberg 11/1 再次報導下一代 2027 年上半年推出、改用 OLED 螢幕；供應鏈媒體 DigiTimes 11/10 也報導同樣時程（B 級訊號）。"],
     signals: [
+      { grade: "B", text: "Gurman：iPhone Air 2、iPad Air（OLED）、iPad Pro 排在 2027 年上半年的第二波，比 2–3 月那一波稍晚推出。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "B", text: "DigiTimes：iPad Air 兩種尺寸 2027 年上半年改用 OLED（三星顯示器為主要供應商），預估 2027 年出貨 400–500 萬台。", source: "DigiTimes／MacRumors", date: "2026-11-10" },
       { grade: "B", text: "Gurman：Apple 計畫 2027 年上半年推出新款 iPad Air、iPad Pro 與入門 iPad；iPad Air 改用 OLED，iPad Pro 加均熱板散熱。", source: "Bloomberg Power On／MacRumors", date: "2026-11-01" },
       { grade: "B", text: "Gurman：iPad Air 2027 年大改款、改用 OLED 螢幕。", source: "Bloomberg Power On／MacRumors", date: "2026-10-11" },
@@ -333,6 +337,7 @@ export const PRODUCTS: Product[] = [
     summary: "這台入門 iPad 已上市一年半，新款已在 Apple 程式碼中現身、預計明年春天推出，不急建議等等。",
     reasons: ["台灣 2025-04-11 開賣，已走完平均週期約八成五。", "Apple 程式碼顯示下一代換 A19 晶片並支援 Apple Intelligence；Bloomberg 11/1 報導 2027 年上半年推出。"],
     signals: [
+      { grade: "B", text: "Gurman：Apple 計畫 2027 年 2 月或 3 月推出第一波新品：iPhone 18、iPhone 18e、入門 iPad（A19）、MacBook Neo（A19 Pro）、MacBook Air（M6）。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "B", text: "Gurman：Apple 計畫 2027 年上半年推出新款 iPad Air、iPad Pro 與入門 iPad；iPad Air 改用 OLED，iPad Pro 加均熱板散熱。", source: "Bloomberg Power On／MacRumors", date: "2026-11-01" },
       { grade: "B", text: "Gurman：下一代入門 iPad（J581／J582）要到 2027 年初才推出。", source: "Bloomberg Power On／MacRumors", date: "2026-10-11" },
       { grade: "B", text: "Apple 程式碼顯示新入門 iPad 搭載 A19、8GB 記憶體，預期 2027 年春季推出。", source: "MacRumors／AppleInsider", date: "2026-09-25" },
@@ -447,6 +452,7 @@ export const PRODUCTS: Product[] = [
     summary: "第一代已賣一年，第二代傳 2027 年上半年推出、改雙鏡頭，不急可等。",
     reasons: ["台灣 2025-09-19 開賣，是第一代。", "Bloomberg 報導 iPhone Air 2 將在 2027 年上半年推出，加上超廣角鏡頭；韓國 ETNews 11/18 報導面板 1 月開始生產，推估 3 月推出，螢幕規格不變。"],
     signals: [
+      { grade: "B", text: "Gurman：iPhone Air 2、iPad Air（OLED）、iPad Pro 排在 2027 年上半年的第二波，比 2–3 月那一波稍晚推出。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "B", text: "ETNews：三星、LG 顯示器預計 12 月底到 1 月初開始量產 iPhone 18 與 iPhone Air 2 的面板，對應 2027 年 3 月推出。", source: "ETNews／MacRumors", date: "2026-11-18" },
       { grade: "B", text: "ETNews：iPhone Air 2 沿用第一代的螢幕規格（可用現有面板庫存），三星為唯一面板供應商。", source: "ETNews／MacRumors", date: "2026-11-18" },
       { grade: "B", text: "Gurman：iPhone Air 2 改用雙鏡頭，2027 年上半年與數字版 iPhone 18 一起推出。", source: "Bloomberg／TechSpot", date: "2026-09-15" },
@@ -470,6 +476,7 @@ export const PRODUCTS: Product[] = [
     summary: "已賣滿一年，iPhone 18 改到 2027 年上半年推出，急用可買、不急可等。",
     reasons: ["台灣 2025-09-19 開賣，已超過一年。", "Bloomberg 報導數字版 iPhone 18 不在今年 9 月推出，改到 2027 年上半年；韓國 ETNews 11/18 報導面板年底開始量產，推估 3 月推出。", "微博爆料者「數碼閒聊站」稱 iPhone 18 電池比 iPhone 17 大、售價可能調漲（單一來源傳聞，漲價幅度與地區不明）。"],
     signals: [
+      { grade: "B", text: "Gurman：Apple 計畫 2027 年 2 月或 3 月推出第一波新品：iPhone 18、iPhone 18e、入門 iPad（A19）、MacBook Neo（A19 Pro）、MacBook Air（M6）。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "B", text: "ETNews：三星、LG 顯示器預計 12 月底到 1 月初開始量產 iPhone 18 與 iPhone Air 2 的面板，對應 2027 年 3 月推出。", source: "ETNews／MacRumors", date: "2026-11-18" },
       { grade: "C", text: "數碼閒聊站：iPhone 18 電池比 iPhone 17（3,692 mAh）大，售價可能調漲，2027 年上半年與 iPhone 18e、iPhone Air 2 一起推出。", source: "微博／MacRumors", date: "2026-11-03" },
       { grade: "B", text: "Gurman：數字版 iPhone 18、iPhone Air 2、iPhone 18e 都在 2027 年上半年推出。", source: "Bloomberg／TechSpot", date: "2026-09-15" },
@@ -497,6 +504,7 @@ export const PRODUCTS: Product[] = [
     summary: "下一代 iPhone 18e 預計明年春天推出、升級幅度不大，急用現在買也行。",
     reasons: ["台灣 2026-03-11 開賣，已走過週期一半以上。", "Bloomberg 報導 iPhone 18e 預計 2027 年春季推出，主要只升級晶片。", "微博另有爆料稱 18e 螢幕加大到 6.3 吋、電池加大，但和其他爆料說法互相矛盾，尚未證實。"],
     signals: [
+      { grade: "B", text: "Gurman：Apple 計畫 2027 年 2 月或 3 月推出第一波新品：iPhone 18、iPhone 18e、入門 iPad（A19）、MacBook Neo（A19 Pro）、MacBook Air（M6）。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "C", text: "定焦數碼：iPhone 18e 螢幕加大到 6.3 吋（17e 為 6.1 吋）、電池 4,430 mAh；與數碼閒聊站「維持 6.1 吋」的說法矛盾。", source: "微博／MacRumors", date: "2026-11-09" },
       { grade: "B", text: "Gurman：iPhone 18e 與數字版 iPhone 18、Air 2 在 2027 年春季推出。", source: "Bloomberg", date: "2026-09-14" },
     ],

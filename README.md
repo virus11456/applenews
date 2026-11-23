@@ -133,6 +133,7 @@ npm run build
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
 - 2026-10-31：修正分享預覽圖建置失敗：Vercel 建置時 Google Fonts 偶爾下載失敗，原本會傳空字型清單導致整個部署失敗；改為重試三次，仍失敗就用 next/og 內建字型。
+- 2026-11-23：每日檢查。Gurman（Bloomberg Power On 11/22，MacRumors 轉述）：2027 年 2–3 月第一波推出 iPhone 18、iPhone 18e、入門 iPad、MacBook Neo、MacBook Air（M6），iPhone Air 2、iPad Air、iPad Pro 為稍晚的第二波；8 條產品各新增一則 B 級訊號（同一段文字，最近消息頁合併顯示），預估日期不變。11/21 的檢查延遲送達、與 11/22 合併執行，兩天皆無變動。官網產品線與 28 條價格都沒有變動。
 - 2026-11-20：每日檢查。iMac：韓國 The Elec（MacRumors 11/19 轉述）稱 Apple 考慮延後或取消原傳 2029–2030 年的 OLED iMac，新增 C 級訊號（iMac 第一則訊號，下一代時程仍未定）。Apple 黑色星期五禮品卡活動（11/27–30）報導未列台灣，未寫入。官網產品線與 28 條價格都沒有變動。
 - 2026-11-19：每日檢查。韓國 ETNews（MacRumors 11/18 轉述）：iPhone 18 與 iPhone Air 2 面板 12 月底到 1 月初量產、推估 2027 年 3 月推出，Air 2 沿用第一代螢幕規格；iPhone 17、iPhone Air 各新增 B 級訊號並更新 reasons。iPhone Duo：數碼閒聊站稱 Duo 2 工程機仍為側邊 Touch ID、螢幕尺寸不變，新增 C 級訊號。iPhone 20 Pro 鈦金屬邊框傳聞為工程機階段，未新增。官網產品線與 28 條價格都沒有變動。
 - 2026-11-17：每日檢查。依 Gurman 11/15 的 2027 新品清單（MacRumors 11/16 整理）：iPhone 18 Pro 新增 B 級訊號（20 週年 Pro 換 A21 Pro、四邊曲面玻璃、iPhone X 以來最大改款）並在 reasons 提醒可考慮等待；MacBook Air 新增 B 級訊號（清單含 M6 版）；Apple Watch 新增 C 級訊號（Series 13 改錶帶連接方式，未具名爆料）。iPhone Duo 相機解鎖仍在 iOS 27.3 測試版，正式推出再寫入。官網產品線與 28 條價格都沒有變動。
