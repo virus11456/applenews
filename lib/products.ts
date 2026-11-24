@@ -668,7 +668,7 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2026-04-23", price: 17990, label: "AirPods Max 2 上市價", kind: "newgen", vs: { price: 18490, label: "上一代 AirPods Max（2020）台灣上市價" }, source: "https://www.apple.com/tw/newsroom/2026/03/apple-introduces-airpods-max-2-powered-by-h2/" }],
     twAvailable: true,
     summary: "AirPods Max 2 今年春天才推出，下一代沒有可靠消息，現在買是好時機。",
-    reasons: ["台灣 2026-04-23 開賣，升級 H2 晶片。", "上一次大改款隔了五年多。"],
+    reasons: ["台灣 2026-04-23 開賣，升級 H2 晶片。", "上一次大改款隔了五年多。", "Bloomberg 報導 12/1（世界愛滋病日）前後可能推出 (PRODUCT)RED 紅色版，只換顏色、不是新一代；想要紅色可以等一下，台灣是否販售未知。"],
     signals: [
       { grade: "C", text: "郭明錤：更輕的 AirPods Max 預計 2027 年量產（Max 2 推出前的說法）。", source: "MacRumors", date: "2025-05-19" },
     ],
@@ -742,7 +742,7 @@ export const PRODUCTS: Product[] = [
     priceHistory: [{ date: "2026-10-03", price: 3990, label: "HomePod mini（第 1 代）", kind: "start" }, { date: "2026-10-14", price: 4790, label: "HomePod mini 2", kind: "newgen" }],
     twAvailable: true,
     summary: "第 2 代台灣 10/30 開賣，NT$4,790，比第一代貴 NT$800。",
-    reasons: ["10/13 發表，S10 晶片、五種新顏色，可和新 Apple TV 4K 組四顆環繞音效；Siri AI 之後以軟體更新加入，Apple 表示繁體中文版年底前推出；不過 11/13 的 HomePod 軟體 27.2.1 仍未開放，Apple 官網只寫「未來軟體更新」、沒給時程。", "台灣在首波地區：10/15 上午 9 點預購、10/30 開賣；比第一代貴 NT$800。", "MacRumors 11/9 報導：部分用戶把它設成 Mac 預設喇叭時，連線會在睡眠、重開機後跳回內建喇叭，Apple 尚未回應；主要想當 Mac 喇叭用的話，可以等軟體更新再買。"],
+    reasons: ["10/13 發表，S10 晶片、五種新顏色，可和新 Apple TV 4K 組四顆環繞音效；Siri AI 之後以軟體更新加入，Apple 表示繁體中文版年底前推出；不過 11/13 的 HomePod 軟體 27.2.1 仍未開放，Apple 官網只寫「未來軟體更新」、沒給時程。", "台灣在首波地區：10/15 上午 9 點預購、10/30 開賣；比第一代貴 NT$800。", "MacRumors 11/9 報導：部分用戶把它設成 Mac 預設喇叭時，連線會在睡眠、重開機後跳回內建喇叭，Apple 尚未回應；主要想當 Mac 喇叭用的話，可以等軟體更新再買。", "Bloomberg 報導 12/1（世界愛滋病日）前後可能推出 (PRODUCT)RED 紅色版，只換顏色、不是新一代；想要紅色可以等一下，台灣是否販售未知。"],
     signals: [],
     specAdvice: [{ label: "顏色", text: "[編輯建議：顏色與立體聲配對]" }],
     history: [
