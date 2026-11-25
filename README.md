@@ -133,6 +133,7 @@ npm run build
 - 2026-10-04：每日檢查。官網 28 條產品線的清單與價格都沒有變動。MacBook Pro 新增 Bloomberg 10/1 訊號：OLED 觸控螢幕高階款（M5 Pro／Max，14、16 吋）最快 10 月、可能 11 月推出；結論改為「不管買哪一款都建議先等等」。
 
 - 2026-10-31：修正分享預覽圖建置失敗：Vercel 建置時 Google Fonts 偶爾下載失敗，原本會傳空字型清單導致整個部署失敗；改為重試三次，仍失敗就用 next/og 內建字型。
+- 2026-11-25：每日檢查。Engadget 設計圖（MacRumors 11/24 轉述，單一供應鏈來源）：iPhone 18e 改 iPad Pro 風格鏡頭模組（仍單鏡頭）、iPhone Air 2 並排雙鏡頭且鏡頭凸起加厚，iPhone 17e、iPhone Air 各新增 C 級訊號。紅色版產品清單更新為 AirPods Max 2、HomePod mini 2 與兩款配件，已在 11/24 加註，不再更動。官網產品線與 28 條價格都沒有變動。
 - 2026-11-24：每日檢查。Gurman（Bloomberg，MacRumors 11/23 轉述）報導 12/1 前後可能推出 HomePod mini 2 與 AirPods Max 2 的 (PRODUCT)RED 紅色版，只換顏色；兩條在 reasons 加註（不列為下一代訊號，避免誤解為新款）。官網產品線與 28 條價格都沒有變動。
 - 2026-11-23：每日檢查。Gurman（Bloomberg Power On 11/22，MacRumors 轉述）：2027 年 2–3 月第一波推出 iPhone 18、iPhone 18e、入門 iPad、MacBook Neo、MacBook Air（M6），iPhone Air 2、iPad Air、iPad Pro 為稍晚的第二波；8 條產品各新增一則 B 級訊號（同一段文字，最近消息頁合併顯示），預估日期不變。11/21 的檢查延遲送達、與 11/22 合併執行，兩天皆無變動。官網產品線與 28 條價格都沒有變動。
 - 2026-11-20：每日檢查。iMac：韓國 The Elec（MacRumors 11/19 轉述）稱 Apple 考慮延後或取消原傳 2029–2030 年的 OLED iMac，新增 C 級訊號（iMac 第一則訊號，下一代時程仍未定）。Apple 黑色星期五禮品卡活動（11/27–30）報導未列台灣，未寫入。官網產品線與 28 條價格都沒有變動。

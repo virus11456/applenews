@@ -452,6 +452,7 @@ export const PRODUCTS: Product[] = [
     summary: "第一代已賣一年，第二代傳 2027 年上半年推出、改雙鏡頭，不急可等。",
     reasons: ["台灣 2025-09-19 開賣，是第一代。", "Bloomberg 報導 iPhone Air 2 將在 2027 年上半年推出，加上超廣角鏡頭；韓國 ETNews 11/18 報導面板 1 月開始生產，推估 3 月推出，螢幕規格不變。"],
     signals: [
+      { grade: "C", text: "Engadget 取得的設計圖：iPhone Air 2 改成並排雙鏡頭，鏡頭凸起從 3.45mm 加厚到 3.8mm，機身維持 5.6mm。", source: "Engadget／MacRumors", date: "2026-11-24" },
       { grade: "B", text: "Gurman：iPhone Air 2、iPad Air（OLED）、iPad Pro 排在 2027 年上半年的第二波，比 2–3 月那一波稍晚推出。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "B", text: "ETNews：三星、LG 顯示器預計 12 月底到 1 月初開始量產 iPhone 18 與 iPhone Air 2 的面板，對應 2027 年 3 月推出。", source: "ETNews／MacRumors", date: "2026-11-18" },
       { grade: "B", text: "ETNews：iPhone Air 2 沿用第一代的螢幕規格（可用現有面板庫存），三星為唯一面板供應商。", source: "ETNews／MacRumors", date: "2026-11-18" },
@@ -504,6 +505,7 @@ export const PRODUCTS: Product[] = [
     summary: "下一代 iPhone 18e 預計明年春天推出、升級幅度不大，急用現在買也行。",
     reasons: ["台灣 2026-03-11 開賣，已走過週期一半以上。", "Bloomberg 報導 iPhone 18e 預計 2027 年春季推出，主要只升級晶片。", "微博另有爆料稱 18e 螢幕加大到 6.3 吋、電池加大，但和其他爆料說法互相矛盾，尚未證實。"],
     signals: [
+      { grade: "C", text: "Engadget 取得的設計圖：iPhone 18e 背面改成類似 iPad Pro 的凸起鏡頭模組（鏡頭、閃光燈、麥克風集中），仍只有一顆主鏡頭。", source: "Engadget／MacRumors", date: "2026-11-24" },
       { grade: "B", text: "Gurman：Apple 計畫 2027 年 2 月或 3 月推出第一波新品：iPhone 18、iPhone 18e、入門 iPad（A19）、MacBook Neo（A19 Pro）、MacBook Air（M6）。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "C", text: "定焦數碼：iPhone 18e 螢幕加大到 6.3 吋（17e 為 6.1 吋）、電池 4,430 mAh；與數碼閒聊站「維持 6.1 吋」的說法矛盾。", source: "微博／MacRumors", date: "2026-11-09" },
       { grade: "B", text: "Gurman：iPhone 18e 與數字版 iPhone 18、Air 2 在 2027 年春季推出。", source: "Bloomberg", date: "2026-09-14" },
