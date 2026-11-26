@@ -102,6 +102,7 @@ export const PRODUCTS: Product[] = [
     summary: "週期中段，M6 版傳聞 2027 年初推出，有需要就買。",
     reasons: ["台灣 4/13 開賣，週期進度約五成。", "Back to School 2026 已於 9/24 結束，目前只剩常態教育價。"],
     signals: [
+      { grade: "B", text: "Gurman：MacBook Air 大改款（可能改 OLED）要到 2027 年底或 2028 年；明年初的 M6 版只升級晶片、外觀不變。", source: "Bloomberg Power On／MacRumors", date: "2026-11-25" },
       { grade: "B", text: "Gurman：Apple 計畫 2027 年 2 月或 3 月推出第一波新品：iPhone 18、iPhone 18e、入門 iPad（A19）、MacBook Neo（A19 Pro）、MacBook Air（M6）。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "B", text: "Gurman 列出的 2027 年新品清單包含 M6 MacBook Air。", source: "Bloomberg／MacRumors", date: "2026-11-15" },
       { grade: "B", text: "M6 MacBook Air 預計 2027 年初推出，外觀不變；OLED 版傳聞 2028 年。", source: "9to5Mac／MacRumors", date: "2026-09-30" },
