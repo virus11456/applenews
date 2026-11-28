@@ -478,6 +478,7 @@ export const PRODUCTS: Product[] = [
     summary: "已賣滿一年，iPhone 18 改到 2027 年上半年推出，急用可買、不急可等。",
     reasons: ["台灣 2025-09-19 開賣，已超過一年。", "Bloomberg 報導數字版 iPhone 18 不在今年 9 月推出，改到 2027 年上半年；韓國 ETNews 11/18 報導面板年底開始量產，推估 3 月推出。", "微博爆料者「數碼閒聊站」稱 iPhone 18 電池比 iPhone 17 大、售價可能調漲（單一來源傳聞，漲價幅度與地區不明）。"],
     signals: [
+      { grade: "C", text: "定焦數碼：iPhone 18 與 iPhone 18e 量產從 10 月底延到元旦前後；Gurman 仍說 2027 年 2–3 月推出，但上市初期可能較難買到。", source: "微博／MacRumors", date: "2026-11-27" },
       { grade: "B", text: "Gurman：Apple 計畫 2027 年 2 月或 3 月推出第一波新品：iPhone 18、iPhone 18e、入門 iPad（A19）、MacBook Neo（A19 Pro）、MacBook Air（M6）。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "B", text: "ETNews：三星、LG 顯示器預計 12 月底到 1 月初開始量產 iPhone 18 與 iPhone Air 2 的面板，對應 2027 年 3 月推出。", source: "ETNews／MacRumors", date: "2026-11-18" },
       { grade: "C", text: "數碼閒聊站：iPhone 18 電池比 iPhone 17（3,692 mAh）大，售價可能調漲，2027 年上半年與 iPhone 18e、iPhone Air 2 一起推出。", source: "微博／MacRumors", date: "2026-11-03" },
@@ -506,6 +507,7 @@ export const PRODUCTS: Product[] = [
     summary: "下一代 iPhone 18e 預計明年春天推出、升級幅度不大，急用現在買也行。",
     reasons: ["台灣 2026-03-11 開賣，已走過週期一半以上。", "Bloomberg 報導 iPhone 18e 預計 2027 年春季推出，主要只升級晶片。", "微博另有爆料稱 18e 螢幕加大到 6.3 吋、電池加大，但和其他爆料說法互相矛盾，尚未證實。"],
     signals: [
+      { grade: "C", text: "定焦數碼：iPhone 18 與 iPhone 18e 量產從 10 月底延到元旦前後；Gurman 仍說 2027 年 2–3 月推出，但上市初期可能較難買到。", source: "微博／MacRumors", date: "2026-11-27" },
       { grade: "C", text: "Engadget 取得的設計圖：iPhone 18e 背面改成類似 iPad Pro 的凸起鏡頭模組（鏡頭、閃光燈、麥克風集中），仍只有一顆主鏡頭。", source: "Engadget／MacRumors", date: "2026-11-24" },
       { grade: "B", text: "Gurman：Apple 計畫 2027 年 2 月或 3 月推出第一波新品：iPhone 18、iPhone 18e、入門 iPad（A19）、MacBook Neo（A19 Pro）、MacBook Air（M6）。", source: "Bloomberg Power On／MacRumors", date: "2026-11-22" },
       { grade: "C", text: "定焦數碼：iPhone 18e 螢幕加大到 6.3 吋（17e 為 6.1 吋）、電池 4,430 mAh；與數碼閒聊站「維持 6.1 吋」的說法矛盾。", source: "微博／MacRumors", date: "2026-11-09" },
